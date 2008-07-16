@@ -1,1 +1,0 @@
-CC="gcc -pipe" CFLAGS="-g -O2 -ffast-math -Wall -Wno-sign-compare -Wno-switch -DFD_SETSIZE=4096 -I../common -DCYGWIN -I/usr/local/include/mysql" LIB_S="-L/usr/local/lib/mysql -lmysqlclient -lz -lcrypt -lm"
