@@ -1,0 +1,57 @@
+// Script By Ultima
+
+prontera.gat,177,147,8	script	DB room	856,{
+    mes "[Ultima]";
+    mes "Hola amig@,";
+    mes "En este mapa podras";
+    mes "abrir tus Dead Branch";
+    mes "o Bloody Branch";
+
+next;
+    mes "[Ultima]";
+    mes "No olvides que NO puedes";
+    mes "matar Mobs que hayan salido";
+    mes "de las Branch de otros jugadores o partys";
+    mes "Eso se paga con carcel";
+
+next;
+    mes "[Woe Warper]";
+    mes "quieres ir al DB room";
+    mes "a pelear con los mobs mas fuertes que te puedan aparecer??";
+
+next;
+	menu "Si",dbroom,"No Gracias",no;
+
+dbroom:
+	mes "elije el mapa que deseas usar";
+	next;
+
+
+menu	"DBroom 1",room,"DBroom 2",no,"DBroom 3",no,"DBroom 4",no,"DBroom 5",no,"No gracias",no;
+
+close;
+
+room:
+	warp	"pvp_n_4-3",	100,	58;	close;
+room2:
+	warp	"mapa2",	000,	000;	close;
+room3:
+	warp	"mapa3",	000,	000;	close;
+room4:
+	warp	"mapa4",	000,	000;	close;
+room5:
+	warp	"mapa5",	000,	000;	close;
+
+
+no:
+	mes "[Ultima]";
+	mes "Lo entiendo";
+	mes "esto es solo para los mas fuertes";
+	mes "y a ti te falta poder aun";
+	next;
+	mes "[Ultima]";
+	mes "Recuerda entrenar duro";
+	mes "para que la proxima ves si seas capas";
+	mes "de matar cualquier mob o Mvp que salga";
+	close;
+}

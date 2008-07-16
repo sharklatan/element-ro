@@ -1,0 +1,83 @@
+//===== Script ===========================================
+//= reset Girl
+//===== Creado Por: ======================================================
+//= SoDa
+//===== Versión ===================================================
+//= 1.1
+//===== Compatible: ===============================================
+//= Cualquier versión
+//===== Descripción: ==============================================
+//= Resetea tus puntos
+//= de skill y stats
+//= 
+//===== Novedades ===============================================
+//= Trae su respectiva imagen de NPC
+//= Incluye sonidos al clickear
+//= Incluye emociones
+//=================================================================
+
+prontera.gat,146,170,5	script	Reset Girl	877,{
+	cutin "nyuang_1",2;
+	soundeffect "siroma_move.wav",0;
+	mes "[Reset Girl]";
+	mes "Hola, yo soy la Reset Girl.";
+	mes "Los poderes de mi gatito me permiten resetear tus puntos de Stats o de Skill.";
+	mes "Claro esta que es por una modica cantidad de dinero, para sacar a mi madre de la carcel";
+	next;
+	mes "Los precios son:";
+	mes "Resetear Stats: 50,000z";
+	mes "Resetear Skills: 50,000z";
+	mes "Resetear Ambos: 90,000z";
+	mes "Porfavor, seleciona que deceas hacer:";
+	next;
+	menu "^FF3355Resetear Skills",L0,"Resetear Stats",L1,"Resetear Ambos^000000",L2,"Salir",LEnd;
+	
+	L0:
+		soundeffect "siroma_move.wav",0;
+		mes "[Reset Girl]";
+		if (Zeny < 50000) goto NeedZenys;
+		mes "Ya he reseteado tus Skills";
+		mes "Mi madre pronto estara en libertad ^^";
+		mes "Gracias por usar mis servicios ^^!";
+		set Zeny,zeny-50000;
+		ResetSkill;
+		emotion e_thx;
+		cutin "",255;
+		close;
+	L1:
+		soundeffect "siroma_move.wav",0;
+		mes "[Reset Girl]";
+		if (Zeny < 50000) goto NeedZenys;
+		mes "Ya he reseteado tus Stats";
+		mes "Mi madre pronto estara en libertad ^^";
+		mes "Gracias por usar mis servicios ^^!";
+		set Zeny,zeny-50000;
+		ResetStatus;
+		emotion e_thx;
+		cutin "",255;
+		close;
+	L2:
+		soundeffect "siroma_move.wav",0;
+		mes "[Reset Girl]";
+		if (Zeny < 90000) goto NeedZenys;
+		mes "Ya he reseteado tus Skills y tus Stats";
+		mes "Mi madre pronto estara en libertad ^^";
+		mes "Gracias por usar mis servicios ^^!";
+		set Zeny,zeny-90000;
+		ResetSkill;
+		ResetStatus;
+		emotion e_thx;
+		cutin "",255;
+		close;
+
+		NeedZenys:
+			cutin "nyuang_4",2;
+			mes "[Reset Girl]";		
+			mes "Disculpa, no tienes el dinero suficiente.";
+			mes "Acaso, ¿No quieres ayudarme?";
+			emotion e_sob;
+			cutin "",255;
+			close;
+	LEnd:
+		close;	
+}

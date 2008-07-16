@@ -1,0 +1,246 @@
+//Item Trading Restrictions File
+//Specify here special rules for item trading.
+//Item ID, TradeMask, GM-Level Override
+//Trading mask values:
+//1:Item can't be drop
+//2:Item can't be traded (nor vended)
+//4:Wedded partner can override restriction 2.
+//8:Item can't be sold to npcs
+//16:Item can't be placed in the cart
+//32:Item can't be placed in the storage
+//64:Item can't be placed in the guild storage
+//Example:
+//1161,67,50 //Balmung: No drop, No trade, No Guild Store (1+2+64 =67),
+//only GMs of GM-level 50 and up can override the setting.
+
+
+//
+//Empiesan Customs Element RO
+//
+// Items Quest
+//Custom weapon
+16001,9,99  //Oridecon_Sword
+16002,9,99  //Fire_Blend_v2
+16003,9,99  //Ice_Falchion_v2
+16004,9,99  //Wind_Blade
+16005,9,99  //Gara_Sword_v2
+16006,9,99  //Excalibur_v2
+16007,9,99  //Mysteltain_v2
+16008,9,99  //Dimension_Blade
+16009,9,99  //Infernal_Sword
+
+16011,9,99  //Masamune_v2
+16012,9,99  //Ifrit_Sword,9,99  //
+16013,9,99  //Shiva_Sword,9,99  //
+16014,9,99  //Typhoon_Sword,9,99  //
+16015,9,99  //Titan_Sword,9,99  //
+16016,9,99  //Eden_Sword,9,99  //
+16017,9,99  //Odin_Sword,9,99  //
+16018,9,99  //Dimension_Slayer,9,99  //
+16019,9,99  //Infernal_Slayer,9,99  //
+
+16021,9,99  //Iron_Driver,9,99  //
+16022,9,99  //Tidal_Mace,9,99  //
+16023,9,99  //Quadrille_v2,9,99  //
+16024,9,99  //Spike_v2,9,99  //
+16025,9,99  //Lava_Mace,9,99  //
+16026,9,99  //Mjolnir_v2,9,99  //
+16027,9,99  //Grand_Cross,9,99  //
+16028,9,99  //Dimensional_Mace,9,99  //
+16029,9,99  //Infernal_Mace,9,99  //
+
+16031,9,99  //Sage큦_Diary_v2,9,99  //
+16032,9,99  //Vulcano_Book,9,99  //
+16033,9,99  //Deluge_Book,9,99  //
+16034,9,99  //Magnetic_Earth_Book,9,99  //
+16035,9,99  //Armageddom_Book,9,99  //
+16036,9,99  //Whirlwing_Book,9,99  //
+16037,9,99  //Holy_Bible,9,99  //
+16050,9,99  //Dimensional_Book,9,99  //
+16060,9,99  //Infernal_Book,9,99  //
+
+16038,9,99  //Soul_Staff_v2,9,99  //
+16039,9,99  //Wizardry_Staff_v2,9,99  //
+16040,9,99  //Infernal_Staff,9,99  //
+
+16041,9,99  //Longinu큦_Spear_v2,9,99  //
+16042,9,99  //Gungnir_v2,9,99  //
+16043,9,99  //Leviathan,9,99  //
+16044,9,99  //Gae_Bolg,9,99  //
+16045,9,99  //Hellfire,9,99  //
+16046,9,99  //Zephyrus_v2,9,99  //
+16047,9,99  //Brionac,9,99  //
+16048,9,99  //Dimension_Spear,9,99  //
+16049,9,99  //Infernal_Spear,9,99  //
+
+16051,9,99  //War_Axe_v2,9,99  //
+16052,9,99  //Windhawk_v2,9,99  //
+16053,9,99  //Bloody_Axe_v2,9,99  //
+16054,9,99  //Sabbath_v2,9,99  //
+16055,9,99  //Light_Epsilon_v2,9,99  //
+16056,9,99  //Slaughter_v2,9,99  //
+16057,9,99  //Aqua_Axe,9,99  //
+16058,9,99  //Dimension_Axe,9,99  //
+16059,9,99  //Infernal_Axe,9,99  //
+
+16061,9,99  //Lightweight_Dagger,9,99  //
+16062,9,99  //Shadow_Dagger,9,99  //
+16063,9,99  //Grimtooth_v2,9,99  //
+16064,9,99  //Holy_Dagger,9,99  //
+16065,9,99  //Kindling_Dagger,9,99  //
+16066,9,99  //Obsidian_Dagger,9,99  //
+16067,9,99  //Fisherman큦_Dagger_v2,9,99  //
+16068,9,99  //Dimension_Dagger,9,99  //
+16069,9,99  //Infernal_Dagger,9,99  //
+
+16071,9,99  //Katar_of_Frozen_Icicle_v2,9,99  //
+16072,9,99  //Katar_of_Quaking_v2,9,99  //
+16073,9,99  //Katar_of_Ranging_Blaze_v2,9,99  //
+16074,9,99  //Katar_of_Piercing_Wind_v2,9,99  //
+16075,9,99  //Holy_Touch,9,99  //
+16076,9,99  //Loki큦_Talon,9,99  //
+16077,9,99  //Unholy_Touch_v2,9,99  //
+16078,9,99  //Dimension_Katar,9,99  //
+16079,9,99  //Infernal_Katar,9,99  //
+
+16081,9,99  //Celestial_Bow,9,99  //
+16082,9,99  //Ballista_v2,9,99  //
+16083,9,99  //Luna_Bow,9,99  //
+16084,9,99  //Dragon_Bow,9,99  //
+16085,9,99  //Infernal_Bow,9,99  //
+
+16091,9,99  //Diamond_Knuckle,9,99  //
+16092,9,99  //Sapphire_Knuckle,9,99  //
+16093,9,99  //Stone_Knuckle,9,99  //
+16094,9,99  //Ruby_Knuckle,9,99  //
+16095,9,99  //Garm_Claw,9,99  //
+16096,9,99  //Kaiser_Knuckle,9,99  //
+16097,9,99  //Opal_Knuckle,9,99  //
+16098,9,99  //Dimensional_Fist,9,99  //
+16099,9,99  //Infernal_Fist,9,99  //
+
+17001,9,99  //Queen,9,99  //
+17002,9,99  //Rock_Guita,9,99  //
+17003,9,99  //Burning_Guitar,9,99  //
+17004,9,99  //Sumerged_Guitar,9,99  //
+17005,9,99  //Chaos_Guitar,9,99  //
+17006,9,99  //Electric_Guitar,9,99  //
+17007,9,99  //Legend,9,99  //
+17008,9,99  //Dimensional_Guitar,9,99  //
+17009,9,99  //Infernal_Guitar,9,99  //
+
+17011,9,99  //Queen큦_Whips,9,99  //
+17012,9,99  //Ice_Whip,9,99  //
+17013,9,99  //Electric_Whip,9,99  //
+17014,9,99  //Flame_Whip,9,99  //
+17015,9,99  //Earth_Whip,9,99  //
+17016,9,99  //Angel_Whip,9,99  //
+17017,9,99  //Demno_Whip,9,99  //
+17018,9,99  //Dimension_Whip,9,99  //
+17019,9,99  //Infernal_Whip,9,99  //
+
+17021,9,99  //Fentir,9,99  //
+17022,9,99  //Darkness,9,99  //
+17023,9,99  //Tiamat,9,99  //
+17024,9,99  //judgment,9,99  //
+17025,9,99  //Beowilf,9,99  //
+17026,9,99  //Chaos,9,99  //
+17027,9,99  //Cerberus,9,99  //
+17028,9,99  //Calamity,9,99  //
+17029,9,99  //Dragon,9,99  //
+17030,9,99  //Catastrophe,9,99  //
+
+17031,9,99  //Kazema_Shuriken_Reikon,9,99  //
+17032,9,99  //Kazema_Shuriken_Suiton,9,99  //
+17033,9,99  //Kazema_Shuriken_Doton,9,99  //
+17034,9,99  //Kazema_Shuriken_Kage,9,99  //
+17035,9,99  //Kazema_Shuriken_Katon,9,99  //
+17036,9,99  //Kazema_Shuriken_Fuuton,9,99  //
+17037,9,99  //Kazema_Shuriken_Tenrai,9,99  //
+17038,9,99  //Kazema_Infernal_Shuriken,9,99  //
+17039,9,99  //Dimension_Shuriken,9,99  //
+
+//armors
+
+18001,9,99  //Platinum_Armor,9,99  //
+18002,9,99  //Hell_Armor_of_Volcano,9,99  //
+18003,9,99  //Poseidon_Armor_of_Ocean,9,99  //
+18004,9,99  //Huracan_Armor,9,99  //
+18005,9,99  //Gaia_Earth_Armor,9,99  //
+18006,9,99  //Darkness_Armor_of_Benefit,9,99  //
+18007,9,99  //Celestial_Armor_of_Protectioni,9,99  //
+
+//garment
+
+18011,9,99  //Manteau_Enchulado,9,99  //
+18012,9,99  //Ragamuffin_Manteau_Enchulado,9,99  //
+18013,9,99  //Survivor's_Manteau_Enchulado,9,99  //
+18014,9,99  //Somber_Novice_Hood_Enchulado,9,99  //
+18015,9,99  //Skeleton_Manteau_Enchulado,9,99  //
+18016,9,99  //Novice_Manteau_Enchulado,9,99  //
+18017,9,99  //Pauldron_Enchulado,9,99  //
+18018,9,99  //Eagle_Wing_Enchulado,9,99  //
+18019,9,99  //Falcon_Muffler_Enchulado,9,99  //
+18020,9,99  //Vali's_Manteau_Enchulado,9,99  //
+18021,9,99  //Morpheus's_Shawl_Enchulado,9,99  //
+18022,9,99  //Morrigane's_Manteau_Enchulado,9,99  //
+18023,9,99  //Goibne's_Spaulders_Enchulado,9,99  //
+18024,75,99  //Valkyrie's_Manteau_Enchulado,95,99  //
+
+//Shields
+
+18031,9,99  //Shield_Reflect,9,99  //
+18032,9,99  //Supreme_Guard,9,99  //
+18033,9,99  //Sacred_Mission,9,99  //
+18034,9,99  //Novice_Shield,9,99  //
+18035,9,99  //Valkyrie's_Shield,9,99  //
+18036,9,99  //Angelic_Guard,9,99  //
+18037,9,99  //Ahura_Mazdah,9,99  //
+
+//Footgears
+
+18051,9,99  // //Pimped_Sandals,9,99  //
+18052,9,99  // //Pimped_Shoes,9,99  //
+18053,9,99  // //Pimped_Boots,9,99  //
+18054,9,99  // //Pimped_Sleipnir,9,99  //
+18055,9,99  // //Pimped_Greaves,9,99  //
+18056,9,99  // //Pimped_Safety_Boots,9,99  //
+18057,9,99  // //Pimped_Novice_Slippers,9,99  //
+18058,9,99  // //Pimped_Novice_Shoes,9,99  //
+18059,9,99  // //Pimped_Freyr's_Shoes,9,99  //
+18060,9,99  // //Pimped_Vidar's_Boots,9,99  //
+18061,9,99  // //Pimped_Goibne's_Greaves,9,99  //
+18062,75,99  // //Pimped_Valkyrie's_Shoes,95,99  //
+
+18071,9,99  // //Pimped_Critical_Ring,9,99  //
+18072,9,99  //Pimped_Bow_Thimble,9,99  //
+18073,9,99  //Pimped_Novice_Armlet,9,99  //
+18074,9,99  //Pimped_Megingjard,9,99  //
+18075,9,99  //Pimped_Brisingamen,9,99  //
+18076,9,99  //Pimped_Celebration_Ring
+18077,9,99  //Pimped_The_Sign
+
+19001,9,99  //Ticket_VIP
+
+15118,8,99  //Santa Hat V2
+
+// Items Donacion
+
+9632,75,99	//penacho moctesuma
+9627,75,99	//maya helm
+18062,75,99	//valkyrie shoes
+9613,75,99	//dragon helm
+9692,75,99	//celestial cloth
+9602,75,99	//black helm
+9629,75,99	//lee valkyrie helm
+15050,75,99	//arch devil wing (ghotic)
+18024,75,99	//valkyrie manto
+9682,75,99	//fox hat vit
+2199,75,99	//ahura mazda
+9719,75,99	//witch hat
+15051,75,99	//ying yang
+15045,75,99	//ohng toi wing
+15112,75,99	//pink fallen wing
+9628,75,99	//true valkyrie helm
+9684,75,99	//wolf helm
+

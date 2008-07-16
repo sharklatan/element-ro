@@ -1,0 +1,109 @@
+//==================================================
+//==================================================
+// Prisión
+//==================================================
+// Version 1.2
+//==================================================
+// Autor: Ivion
+//==================================================
+// Descripción:
+//
+// - Para enviar un user a la carcel, puedes usar el comando @jail.
+// - Automáticamente quedarán guardados allí como presos, y deberán permanecer allí un tiempo para poder salir.
+// - Cada vez que vallan a la cárcel, su nivel de preso subirá un punto más.
+// - El tiempo que deberá permanecer cada user en la prisión aumentará según una función exponencial respecto al nivel de preso de cada user encarcelado. El grado de esta función exponencial puede ser configurado en las opcines de configuración de este script.
+// - Todo esto no funciona con cuentas de gm, los cuales podrán estar allí sin que pase nada.
+// - La prisión está situada en los sótanos del castillo de morocc.
+//==================================================
+// Actualizaciones (5 últimas versiones):
+//
+// 1.0:
+//  - Script Base
+// 1.1:
+//  - Añadida la otra celda al script para poder usar el comando @jail.
+// 1.2:
+//  - El tiempo que deberá permanecer cada user en la prisión aumentará según una función exponencial respecto al nivel de preso de cada user encarcelado. El grado de esta función exponencial puede ser configurado en las opcines de configuración de este script.
+//  - Las variables del nivel de preso serán variables permanentes de cuenta, no solo de pj.
+//==================================================
+//==================================================
+
+
+//==================================================
+// Configuración
+//==================================================
+yuno_in02.gat,0,0,0	script	Config	-1,{
+	OnInit:
+		set $Prision_Servidor$,"Element RO";	// Nombre del Server.
+		set $Prision_Grado,24;		// Grado de la ecuación exponencial del nº de horas que deberá permanecer el user en la prisión respecto a su nivel de preso.
+		set $Prision_Prisioneros,1;
+		end;
+}
+//==================================================
+
+
+//==================================================
+// Data
+//==================================================
+sec_pri.gat,18,14,1	warp	Warp_Carcel1	1,1,moc_castle.gat,138,86
+moc_castle.gat,140,86,1	warp	Warp_Carcel2	1,1,sec_pri.gat,18,16
+//==================================================
+
+
+//==================================================
+// Cárcel nº 1
+//==================================================
+sec_pri.gat,36,75,1	script	Carcel	-1,23,10,{
+	OnTouch:
+		if (getgmlevel() >= 99) end;
+		if (#Prision_Status != 1) {
+			set #Prision_Status,1;
+			save "sec_pri.gat",49,75;
+			set #Prision_Numero,$Prision_Prisioneros;
+			set $Prision_Prisioneros,($Prision_Prisioneros + 1);
+			if (##Prision_Nivel >= 1) set ##Prision_Nivel,(##Prision_Nivel + 1);
+			if (!##Prision_Nivel) set ##Prision_Nivel,1;
+			set #Prision_Final,(gettimetick(2) + (pow(##Prision_Nivel,$Prision_Grado) * 3600));
+		}
+		end;
+}
+sec_pri.gat,53,63,4	script	Carcelero	780,{
+	OnClick:
+		cutin "prt_soldier",2;
+		mes "^008888Carcelero^000000";
+		if (#Prision_Status == 1) {
+			mes "Prisionero nº " + #Prision_Numero + ".";
+			mes "...";
+			next;
+			mes "^008888Carcelero^000000";
+			if (#Prision_Final > gettimetick(2)) {
+				emotion e_bzz;
+				mes "Has sido detenido por inflingir una norma de este server.";
+				mes "Para pagar tu falta, deberás permanecer aislado en esta prisión durante " + (pow(##Prision_Nivel,$Prision_Grado)) + " horas.";
+				mes "Para más información visita la sección de denuncias en el foro.";
+			}
+			if (#Prision_Final <= gettimetick(2)) {
+				emotion e_no1;
+				mes "Ya has cumplido tu condena.";
+				mes "Puedes marcharte.";
+				next;
+				mes "^008888Carcelero^000000";
+				mes "Espero no tener que volver a verte por aquí.";
+				set #Prision_Status,0;
+				close2;
+				cutin "",255;
+				savepoint	"prontera.gat",	156,116;
+				warp	"prontera.gat",	156,116;
+				end; 
+			}
+		}
+		if (#Prision_Status != 1) {
+			mes "Bienvenido a la Prisión de " + $Prision_Servidor$ + ".";
+			mes "Aquí es donde pagan justicia aquellos que incumplen las normas de este juego.";
+		}
+		close2;
+		cutin "",255;
+		end;
+}
+sec_pri.gat,22,23,1	duplicate(Carcelero)	Carcelero	780
+sec_pri.gat,27,63,4	duplicate(Carcelero)	Carcelero	780
+//==================================================

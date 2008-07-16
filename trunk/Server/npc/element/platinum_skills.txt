@@ -1,0 +1,1389 @@
+//===== eAthena Script =========================================================================
+//= Script Que Contiene Todas Las Quest de Skill Platinium
+//===== By: ====================================================================================
+//= Anderson Peñaloza (Omega)
+//===== Current Version: =======================================================================
+//= 2.5
+//===== Compatible With: =======================================================================
+//= Any eAthena Version
+//===== Description: ===========================================================================
+//= Script que Contiene Todas Las Quest de Skill Platinium
+//===== Version Info: ==========================================================================
+//=	1.0 Creado NPC Para Obtener El Lether bag Of Infinity
+//=	2.1 Arreglados Pequeños Bugs
+//=	2.2 Agregadas Las Nuevas Quest Skill
+//=	2.3 Arreglados Pequeños Bugs
+//=	2.4 Integradas Las Nuevas Quest de Skill Platinum
+//=	2.5 Cambiado Numeros de jobs por sus Constantes
+//==============================================================================================
+prontera.gat,148,267,3	script	Game Master	871,{
+
+mes "[Game Master]";
+mes "Hola ^5555FF" + strcharinfo(0) + "^000000!...";
+mes "Yo Soy El Maestro de Maestros";
+mes "Cualquier Tecnica Especial Aqui Podras Conseguirla";
+next;
+menu "Comenzar",Mcomenzar,"Salir",Msalir;
+
+Mcomenzar:
+	if ((Class==Job_Baby) || (Class==0) || (Class==Job_Novice) || (Class==Job_Novice_High)) goto Lskillsnovice;
+	if ((Class==Job_SuperNovice) || (Class==Job_Super_Baby)) goto Lskillssnovice;
+	if ( callfunc("Is_Holy_Class") ) goto Lskillsaco;
+	if ( callfunc("Is_Sword_Class") ) goto Lswordman;
+	if ( callfunc("Is_Magic_Class") ) goto LskillsMage;
+	if ( callfunc("Is_Bow_Class") ) goto Lskillsarcher;
+	if ( callfunc("Is_Merc_Class") ) goto Lskillsmerchie;
+	if ( callfunc("Is_Thief_Class") ) goto Lskillsthief;
+	mes "[Game Master]";
+	mes "...";
+	end;
+
+Lskillsnovice:
+	if ((getskilllv(142)>0) && (getskilllv(143)>0)) Goto Allready_nob;
+	mes "[Game master]";
+	mes "He Aqui las habilidades Especiales para Novice... Consideralas Un regalo";
+	skill 142,1,0;
+	skill 143,1,0;
+	mes "Ahora que tienes Estas habilidades Ve y entrena como es debido";
+	close;
+
+Lskillssnovice:
+	if ((getskilllv(142)>0) && (getskilllv(143)>0)) Goto Allready_nob;
+	mes "[Game master]";
+	mes "He Aqui las habilidades Especiales para  Super Novice... Consideralas Un regalo";
+	skill 142,1,0;
+	skill 143,1,0;
+	mes "Ahora que tienes Estas habilidades Ve y entrena como es debido";
+	close;
+
+Allready_nob:
+	mes "[Game master]";
+	mes "Que Haces Aqui? Ya deberias estar entrenando";
+	close;
+
+Lswordman:
+	if ((getskilllv(144)>0) && (getskilllv(145)>0) && (getskilllv(146)>0)) goto SOtra;
+	mes "[Game Master]";	
+	if(sex==1) mes "Veo que eres Un Swordman";
+	if(sex==0) mes "Veo que eres una Swordwoman";
+	mes "Puedo Enseñarte Unas ^5555FFHabilidades Especiales^000000";
+	mes "Que te Seran muy Utiles";
+	next;
+	menu "Habilidades?",Otrain,"No Me Intersa",MSalir;
+
+	Otrain:
+		if ((getskilllv(144)>0) && (getskilllv(145)>0) && (getskilllv(146)>0)) goto SOtra;
+		mes "[Game Master]";
+		mes "Las Habilidades especiales ue Puedo Enseñarte son :";
+		mes "^5555FFAtack Weak Point^000000";
+		mes "^5555FFAuto Berserk^000000";
+		mes "^5555FFMoving HP Recover^000000";
+		mes "Para Poder Enseñarte estas Habilidades deberas Cumplir Ciertos requisitos";
+		mes "cual de Estas Habilidades te Interesa?";
+		next;
+		menu "Atack Weak Point",Sweak,"Auto Berserk",Sberserk,"Moving HP recover",Srecov,"Cancelar",MSalir;
+
+	Sweak:
+		if (getskilllv(145)>0) goto L_Done1;
+		mes "[Game Master]";
+		mes "Para Enseñarte ^5555FFAtack Weak Point^000000 debes tener Por Lo Menos";
+		mes "^5555FFBash en Nivel 5^000000 y traerme Estos Items :";
+		mes "- 10 ^FF0000Fire Arrows^000000,";
+		mes "- 10 ^FF0000Silver Arrows^000000,";
+		mes "-  1 ^FF0000Banana Juice^000000,";
+		mes "- 30 ^FF0000Tentacles^000000,";
+		mes "-  5 ^FF0000Royal Jelly^000000.";
+		mes "Te Interesa?";
+		next;
+		menu "Si", -, "No",MSalir;
+		if (countitem(1752)<10) goto L_NoItems1;
+		if (countitem(1751)<10) goto L_NoItems1;
+		if (countitem(532)<1) goto L_NoItems1;
+		if (countitem(962)<30) goto L_NoItems1;
+		if (countitem(526)<5) goto L_NoItems1;
+		if (getskilllv(5)<5) goto L_BashLvl;
+		mes "[Game Master]";
+		mes "Veo Que Has traido Todo... Continuemos";
+		next;
+		mes "(despues de Horas de Entrenamiento)";
+		next;
+		delitem 1752,10;
+		delitem 1751,10;
+		delitem 532,1;
+		delitem 962,30;
+		delitem 526,5;
+		skill 145,1,0;
+		mes "[Game Master]";
+		mes "Espero que esta Habilidad te Sea De gran Ayuda";
+		Close;
+
+	L_BashLvl:
+		mes "[Game Master]";
+		mes "Todavia te Falta Un Poco de Entrenamiento";
+		mes "Debes Tener Por Lo Menos ^5555FFBash en Nivel 5^000000";
+		Close;
+
+	Sberserk:
+		if (getskilllv(146)>0) goto L_Done3;
+		mes "[Game Master]";
+		mes "Para Enseñarte ^5555FFAuto berserk^000000 debes tener Por Lo Menos";
+		mes "^5555FFNivel 35 de Job^000000 y traerme estos Items :";
+		mes "^5555FF-35 Powder of Butterfly,";
+		mes "-10 Horrendous Mouth,";
+		mes "-10 Decayed Nail^000000,";
+		mes "-^5555FF10 Honeys^000000!";
+		mes "Te Interesa?";
+		next;
+		menu "Si", -, "No",MSalir;
+		if (countitem(924)<35) goto L_NoItems3;
+		if (countitem(957)<10) goto L_NoItems3;
+		if (countitem(958)<10) goto L_NoItems3;
+		if (countitem(518)<10) goto L_NoItems3;
+		if (Class==Job_Swordman && JobLevel<34) goto L_LowLvl;
+		mes "[Game Master]";
+		mes "Veo Que Has traido odo... Continuemos";
+		next;
+		mes "(despues de Horas de Entrenamiento)";
+		next;
+		delitem 924,35;
+		delitem 958,10;
+		delitem 957,10;
+		delitem 518,10;
+		skill 146,1,0;
+		set BERSERK, 0;
+		mes "[Game Master]";
+		mes "Muy Bien... Espero que esta gran Habilidad Te ayude En Tu Larga travesia...";
+		close;
+
+	Srecov:
+		if (getskilllv(144)>0) goto L_Done2;
+		mes "[Game Master]";
+		mes "Para Enseñarte ^5555FFMoving HP reconver^000000 debes tener Por Lo Menos";
+		mes "^5555FFNivel 35 de Job^000000 y traerme estos Items :";
+		mes "^5555FF200 Empty Bottles^000000,";
+		mes "^5555FF1 Padded Armour^000000,";
+		mes "and ^5555FF1 Moth Wings^000000.";
+		mes "Te Interesa?";
+		next;
+		menu "Si", -,"No",MSalir;
+		if (countitem(713)<200) goto L_NoItems2;
+		if (countitem(1058)<1) goto L_NoItems2;
+		if (countitem(2312)<1) goto L_NoItems2;
+		if (JobLevel < 35) goto L_LowLvl;
+		mes "[Game Master]";
+		mes "Veo Que Has traido Todo... Continuemos";
+		next;
+		mes "(despues de Horas de Entrenamiento)";
+		delitem 713,200;
+		delitem 1058,1;
+		delitem 2312,1;
+		skill 144,1,0;
+		set MOVHPREC, 0;
+		next;
+		mes "[Game Master]";
+		mes "Muy Bien... Espero que esta gran Habilidad Te ayude En Tu Larga travesia...";
+		close;
+
+	L_LowLvl:
+		mes "[Game Master]";
+		mes "Todavia te Falta Un Poco de Entrenamiento";
+		mes "Debes Tener Por Lo Menos ^5555FFNilve 35 de Job^000000";
+		close;
+
+	L_NoItems1:
+		mes "[Game Master]";
+		mes "No Tienes Todos Los Items que te he Pedido, Recuerda Necesitas Traerme :";
+		mes "- 10 ^FF0000Fire Arrows^000000,";
+		mes "- 10 ^FF0000Silver Arrows^000000,";
+		mes "-  1 ^FF0000Banana Juice^000000,";
+		mes "- 30 ^FF0000Tentacles^000000,";
+		mes "-  5 ^FF0000Royal Jelly^000000.";
+		close;
+
+	L_NoItems2:
+		mes "[Game Master]";
+		mes "No Tienes Todos Los Items que te he Pedido, Recuerda Necesitas Traerme :";
+		mes "^5555FF200 Empty Bottles^000000,";
+		mes "^5555FF1 Padded Armour^000000,";
+		mes "and ^5555FF1 Moth Wings^000000.";
+		close;
+		
+	L_NoItems3:
+		mes "[Game Master]";
+		mes "No Tienes Todos Los Items que te he Pedido, Recuerda Necesitas Traerme :";
+		mes "^5555FF-35 Powder of Butterfly,";
+		mes "-10 Horrendous Mouth,";
+		mes "-10 Decayed Nail^000000,";
+		mes "-^5555FF10 Honeys^000000!";
+		close;
+
+	L_Done1:
+		mes "[Game Master]";
+		mes "ya Has Aprendido ^5555FFAtack Weak Point^000000";
+		close;
+		
+	L_Done2:
+		mes "[Game Master]";
+		mes "ya Has Aprendido ^5555FFMoving HP recover^000000";
+		close;
+
+	L_Done3:
+		mes "[Game Master]";
+		mes "ya Has Aprendido ^5555FFAuto Berserk^000000";
+		close;
+
+SOtra:
+	if(BaseJob == Job_Knight) goto L_knight;
+	if(BaseJob == Job_Crusader) goto L_cruz;
+	mes "[Game Master]";
+	mes "si Quieres Aprender Algo Nuevo Debes Cambiar de Clase Primero";
+	close;
+
+L_cruz:
+	if(getskilllv(1002)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "La Nueva Habilidad Que Te Enseñaré Se Llama";
+	mes "Shrink";
+	next;
+	mes "[Game Master]";
+	mes "Estos Son Los Items Necesarios";
+	mes "1 Red Potion";
+	mes "20 Sticky Mucus";
+	mes "3 Empty Bottles";
+	mes "5 Jellopies";
+	mes "1 Unripe Apple";
+	mes "1 Grape";
+	mes "1 Coal";
+	mes "3 Cyfars";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(501)<1 || countitem(938)<20 || countitem(713)<3 || countitem(909)<5 || countitem(619)<1 || countitem(514)<1 || countitem(1003)<1 || countitem(7053)<3)goto L_noitemKC;
+	delitem 501, 1;//Items: Red_Potion,
+	delitem 938, 20;//Items: Sticky_Mucus,
+	delitem 713, 3;//Items: Empty_Bottle,
+	delitem 909, 5;//Items: Jellopy,
+	delitem 619, 1;//Items: Unripe_Apple,
+	delitem 514, 1;//Items: Grape,
+	delitem 1003, 1;//Items: Coal,
+	delitem 7053, 3;//Items: Cyfar,
+
+	mes "[Game Master]";
+	mes "Muy bien... Esta Es La Habilidad";
+	skill 1002,1,0;
+	close;
+
+L_knight:
+	if(getskilllv(1001)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "La Nueva Habilidad Que Te Enseñaré Se Llama";
+	mes "Charge Atack";
+	next;
+	mes "[Game Master]";
+	mes "Estos Son Los Items Necesarios";
+	mes "5 Candy canes";
+	mes "3 Witherless Roses";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if (countitem(530)<5 || countitem(748)<3)goto L_noitemKC;
+	delitem 530, 5;//Items: Candy_Cane,
+	delitem 748, 3;//Items: Witherless_Rose,
+	
+	mes "[Game Master]";
+	mes "Muy bien... Esta Es La Habilidad";
+	skill 1001,1,0;
+	close;
+
+L_noitemKC:
+	mes "[Game Master]";
+	mes "No Tienes Los Items Necesarios";
+	close;
+
+L_alreadyCK:
+	mes "[Game Master]";
+	mes "No Tengo nada mas Que enseñarte";
+	close;
+
+LskillsMage:
+	if(JobLevel < 35) goto L_JobLvlmag;
+	if (getskilllv(157)>0) goto L_GotSkillmag;
+	mes "[Game master]";
+	if(sex==1) mes "Veo que eres Un Magician";
+	if(sex==0) mes "Veo que eres una Magician";
+	mes "Puedo Enseñarte a Liberar tu Verdadero Potencial, ";
+	mes "Asi Podras Utilizar una ^5555FFHabilidad Escondida^000000, ";
+	mes "pero para eso debes cumplir ciertos requisitos";
+	next;
+	menu "Requisitos?",Lreqmag,"Que Puedes Enseñarme?",Lskillmag,"No Estoy Interesado",MSalir;
+
+	Lrequisitos:
+		mes "[Game master]";
+		mes "La Habilidad en cuestion es ^5555FFEnergy Coat^000000";
+		mes "Para Enseñarte Esta Habilidad debes Tener por lo menos Un ^5555FFNivel 35 de Job^000000";
+		mes "y deberas traerme Los Siguientes Items :";
+		mes "^5533FF3 Glass Beads,";
+		mes " 1 One Carat Diamond,";
+		mes " 5 Shells";
+		mes " 1 Solid shell^000000";
+		next;
+		menu "Si Por Favor", -,"No Estoy Intersado",MSalir;
+		mes "[Game master]";
+		mes "Muy Bien Debes traerme cuanto Antes Estos Items :";
+		mes "^FF0000 1 One Carat Diamond,";
+		mes " 5 Shells";
+		mes " 1 Solid shell^000000";
+		next;
+		if (countitem(746)<3) goto L_Itemsmag;
+		if (countitem(730)<1) goto L_Itemsmag;
+		if (countitem(935)<5) goto L_Itemsmag;
+		if (countitem(943)<1) goto L_Itemsmag;
+		mes "[Game master]";
+		mes "Veo Que haz Traido Todos Los Items que Te Solicite";
+		mes "Comenzemos...";
+		next;
+		mes "(Muchas Horas despues)";
+		next;
+		delitem 746,3;
+		delitem 730,1;
+		delitem 935,5;
+		delitem 943,1;
+		skill 157,1,0;
+		next;
+		mes "[Game master]";
+		mes "Ya Puedes Usar ^5555FFEnergy Coat^000000";
+		emotion 21;
+		close;
+
+	L_GotSkillmag:
+		if(BaseJob == Job_Sage) goto SSage;
+		if(BaseJob == Job_Wizard) goto SWiz;
+		mes "[Game Master]";
+		mes "si Quieres Aprender Algo Nuevo debes Cambiar de Clase Primero";
+		close;
+
+	L_Itemsmag:
+		mes "[Game Master]";
+		mes "No Tienes Todos Los Items Necesarios";
+		mes "Regresa Cuando Los Tengas Todos";
+		mes "^FF0000 1 One Carat Diamond,";
+		mes " 5 Shells";
+		mes " 1 Solid shell^000000";
+		close;
+
+	L_JobLvlmag:		
+		mes "[Game Master]";
+		mes "Para Poder Enseñarte a Liberar Tu Verdadero Potencial";
+		mes "Debes Tener por lo menos Un ^5555FFNivel 35 de Job^000000";
+		close;
+
+SSage:
+	if(getskilllv(1007)) goto L_elemental;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "10 Scorpion Tails";
+	mes "7 Horns";
+	mes "12 Rainbow Shells";
+	mes "10 Snail Shells";
+	mes "4 Blank Scrolls";
+	next;
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+	if(countitem(904)<10 || countitem(947)<7 || countitem(1013)<12 || countitem(946)<10 || countitem(7433)<4) goto L_noitemKC;
+	delitem 904, 10;//Items: Scorpion_Tail,
+	delitem 947, 7;//Items: Horn,
+	delitem 1013, 12;//Items: Rainbow_Shell,
+	delitem 946, 10;//Items: Snail's_Shell,
+	delitem 7433, 4;//Items: Blank_Scroll,
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1007,1,0;
+	close;
+
+L_elemental:
+	if(getskilllv(1008) || getskilllv(1017) || getskilllv(1018) || getskilllv(1019)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Puedo Enseñarte Una Habilidad Mas";
+	mes "Pero Deberas traerme Uno de Estos Items :";
+	mes "20 Red blood (fire)";
+	mes "20 Crystal Blue (water)";
+	mes "20 Wind of Verdure (Wind)";
+	mes "20 Green Live (Earth)";
+	next;
+	
+	mes "[Game Master]";
+	mes "Recuerda, Solo Puedo Enseñarte Una de estas Habilidades, asi Que Elige Bien";
+	next;
+	menu "Water Charge",sage_1, "Earth Charge",sage_2, "Fire Charge",sage_3, "Wind Charge",sage_4;
+
+	sage_1:
+		if(countitem(991)<20)goto L_noitemKC;
+		delitem 991, 20;
+		skill 1008,1,0;
+		goto L_alreadyCK;
+
+	sage_2:
+		if(countitem(993)<20)goto L_noitemKC;
+		delitem 993, 20;
+		skill 1017,1,0;
+		goto L_alreadyCK;
+
+	sage_3:
+		if(countitem(990)<20)goto L_noitemKC;
+		delitem 990, 20;
+		skill 1018,1,0;
+		goto L_alreadyCK;
+
+	sage_4:
+		if(countitem(992)<20)goto L_noitemKC;
+		delitem 992, 20;
+		skill 1019,1,0;
+		goto L_alreadyCK;
+
+SWiz:
+	if(getskilllv(1006)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "10 Crystal Blue";
+	mes "10 Green Live";
+	mes "10 Red Blood";
+	mes "10 Wind of Verdure";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(990)<10 || countitem(991)<10 || countitem(992)<10 || countitem(993)<10) goto  L_noitemKC;
+	delitem 990, 10;//Items: Red_Blood,
+	delitem 991, 10;//Items: Crystal_Blue,
+	delitem 992, 10;//Items: Wind_of_Verdure,
+	delitem 993, 10;//Items: Green_Live,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1006,1,0;
+	close;
+
+Lskillsarcher:
+	if (getskilllv(147)>0 && getskilllv(148)>0) goto L_GotSkillarc;
+	if (JobLevel<35) goto L_LowLvlarc;
+	mes "[Game Master]";
+	if(sex==1) mes "Veo que al parecer eres un Arquero de Alto Nivel. Creo Que podria enseñarte";
+	if(sex==0) mes "Veo que al parecer eres una Arquera de Alto Nivel. Creo Que podria enseñarte";
+	mes "una o dos cosas que te podran ser de gran utilidad";
+	next;
+	menu "Que Puedes Enseñarme",Mcomienzo,"No Necesito Nada",MSalir;
+	
+	Mcomienzo:
+		mes "[Game Master]";
+		mes "Bien, Como Arquero Existen unas ^5555FF Habilidades Especiales ^000000";
+		mes "que creo que te Seran de Utilidad, estas Habilidades Son :";
+		mes "^5555FFArrow Crafting^000000";
+		mes "^5555FFArrow Repel^000000";
+		next;
+		menu "Arrow Crafting",Acraft,"Arrow Repel",Arepel,"Nada",MSalir;
+	Acraft:
+		if (getskilllv(147)>0) goto L_GotSkillacr1;
+		mes "[Game Master]";
+		mes "Para Enseñarte ^5533FF'Arrow Crafting'^000000";
+		mes "Debes Traerme Los Siguientes Items";
+		mes "^FF335520 Resin,";
+		mes " 7 Poison Spores,";
+		mes "41 Pointed Scales,";
+		mes "13 Trunks,";
+		mes " 1 Red potion^000000";
+		emotion 5;
+		next;
+		if (countitem(907)<20) goto L_NotEnuf;
+		if (countitem(7033)<7) goto L_NotEnuf;
+		if (countitem(906)<41) goto L_NotEnuf;
+		if (countitem(1019)<13) goto L_NotEnuf;
+		if (countitem(501)<1) goto L_NotEnuf;
+		mes "[Game Master]";
+		mes "Has traido Los Items que te he Pedido... Comenzemos";
+		next;
+		mes "[Game Master]";
+		mes ".......................";
+		next;
+		mes "[Game Master]";
+		mes "Todo Listo, Ya Puedes Crear Todo Tipo de flechas Que Quieras";
+		next;
+		mes "[Game Master]";
+		mes "Espero que No Esperaras Ningun Tipo de Gran ceremonia";
+		mes "Disfruta de esta gran Habilidad que oy te He Enseñado";
+		next;
+		delitem  907, 20;
+		delitem 7033,  7;
+		delitem  906, 41;
+		delitem 1019, 13;
+		delitem  501,  1;
+		skill 147,1,0;
+		set ARWCRFT, 0;
+		mes "[Game Master]";
+		mes "Bueno Fue un Placer Haberte Ayudado";
+		mes "Buena Suerte...";
+		close;
+
+	Arepel:
+		if (getskilllv(148)>0) goto L_GotSkillarc2;
+		mes "[Game Master]";
+		mes "Para Enseñarte La Habilidad ^5555FFArrow Repel^000000";
+		mes "Necesitaré los siguientes Items :";
+		mes "-^FF0000 2 Emeralds^000000";
+		mes "-^FF0000 3 Yoyo tails^000000";
+		mes "-^FF000010 Tentacles^000000";
+		mes "-^FF000010 Bill of birds^000000";
+		mes "-^FF000036 Banana Juices^000000";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Tengas Los Items que te He Pedido";
+		next;
+		if ((countitem(721)<2) || (countitem(942)<3) || (countitem(962)<10) || (countitem(925)<10) || (countitem(532)<36)) goto L_NotEnuf;
+		mes "[Game Master]";
+		mes "Has Traido Todo Lo que te pedi";
+		mes "Ahora te Enseñare La Habilidad ^0033FFArrow Repel^000000";
+		next;
+		delitem 721,2;
+		delitem 942,3;
+		delitem 962,10;
+		delitem 925,10;
+		delitem 532,36;
+		skill 148,1,0;
+		set ARWREP, 0;
+		mes "[Game Master]";
+		mes "Espero q esta gran habilidad te sea util";
+		close;
+
+	L_NotEnuf:
+		mes "[Game Master]";
+		mes "No Tienes Todos Los Items que te He Pedido";
+		next;
+
+	L_LowLvlarc:
+		mes "[Game Master]";
+		mes "Al Parecer No Tienes Suficiente Nivel Para Poder Darte";
+		mes "El entrenamiento necesario, debes tener por lo menos ^0033FFNivel de Job 35^000000";
+		close;
+
+	L_GotSkillarc:
+		if (BaseJob == Job_Hunter) goto L_hunter;
+		if (BaseJob == Job_Bard) goto L_bard;
+		if (BaseJob == Job_Dancer) goto L_dancer;
+		mes "[Game Master]";
+		mes "si Quieres Aprender Algo Nuevo debes Cambiar de Clase Primero";
+		close;
+
+	L_GotSkillacr1:
+		mes "[Game Master]";
+		mes "Ya Te he Enseñado La Habilidad ^5533FF'Arrow Crafting'^000000";
+		close;	
+
+	L_GotSkillacr2:
+		mes "[Game Master]";
+		mes "Ya Te he Enseñado La Habilidad ^5555FFArrow Repel^000000";
+		close;
+
+L_hunter:
+	if(getskilllv(1009)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "5 Cursed Rubys";
+	mes "5 Harpy's Feathers";
+	mes "30 Pet Food";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(724)<5 || countitem(7115)<5 || countitem(537)<30) goto L_noitemKC;
+	delitem 724, 5;//Items: Cursed_Ruby,
+	delitem 7115, 5;//Items: Harpy_Feather,
+	delitem 537, 30;//Items: Pet_Food,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1009,1,0;
+	close;
+
+L_bard:
+	if(getskilllv(1010)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "1 Tropical Sograt";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if (countitem(12112)<1) goto L_noitemKC;
+	delitem 12112, 1;//Items: Tropical_Sograt,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1010,1,0;
+	close;
+
+L_dancer:
+	if(getskilllv(1011)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "1 Crystal Mirror";
+	mes "1 Alcohol";
+	mes "1 China";
+	mes "1 Apple";
+	mes "3 Bananas";
+	mes "5 Well-baked Cookies";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(747)<1 || countitem(970)<1 || countitem(736)<1 || countitem(512)<1 || countitem(513)<3 || countitem(538)<5) goto L_noitemKC;
+	delitem 747, 1;//Items: Crystal_Mirror,
+	delitem 970, 1;//Items: Alcohol,
+	delitem 736, 1;//Items: China,
+	delitem 512, 1;//Items: Apple,
+	delitem 513, 3;//Items: Banana,
+	delitem 538, 5;//Items: Well-baked_Cookie,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1011,1,0;
+	close;
+
+Lskillsaco:
+	if (getskilllv(156)>0) goto L_GotSkillaco;
+	if(sex==1) mes "Veo que eres Un Acolito";
+	if(sex==0) mes "Veo que eres Una Acolita";
+	next;
+	menu "Acerca de Las Habilidades Secretas del Acolito",M_0,"Nada.",LskillsEND;
+
+	M_0:
+		mes "[Game Master]";
+		mes "Para Encarar el mal... El Acolito Necesita de Una gran Asistencia";
+		next;
+		mes "[Game Master]";
+		mes "Como Acolito Te Proporcionaré un Entrenamiento Especial para que puedas";
+		mes "Liberar tu poder Interno y poder aprender Esta Gran Habilidad";
+		next;
+		mes "[Game Master]";
+		mes "esta Habilidad se Llama ^5555FF'Holy Light'^000000.  Esta Habilidad";
+		mes "Hace Daño a Toda Clase de Enemigos, pero Mas Aun A Los No Muertos.";
+		next;
+		mes "[Game Master]";
+		mes "Para Alguien Como Tu, El Entrenamiento Requerirá de Un gran trabajo";
+		mes "Quieres Aprender Esta Habilidad?";
+		next;
+		menu "Si, Por Favor.",-,"Dejame Pensarlo.",LskillsEND;
+
+		mes "[Game Master]";
+		mes "Muy Bien... Necesitaras Estos items para poder Aprender esta";
+		mes "Habilidad";
+		mes "^5555FF1 Opal^000000,";
+		mes "^5555FF1 Crystal Bule^000000,";
+		mes "^5555FF1 Rosary^000000.";
+		next;
+		mes "[Game Master]";
+		mes "Ademas, Necesitaras Tener el Nivel Suficiente Para Poder";
+		mes "entrenar, debes Tener ^5555Nivel de Job 3 0^000000. Y No";
+		mes "Puedes ser Ni Pries Ni Monk, por la Cantidad de Experiencia ";
+		mes "que Ellos Tienen";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando estes Listo";
+		next;
+		mes "Asi que estas Listo Para El Etrenamiento, dejame Revisar";
+		next;
+		mes "[Game Master]";
+		if (JobLevel<30) goto L_LowLvlaco;
+		if (countitem(727)<1 || countitem(991)<1 || countitem(2608)<1) goto L_NoItemsaco;
+
+		mes "Ok... Has Traido Todos Los Items Necesarios";
+		next;
+		mes "[Game Master]";
+		mes "Muy Bien... Comencemos";
+		next;
+		mes "(despues de Horas de Orar y Meditar)";
+		next;
+		mes "[Game Master]";
+		mes "Si!!... Puedo Sentirlo, Has liberado Tu Poder Interno";
+		mes "ya Puedes Usar ^5555FFHoly Light^000000!";
+		delitem 727,1;
+		delitem 991,1;
+		delitem 2608,1;
+		skill 156,1,0;
+		mes "[Game Master]";
+		mes "Lo Has Echo Muy Bien";
+		emotion 21;
+		close;
+
+	L_LowLvlaco:
+		mes "[Game Master]";
+		mes "Lo Siento, Necesitas Un Poco Mas de Entrenamiento antes de Poder Enseñarte";
+		mes "Holy Light.  Regresa Cuando Tengas U Nivel de Job de 30.";
+		close;
+	L_NoItemsaco:
+		mes "[Game Master]";
+		mes "Lo Siento pero No Tienes Los Items Suficientes";
+		mes "necesitas:";
+		mes "^5555FF-1 Opal^000000,";
+		mes "^5555FF-1 Crystal Bule^000000,";
+		mes "^5555FF-1 Rosary^000000.";
+		close;
+
+	L_GotSkillaco:
+		if (BaseJob == Job_Monk) goto L_monk;
+		if (BaseJob == Job_Priest) goto L_priest;
+		mes "[Game Master]";
+		mes "Veo que ya estas Usando Holi Light";
+		mes "si Quieres Aprender Algo Nuevo debes Cambiar de Clase Primero";
+		close;
+
+L_monk:
+	if(getskilllv(1015) && getskilllv(1016)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "40 Stems";
+	mes "3 Shoots";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(711)<3 || countitem(905)<40) goto L_noitemKC;
+	delitem 711, 3;//Items: Shoot,
+	delitem 905, 40;//Items: Stem,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1015,1,0;
+	skill 1016,1,0;
+	close;
+
+L_priest:
+	if(getskilllv(1014)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "1 Blue Gemstone";
+	mes "1 Holy Water";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(717)<1 || countitem(523)<1) goto L_noitemKC;
+	delitem 717, 1;//Items: Blue_Gemstone,
+	delitem 523, 1;//Items: Holy_Water,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1014,1,0;
+	close;
+
+
+Lskillsmerchie:
+	if (JobLevel < 15) goto L_JobLvlmec1;
+	if (getskilllv(155)>0) && (getskilllv(154)>0) && (getskilllv(153)>0) goto L_GotSkillmec;
+	mes "[Game Master]";
+	if (sex==1) mes "Veo Que eres Un Mercante";
+	if (sex==0) mes "Veo Que eres Una Mercante";
+	next;
+	mes "[Game Master]";
+	mes "Te Gustaría Que te Diese Un Gran entrenamiento?";
+	next;
+	menu "Si Claro",MtrainM,"No Necesito tu Entrenamiento",MSalir;
+
+	MtrainM:
+		mes "[Game Master]";
+		mes "Muy Bien... Bajo mi Entrenamiento Podras Aprender Estas Habilidades";
+		mes "^5555FCrazy Uproar^000000";
+		mes "^5555FChange Cart^000000";
+		mes "^5555FCart revolution^000000";
+		next;
+		menu "Crazy Uproar",Scrazy,"Change Cart",Schange,"Cart revolution",Scart,"Nada",MSalir;
+
+	Scrazy:
+		if (getskilllv(155)>0) goto L_GotSkillmec1;
+		mes "[Game Master]";
+		mes "Para Enseñarte Esta Habilidad Primero Deberas traerme EsTos items :";
+		mes "- ^3355FF7 Pearls,";
+		mes "- 1 Banana juice,";
+		mes "- 50 Mushroom spores^000000.";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Tengas Todos Los Items";
+		next;
+		if ((countitem(722)<7) || (countitem(532)<1) || (countitem(921)<50)) goto L_Items1;
+		mes "[Game Master]";
+		mes "veo que Has traido Todos Los Items que te He Pedido... Conntinuemos";
+		delitem 722,7;
+		delitem 532,1;
+		delitem 921,50;
+		skill 155,1,0;
+		next;
+		mes "[Game Master]";
+		mes "Que Te Aproveche, Pero Recuerda Que Solo Es El Comienzo...";
+		emotion 21;
+		close;
+
+	Schange:
+		if (getskilllv(154)>0) goto L_GotSkillmec2;
+		if (Class==Job_Merchant && JobLevel < 30) goto L_JobLvlmec2;
+		mes "[Game Master]";
+		mes "Para Enseñarte Esta Habilidad Primero Deberas traerme EsTos items :";
+		mes "^3355FF50 Trunks,";
+		mes "20 Animal Skin,";
+		mes "20 Iron^000000.";
+		next;
+		if ((countitem(1019)<50) || (countitem(998)<20) || (countitem(919)<20)) goto L_Items2;
+		mes "[Game Master]";
+		mes "veo que Has traido Todos Los Items que te He Pedido... Conntinuemos";
+		delitem 1019,50;
+		delitem 998,20;
+		delitem 919,10;
+		skill 154,1,0;
+		next;
+		mes "[Game Master]";
+		mes "Que Te Aproveche, Pero Recuerda Que El Entrenamiento No Ha Terminado...";
+		emotion 21;
+		close;
+
+	Scart:
+		if (getskilllv(153)>0) goto L_GotSkillmec3;
+		if (JobLevel < 35) goto L_JobLvlmec3;
+		mes "[Game Master]";
+		mes "Para Enseñarte Esta Habilidad Primero Deberas traerme EsTos items :";
+		mes "^3355FF30 Sticky Mucus,";
+		mes "20 Fly wings,";
+		mes "15 Iron,";
+		mes "5 Tentacles,";
+		mes "2 Grape Juice^000000.";
+		next;
+		if ((countitem(533)<2) || (countitem(998)<15) || (countitem(938)<30) || (countitem(601)<20) || (countitem(962)<5)) goto L_Items3;
+		mes "[Game Master]";
+		mes "veo que Has traido Todos Los Items que te He Pedido... Conntinuemos";
+		delitem 533,2;
+		delitem 998,15;
+		delitem 938,30;
+		delitem 601,20;
+		delitem 962,5;
+		skill 153,1,0;
+		next;
+		mes "[Game Master]";
+		mes "Has Completado Mi Entrenamiento... fecliciTaciones...";
+		emotion 21;
+		close;
+
+	L_Items1:
+		mes "[Game Master]";
+		mes "No Has traido Todos Los Items, Recuerda Debes traerme";
+		mes "- ^3355FF7 Pearls,";
+		mes "- 1Banana juice,";
+		mes "- 50 Mushroom spores^000000.";
+		close;
+
+	L_Items2:
+		mes "[Game Master]";
+		mes "No Has traido Todos Los Items, Recuerda Debes traerme";
+		mes "^3355FF50 Trunks,";
+		mes "20 Animal Skin,";
+		mes "10 Iron^000000.";
+		close;
+
+	L_Items3:
+		mes "[Game Master]";
+		mes "No Has traido Todos Los Items, Recuerda Debes traerme";
+		mes "^3355FF30 Sticky Mucus,";
+		mes "20 Fly wings,";
+		mes "15 Iron,";
+		mes "5 Tentacles,";
+		mes "2 Grape Juice^000000.";
+		close;
+
+	L_JobLvlmec1:
+		mes "[Game Master]";
+		mes "Para Enseñarte La Habilidad ^5555FCrazy Uproar^000000";
+		mes "Por lo Menos ^5555FFNivel 15 de Job^000000";
+		close;
+
+	L_JobLvlmec2:
+		mes "[Game Master]";
+		mes "Para Enseñarte La Habilidad ^5555FChange Cart^000000";
+		mes "Por lo Menos ^5555FFNivel 30 de Job^000000";
+		close;
+
+	L_JobLvlmec3:
+		mes "[Game Master]";
+		mes "Para Enseñarte La Habilidad ^5555FCart revolution^000000";
+		mes "Por lo Menos ^5555FFNivel 35 de Job^000000";
+		close;
+
+	L_GotSkillmec:
+		if (BaseJob == Job_Alchem) goto L_alche;
+		if (BaseJob == Job_Blacksmith) goto L_smith;
+		mes "[Game Master]";
+		mes "si Quieres Aprender Algo Nuevo debes Cambiar de Clase Primero";
+		close;
+
+	L_GotSkillmec1:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad ^5555FCrazy Uproar^000000";
+		close;
+
+	L_GotSkillmec2:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad ^5555FChange Cart^000000";
+		goto Mer_Skills;
+		close;
+
+L_alche:
+	if((getskilllv(1013)) && (getskilllv(1012))) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Traeme estos Items";
+	mes "5 Yellow Gemstones";
+	mes "4 Empty Potion Bottles";
+	mes "10 Hearts of Mermaid";
+	mes "10 Moth Dust";
+	mes "20 Maneater Blossoms";
+	mes "1 Geek Glasses";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(715)<5 || countitem(1093)<4 || countitem(950)<10 || countitem(1057)<10 || countitem(1032)<20 || countitem(2243)<1) goto L_noitemKC;
+	delitem 715, 5;//Items: Yellow_Gemstone,
+	delitem 1093, 4;//Items: Empty_Potion_Bottle,
+	delitem 950, 10;//Items: Heart_of_Mermaid,
+	delitem 1057, 10;//Items: Moth_Dust,
+	delitem 1032, 20;//Items: Maneater_Blossom,
+	delitem 2243, 1;//Items: Geek_Glasses,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui Tiebes El Manual";
+	getitem 7434, 1;//Items: Elemental_Potion_Creation_Guide,
+	close;
+
+L_smith:
+	if((getskilllv(1013)) && (getskilllv(1012))) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "2 Steel";
+	mes "8 Coal";
+	mes "2 Iron Hammers";
+	mes "1 Detrimindexta";
+	mes "500 Zeny";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(999)<2 || countitem(1003)<8 || countitem(613)<2 || countitem(971)<1 || zeny<500) goto L_noitemKC;
+	delitem 999, 2;//Items: Steel,
+	delitem 1003, 8;//Items: Coal,
+	delitem 613, 2;//Items: Iron_Hammer,
+	delitem 971, 1;//Items: Detrimindexta,
+	set zeny, zeny-500;
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1012,1,0;
+	skill 1013,1,0;
+	close;
+
+Lskillsthief:
+	if ((getskilllv(149) > 0) && (getskilllv(150)>0) && (getskilllv(151)>0) && (getskilllv(152)>0)) goto L_GotTH;
+	mes "[Game Master]";
+	mes "Te Gustaria Recibir Un Gran Entrenamiento";
+	next;
+	menu "Si",Mtraint,"No",Msalir;
+
+	Mtraint:
+		mes "[Game Master]";
+		mes "Bajo mi entrenamiento Podras Aprender estas Habilidades";
+		mes "^5555FF Sand atack ^000000";
+		mes "^5555FF Back Slide ^000000";
+		mes "^5555FF Find stone ^000000";
+		mes "^5555FF Trow stone ^000000";
+		next;
+		menu "-Sand Attack",M_Sand,"-Back Slide",M_Back,"-Find Stone",M_Find,"-Trow stone",M_Trow,"-regresaré Despues.",MSalir;
+
+	M_Sand:
+		if(getskilllv(149) > 0) goto L_GotSand;
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "- ^5555FF5 Fine Grit^000000";
+		mes "- ^FF3355'Leather Bag of Infinity'^000000.";
+		mes "Tambien debes Tener Un Nivel de Job de ^5555FFPor lo Menos 25^000000.";
+		next;
+		mes "[Game Master]";
+		mes "El ^FF3355'Leather Bag of Infinity'^000000 lo puedes Conseguir Hablndo";
+		mes "Con un Mercante llamado ^5533FFRuRumuni^000000.";
+		mes "Que se Encuentra en la Parte Norte de Alberta";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Estes Listo";
+		next;
+		if (countitem(7041)<5 || countitem(7042)<1) goto L_NotRdy1;
+		if (Class==Job_Thief && JobLevel<25) goto L_LowLvl1;
+		mes "[Game Master]";
+		mes "Bien Has Traido Todos Los Items que te Pedi...";
+		mes "Ahora Podemos Comensar Con El Entrenamiento";
+		next;
+		mes "[Game Master]";
+		mes "Mira Bien en Tus Pies... Ves Eso?... El Secreto de Esta Tecnica es Ese";
+		mes "Asi es... La Arena";
+		next;
+		mes "[Game Master]";
+		mes "Ahora Bien... Toma Un Poco... Sep Con Eso Es Sufuciente";
+		mes "Ahora...";
+		next;
+		mes "[Game Master]";
+		mes "LANZAMELA";
+		emotion 27;
+		next;
+		mes "[Game Master]";
+		mes "(AHHH!!!!!....... MIS OJOS!!!!!!)";
+		mes "(HIJO DE!!!!....... COMO ARDE!!!!!)";
+		mes "Ves lo Eficiente que es esta habilidad";
+		emotion 23;
+		next;
+		mes "[Game Master]";
+		mes "En Fin... Agarras arena Y la Lanzas a La cara...";
+		mes "(CON MIL DEMONIOS SI QUE TENGO ARENA EN LOS OJOS)";
+		mes "(CREO QUE EL SAHARA SE HA QUEDADO PEQUEÑO)";
+		mes "(CON LA ARENA QUE ME LANZO ESTE HIJO DE SU!!)";
+		next;
+		mes "[Game Master]";
+		mes "Ah!! y Por Cierto esta Tecnica Hace Daño Con Propiedades de Tierra";
+		mes "(DEBO ENCONTRAR UNA MEJOR MANERA DE ENSEÑAR ESTO)";
+		mes "(POR IOS SI QUE TENGO ARENA EN LOS OJOS)";
+		emotion 4;
+		delitem 7041, 5;
+		delitem 7042, 1;
+		skill 149,1,0;
+		close;
+
+	M_Back:
+		if (getskilllv(150)>0) goto L_GotBack;
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "5555FF20 Grasshopper's Legs^000000.";
+		mes "Tambien debes Tener Un Nivel de Job de ^5555FFPor lo Menos 35^000000.";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Estes Listo";
+		next;
+		if (countitem(940)<20) goto L_NotRdy2;
+		if (Class==Thief && JobLevel<35) goto L_LowLvl2;
+		mes "[Game Master]";
+		mes "Bien Has Traido Todos Los Items que te Pedi...";
+		mes  "Ahora Podemos Comensar Con El Entrenamiento";
+		next;
+		mes "[Game Master]";
+		mes "Mientras Colectabas estas piesas te habras dado cuenta ";
+		mes "De muchas de las caracteristicas de los grasshoppers.";
+		next;
+		mes "[Game Master]";
+		mes "Necesitaras Esos Conocimientos para poder aprender esta Tecnica";
+		mes "ya que está Basadaen en los movimientos de los grasshoppers.";
+		next;
+		mes "[Game Master]";
+		mes "Ok!!.... Comencemos";
+		next;
+		mes "[Game Master]";
+		mes "fwosh";
+		next;
+		mes "[Game Master]";
+		mes "fwo0ooooosh";
+		next;
+		mes "[Game Master]";
+		mes "fwo0oooooooooooooosh";
+		next;
+		mes "[Game Master]";
+		mes "Ah!!... Muy Bien ya lo has Conseguido... Felicitaciones";
+		delitem 940,20;
+		skill 150,1,0;
+		close;
+
+	M_Find:
+		if (getskilllv(151)>0) goto L_GotFind;
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "-^5555FF1 Bear's Footskin^000000.";
+		mes "-^5555FF1 Zargon^000000.";
+		mes "-^5555FF5 Spawn^000000.";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Estes Listo";
+		next;
+		if (countitem(912)<1 || countitem(948)<1 || countitem(908)<5) goto L_NotRdy3;
+		mes "[Game Master]";
+		mes "Bien Has Traido Todos Los Items que te Pedi...";
+		mes  "Ahora Podemos Comensar Con El Entrenamiento";
+		next;
+		mes "[Game Master]";
+		mes "Ah!!... Muy Bien ya lo has Conseguido... Felicitaciones";
+		delitem 910,2;
+		delitem 911,2;
+		skill 152,1,0;
+		close;
+
+	M_Trow:
+		if (getskilllv(152)>0) goto L_GotTrow;
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "-^5555FF2 Garlet^000000.";
+		mes "-^5555FF2 Scell^000000.";
+		mes "Tambien debes de Haber Completado ";
+		mes "El entrenamiento de ^5555FFFind Stone^000000.";
+		next;
+		mes "[Game Master]";
+		mes "Regresa Cuando Estes Listo";
+		next;
+		if (getskilllv(151) == 0) goto L_NotRdy4;
+		if ((countitem(910)<2) || (countitem(911)<2)) goto L_NotRdy4;
+		mes "[Game Master]";
+		mes "Bien Has Traido Todos Los Items que te Pedi...";
+		mes  "Ahora Podemos Comensar Con El Entrenamiento";
+		next;
+		mes "[Game Master]";
+		mes "Bien... Toma Esa Piedra de Ahi...";
+		mes "Concentrate... debes Volverte uno con la Piedra....";
+		mes "Piensa... eres La Piedra....";
+		mes "Es La Unica Forma de Que Funcionará Correctamente...";
+		next;
+		mes "[Game Master]";
+		mes "(Una Hora Despues...)";
+		next;
+		mes "[Game Master]";
+		mes "Bien... Ya Has Conseguido muchas Piedras...";
+		mes " Has Aprendido Exitosamente Esta Tecnica";
+		emotion 21;
+		delitem 912,1;
+		delitem 948,1;
+		delitem 908,5;
+		skill 151,1,0;
+		next;
+		mes "[Game Master]";
+		mes "que Te Aproveche...";
+		close;
+
+	L_NotRdy1:
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "- ^5555FF5 Fine Grit^000000";
+		mes "- ^FF3355'Leather Bag of Infinity'^000000.";
+		next;
+		mes "[Game Master]";
+		mes "El ^FF3355'Leather Bag of Infinity'^000000 lo puedes Conseguir Hablndo";
+		mes "Con un Mercante llamado ^5533FFRuRumuni^000000.";
+		mes "Que se Encuentra en la Parte Norte de Alberta";
+
+	L_LowLvl1:
+		mes "[Game Master]";
+		mes "Debes Tener Un Nivel de Job de ^5555FFPor lo Menos 25^000000.";
+		close;
+
+
+	L_NotRdy2:
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "5555FF20 Grasshopper's Legs^000000.";
+		close;
+
+	L_LowLvl2:
+		mes "[Game Master]";
+		mes "Debes Tener Un Nivel de Job de ^5555FFPor lo Menos 35^000000.";
+		close;
+
+	L_NotRdy3:
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "-^5555FF1 Bear's Footskin^000000.";
+		mes "-^5555FF1 Zargon^000000.";
+		mes "-^5555FF5 Spawn^000000.";
+		close;
+
+
+	L_NotRdy4:
+		mes "[Game Master]";
+		mes "Para Entrenarte en esta Tecnica Necesitas :";
+		mes "-^5555FF2 Garlet^000000.";
+		mes "-^5555FF2 Scell^000000.";
+		mes "Tambien debes de Haber Completado ";
+		mes "El entrenamiento de ^5555FFFind Stone^000000.";
+		close;
+
+	L_GotSand:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad";
+		mes "^5555Sand atack^000000";
+		close;
+
+	L_GotBack:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad";
+		mes "^5555Back Slide^000000";
+
+	L_GotFind:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad";
+		mes "^5555Find Stone^000000";
+
+	L_GotTrow:
+		mes "[Game Master]";
+		mes "Ya Has Aprendido La Habilidad";
+		mes "^5555trow Stone^000000";
+
+	L_GotTH:
+		if (BaseJob == Job_Rogue) goto L_rogue;
+		if (BaseJob == Job_Assassin) goto L_sin;
+		mes "[Game Master]";
+		mes "si Quieres Aprender Algo Nuevo debes Cambiar de Clase Primero";
+		close;
+
+L_rogue:
+	if(getskilllv(1005)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "5 Immortal Hearts";
+	mes "5 Stone Hearts";
+	mes "2 Burning hearts";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(929)<5 || countitem(953)<5 || countitem(7097)<2) goto L_noitemKC;
+	delitem 929, 5;//Items: Immortal_Heart,
+	delitem 953, 5;//Items: Stone_Heart,
+	delitem 7097, 2;//Items: Burning_Heart,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1005,1,0;
+	close;
+
+L_sin:
+	if(getskilllv(1003) && getskilllv(1004)) goto L_alreadyCK;
+	mes "[Game Master]";
+	mes "Tengo Algo Mas Que enseñarte";
+	mes "Si Me traes Estos Items te enseñaré Una Nueva Habilidad";
+	mes "3 Sapphires";
+	mes "1 Ruby";
+	next;
+
+	mes "[Game Master]";
+	mes "Veamos si Tienes Los Items";
+	next;
+
+	if(countitem(726)<3 || countitem(723)<1) goto L_noitemKC;
+	delitem 726, 3;//Items: Sapphire,
+	delitem 723, 1;//Items: Ruby,
+	
+	mes "[Game Master]";
+	mes "Muy bien Aqui esta La Nueva Habilidad";
+	skill 1003,1,0;
+	skill 1004,1,0;
+	close;
+
+
+LskillsEND:
+	mes "[Gmae Master]";
+	mes "Que Tengas Un Buen Dia";
+	close;
+
+MSalir:
+	mes "[Game Master]";
+	mes "Que Malo, Espero que Cambies de Opinion...";
+	mes "Que Tengas Un Buen Día";
+	close;
+}
+
+alberta.gat,38,240,5	script	RuRumuni	99,{
+	if ( callfunc("Is_Thief_Class") ) goto L_Mochila;
+
+	mes "[RuRumuni]";
+	mes "Hola... Me Llamo RuRumuni, Soy Un Mercante que se dedica a comprar Leathers";
+	mes "para crear todo tipo de Cosas Super Utiles.";
+	mes "Mis habilidades se Han vuelto tan famosas que Incluso el Game Master";
+	mes "manda a los Thiefs para que les confeccione un item que es muy necesitado";
+	mes "El ^5533FF'Leather Bag of Infinity'^000000.";
+	close;
+
+L_Mochila:
+	mes "[RuRumuni]";
+	mes "Hola! asi que el Game Master te ha enviado aca...";
+	mes "deseas obtener El ^5533FF'Leather Bag of Infinity'^000000.";
+	next;
+	mes "[RuRumuni]";
+	mes "Pero como este Item es muy especial, asi que necesitaré items muy especiales";
+	mes "para poder crearte este item";
+	next;
+	mes "[RuRumuni]";
+	mes "Estos son los Items que necesito :";
+	mes "- 5 ^5533FFScorpion Tails^000000";
+	mes "- 1 ^5533FFCobweb^000000";
+	mes "- 1 ^5533FFCactus Needle^000000";
+	mes "- 1 ^5533FFEarthworm Peeling^000000.";
+	next;
+	mes "[RuRumuni]";
+	mes "Bueno, manos a la obra, cuando consigas estos items vuelve y con gusto te crearé";
+	mes "El ^5533FF'Leather Bag of Infinity'^000000.";
+	next;
+	mes "[RuRumuni]";
+	mes "Has vuelto, has traido todos los items que te pedi?... Veamos...";
+	next;
+	if(countitem(904)<5 || countitem(1025)<1 || countitem(952)<1 || countitem(1055)<1) goto L_List;
+	mes "[RuRumuni]";
+	mes "Muy bien, ahora puedo crearte El ^5533FF'Leather Bag of Infinity'^000000.";
+	mes "ahora a empezar a trabajar";
+	next;
+	mes "~( 30 minutes despues)~";
+	next;
+	mes "[RuRumuni]";
+	mes "Aqui tienes y espero que te sea muy provechoso...";
+	getitem 7042, 1;
+	delitem 904, 5;
+	delitem 1025, 1;
+	delitem 952, 1;
+	delitem 1055, 1;
+	set BAGNFNTY, 2;
+	close;
+
+L_List:
+	mes "[RuRumuni]";
+	mes "Estos son los Items que necesito :";
+	mes "- 5 ^5533FFScorpion Tails^000000";
+	mes "- 1 ^5533FFCobweb^000000";
+	mes "- 1 ^5533FFCactus Needle^000000";
+	mes "- 1 ^5533FFEarthworm Peeling^000000.";
+	close;
+}

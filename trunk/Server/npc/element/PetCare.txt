@@ -1,0 +1,70 @@
+//===== eAthena Script =======================================
+//= NPC Pet Friendly
+//===== By: ==================================================
+//= //= Shuji Yagami [Alfonso Gonzalez] [yagami_shuji@hotmail.com]
+//===== Current Version: =====================================
+//= 1.1
+//===== Compatible With: =====================================
+//= Any eAthena Version;
+//===== Description: =========================================
+//= NPC que aumenta la confianza de una pet. 
+//===== Additional Comments: =================================
+//= 1.0	Inicio de Script.
+//= 1.1 Fix Bugs
+//= 1.2 Cobra 1m por aumentar 100 puntos de amistad. (antes cobraba menos y daba 1000puntos.)
+//============================================================
+//= NPC HECHO A PETCION DE ~noteinteresa~
+//=========================================================
+
+prontera.gat,165,108,4	script	Pet~Friendly	725,{
+
+// Variables
+set	@name$,"[Pet Friendly]";	//Nombre del NPC
+set	@precio1,1000000;		// Costo de Friednly
+set	@precio2,1000;			// Costo de Food
+set 	$Cobrar,2;			// Cobro -Si- (1) -No- (2)
+
+// Script
+	mes @name$;
+	mes "Hola, yo puedo aumentar la confianza de tu Pet,";
+	mes "Ademas de darle de comer";
+	if ($Cobrar == 1) mes "Todo por un ^5555FF" + @precio1 + "^000000 Zenys";
+	next;
+	mes "¿Que deseas hacer?";
+	menu "Aumentar la Confianza",petup,"Darle de Comer",petfood,"No, gracias",no;
+
+petup:
+	if ($Cobrar == 1) if(zeny <= @precio1) goto no_zeny;
+	next;
+	mes @name$;
+	mes "Bien, veamos...";
+	if ($Cobrar == 1) set zeny, zeny-@precio1;
+	next;
+	atcommand strcharinfo(0)+":@petfriendly "+ 1000;
+	next;	
+	mes "Listo, ya te quiere mucho.";
+	close;
+
+petfood:
+	next;
+	if ($Cobrar == 1) if(zeny <= @precio2) goto no_zeny;
+	mes @name$;
+	mes "Bien, veamos...";
+	if ($Cobrar == 1) set zeny, zeny-@precio2;
+	next;
+	atcommand strcharinfo(0)+":@pethungry " +100;
+	next;	
+	mes "Listo, ya esta satisfecho.";
+	close;
+
+no:	
+	mes @name$;
+	mes "Ok. nos vemos,";
+	mes "pero pronto me necesitaras";
+	close;
+
+no_zeny:
+	mes @name$;
+	mes "¬¬U no tienes dinero, regresa cuanto lo tengas.";
+	close;
+}

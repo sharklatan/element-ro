@@ -1,0 +1,1 @@
+pvp_n_1-1,0,0,0,0	monster	Treasure Chest	1798,150,0,0,0

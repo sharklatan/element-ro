@@ -1,0 +1,434 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,253,384,5	script	Muflers v2	827,{
+
+	set @JMROW$,"[^0065DFEQUIPO^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui algunos equipos que te pueden ayudar";
+	mes "deseas verlos??";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Vali's Manteau", "Muffler de Principiante", "Pauldron", "Falcon Muffler", "Morpheus's Shawl", "Morrigane's Manteau", "Skeleton Manteau", "Salir");
+	switch (@item)
+	{
+		case 1: goto equipo1;
+		case 2: goto equipo2;
+                case 3: goto equipo3;
+                case 4: goto equipo4;
+                case 5: goto equipo5;
+		case 6: goto equipo6;
+		case 7: goto equipo7;
+                case 8: goto salir;
+	}
+
+// [==================================================]
+// [===========           equipo 1         ===========]
+// [==================================================]
+equipo1:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Vali's Manteau");
+	switch (@item)
+	{
+		case 1: goto equipo1_1;
+
+	}
+  
+equipo1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Vali's Manteau";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage";
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2517)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2517,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18020,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 2         ===========]
+// [==================================================]
+equipo2:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "Un Simple Muffler";
+	mes "Equipable desde lv 1 hasta lv 150";
+	mes "Tiene 4 Slots";
+	mes "Por eso es Muffler de principiante";
+	set @item, select("Muffler de Principiante");
+	switch (@item)
+	{		
+		case 1: goto equipo2_1;
+
+	}
+equipo2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Muffler[1]";
+	mes "5 Poring Card";
+	mes "5 Skeleton Card";
+	mes "100 Sticky Mucus";
+	mes "100 Skel-Bone";
+	mes "100 Dry Sand";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2504)<1)goto falta;
+	if(countitem(4001)<5)goto falta;
+	if(countitem(4025)<5)goto falta;
+	if(countitem(938)<100)goto falta;
+	if(countitem(932)<100)goto falta;
+	if(countitem(7264)<100)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2504,1;
+	delitem 4001,5;
+	delitem 4025,5;
+	delitem 938,100;
+	delitem 932,100;
+	delitem 7264,100;
+	set Zeny,Zeny-20000000;
+	getitem 18011,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 3         ===========]
+// [==================================================]
+equipo3:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pauldron");
+	switch (@item)
+	{		
+		case 1: goto equipo3_1;
+
+	}
+equipo3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Pauldron";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage";
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2514)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2514,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18017,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 4         ===========]
+// [==================================================]
+equipo4:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Falcon Muffler");
+	switch (@item)
+	{		
+		case 1: goto equipo4_1;
+
+	}
+equipo4_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Falcon Muffler";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage"; 
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2516)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2516,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18019,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 5         ===========]
+// [==================================================]
+equipo5:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Morpheus's Shawl");
+	switch (@item)
+	{		
+		case 1: goto equipo5_1;
+
+	}
+equipo5_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Morpheus's Shawl";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage"; 
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2518)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2518,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18021,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 6         ===========]
+// [==================================================]
+equipo6:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Morrigane's Manteau");
+	switch (@item)
+	{
+		case 1: goto equipo6_1;
+
+	}
+  
+equipo6_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Morpheus's Shawl";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage"; 
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2518)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2518,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18022,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 7         ===========]
+// [==================================================]
+equipo7:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Skeleton Manteau");
+	switch (@item)
+	{		
+		case 1: goto equipo7_1;
+
+	}
+equipo7_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Skeleton Manteau ";
+	mes "20 Raydric Card";
+	mes "1 Fantastic Cooking Kit";
+	mes "200 Bloody Rune";
+	mes "200 Darkness Rune";
+	mes "50 Stone of Sage"; 
+	mes "50 Yggdrasil Berry";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2511)<1)goto falta;
+	if(countitem(4133)<20)goto falta;
+	if(countitem(12129)<1)goto falta;
+	if(countitem(7563)<200)goto falta;
+	if(countitem(7511)<200)goto falta;
+	if(countitem(1204)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2511,1;
+	delitem 4133,20;
+	delitem 12129,1;
+	delitem 7563,200;
+	delitem 7511,200;
+	delitem 1204,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18022,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes /gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario vulosve cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}
