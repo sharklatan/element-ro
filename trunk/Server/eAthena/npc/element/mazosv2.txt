@@ -1,0 +1,460 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,226,373,4	script	Mazos V2	920,{
+
+	set @JMROW$,"[^0065DFMaso^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui algunos Masos que te pueden ayudar";
+	mes "deseas verlos??";
+	next;
+	menu "Si",Maso,"No Gracias",no;
+
+Maso:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Iron_Driver", "Tidal_Mace", "Lava_Mace", "Spike_v2", "Mjolnir_v2", "Grand_Cross", "Quadrille_v2", "Salir");
+	switch (@item)
+	{
+		case 1: goto Maso1;
+		case 2: goto Maso3;
+                case 3: goto Maso4;
+                case 4: goto Maso5;
+                case 5: goto Maso6;
+		case 6: goto Maso7;
+		case 7: goto Maso8;
+                case 8: goto Maso9;
+                case 9: goto Maso0;
+                case 10: goto Maso10;
+                case 11: goto Maso11;
+                case 12: goto Maso12;
+		case 13: goto salir;
+	}
+
+// [==================================================]
+// [===========           Maso 1         ===========]
+// [==================================================]
+Maso1:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Unstripeable";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Skill Magic Crasher Lvl 4";
+	mes "Elemento Neutral";
+	set @item, select("Iron_Driver");
+	switch (@item)
+	{
+		case 1: goto Maso1_1;
+
+	}
+  
+Maso1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Stunner";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1522)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1522,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16021,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           Maso 2         ===========]
+// [==================================================]
+Maso2:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Neutral";
+	set @item, select("Infernal_Mace");
+	switch (@item)
+	{		
+		case 1: goto Maso2_1;
+
+	}
+Maso2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Wrench";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "20 Decayed Nail";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1531)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(957)<20)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1531,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 957,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16029,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           Maso 3         ===========]
+// [==================================================]
+Maso3:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Neutral";
+	set @item, select("Tidal_Mace");
+	switch (@item)
+	{		
+		case 1: goto Maso3_1;
+
+	}
+Maso3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Stunner";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "20 Cristal Blue";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1522)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(991)<20)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1522,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 991,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16022,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           Maso 4         ===========]
+// [==================================================]
+Maso4:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Fuego";
+	set @item, select("Lava_Mace");
+	switch (@item)
+	{		
+		case 1: goto Maso4_1;
+
+	}
+Maso4_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Golden Mace";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "20 Red Blood";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1524)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(990)<20)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1524,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 990,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16025,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           Maso 5         ===========]
+// [==================================================]
+Maso5:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Dark";
+	set @item, select("Spike_v2");
+	switch (@item)
+	{		
+		case 1: goto Maso5_1;
+
+	}
+Maso5_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Spike";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "20 Green Live";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1523)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(993)<20)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1523,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 993,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16024,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           Maso 6         ===========]
+// [==================================================]
+Maso6:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Wind";
+	set @item, select("Mjolnir_v2");
+	switch (@item)
+	{
+		case 1: goto Maso6_1;
+
+	}
+  
+Maso6_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mjolnir";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "20 Wind of Verdure";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1530)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(992)<20)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1530,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 992,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16026,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           Maso 7         ===========]
+// [==================================================]
+Maso7:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Holy";
+	set @item, select("Grand_Cross");
+	switch (@item)
+	{		
+		case 1: goto Maso7_1;
+
+	}
+Maso7_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Grand Cross";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "100 Opal";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1528)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(727)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1528,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 727,100;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16027,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           Maso 8         ===========]
+// [==================================================]
+Maso8:
+	mes @JMROW$;
+	mes "Este Maso da los siguientes bonus:";
+	mes "+10 Vit";
+	mes "+15% Matak";
+	mes "+10 Dex";
+	mes "+10 Aspd";
+	mes "Skill Triple Atak Lvl 10";
+	mes "Elemento Tierra";
+	set @item, select("Quadrille_v2");
+	switch (@item)
+	{		
+		case 1: goto Maso8_1;
+
+	}
+Maso8_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Quadrille";
+	mes "20 Margaretha Solin Card";
+	mes "100 Witched Starsand";
+	mes "100 Cat's Eye";
+	mes "100 Cursed Seal";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1527)<1)goto falta;
+	if(countitem(4364)<20)goto falta;
+	if(countitem(1061)<100)goto falta;
+	if(countitem(7263)<100)goto falta;
+	if(countitem(7442)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1527,1;
+	delitem 4364,20;
+	delitem 1061,100;
+	delitem 7263,100;
+	delitem 7442,100;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16023,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes /gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario regresa cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

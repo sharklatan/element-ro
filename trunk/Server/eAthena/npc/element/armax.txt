@@ -1,0 +1,570 @@
+//(=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=)
+//(       (c)2005 RagMods Modification Team presents        )
+//(       ______  __    __                                  )
+//(      /\  _  \/\ \__/\ \                     v 1.00.00   )
+//(    __\ \ \_\ \ \ ,_\ \ \___      __    ___      __      )
+//(  /'__`\ \  __ \ \ \/\ \  _ `\  /'__`\/' _ `\  /'__`\    )
+//( /\  __/\ \ \/\ \ \ \_\ \ \ \ \/\  __//\ \/\ \/\ \_\.\_  )
+//( \ \____\\ \_\ \_\ \__\\ \_\ \_\ \____\ \_\ \_\ \__/.\_\ )
+//(  \/____/ \/_/\/_/\/__/ \/_/\/_/\/____/\/_/\/_/\/__/\/_/ )
+//(                                                         )
+//(            __ [s] [c] [r] [i] [p] [t] [s] __            )
+//(   _   _   _   _   _   _   _     _   _   _   _   _   _   )
+//(  / \ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \  )
+//( ( e | s | p | a | ñ | o | l ) ( A | t | h | e | n | a ) )
+//(  \_/ \_/ \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/  )
+//(                                                         )
+//(   (c) 2007 Shark_Latan Element_RO			    )
+//(=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=)
+//===== eAthena Script ======================================
+//= wings Quest.
+//===========================================================
+//===== By ==================================================
+//= [Shark_Latan]
+//===== Version =============================================
+//= 1.0
+//===== Compatible With =====================================
+//= eAthena SVN and Freya SVN
+//===== Description =========================================
+//= NPC wings Quest por categorias.
+//===========================================================
+quiz_02,71,380,3	script	Armas Celestiales	811,{
+	set @JMROW$,"[^0065DFArmas^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	mes "Tengo algunas Quest de Armas para ti.";
+	mes "¿Deceas verlas?";
+	next;
+	set @item, select("Arma 1", "Arma 2", "Arma 3", "Salir");
+	switch (@item)
+	{
+		case 1: goto Arma1;
+		case 2: goto Arma2;
+		case 3: goto Arma3;
+                case 4: goto Arma4;
+                case 5: goto Arma5;
+                case 6: goto Arma6;
+		case 7: goto Msalir;
+	}
+
+// [==================================================]
+// [===========           Armas 1          ===========]
+// [==================================================]
+Arma1:
+	mes @JMROW$;
+	mes "No seas Ingenuo Amigo la descripcion es Imnesesaria Simplemente es lo Mejor delo Mejor:";
+	set @item, select("Arco", "Espada 1 Mano", "Katar ", "Daga", "Maso", "Hacha", "Puño");
+	switch (@item)
+	{
+		case 1: goto Arma1_1;
+		case 2: goto Arma1_2;
+		case 3: goto Arma1_3;
+		case 4: goto Arma1_4;
+		case 5: goto Arma1_5;
+		case 6: goto Arma1_6;
+		case 7: goto Arma1_7;
+	}
+  
+Arma1_1:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16083,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_2:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16007,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_3:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16076,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_4:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16063,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_5:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16021,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_6:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16051,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma1_7:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16091,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+
+// [==================================================]
+// [===========           Armas 2          ===========]
+// [==================================================]
+Arma2:
+	mes @JMROW$;
+	mes "No seas Ingenuo Amigo la descripcion es Imnesesaria Simplemente es lo Mejor delo Mejor:";
+	set @item, select("Baculo", "Espada 2 Manos", "Lanza", "Latigo", "Armadura", "Escudo", "Guitarra");
+	switch (@item)
+	{		
+		case 1: goto Arma2_1;
+		case 2: goto Arma2_2;
+		case 3: goto Arma2_3;
+		case 4: goto Arma2_4;
+		case 5: goto Arma2_5;
+		case 6: goto Arma2_6;
+		case 7: goto Arma2_7;
+	}
+Arma2_1:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16039,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_2:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16017,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_3:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16042,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_4:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 17011,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_5:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 18007,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_6:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 18035,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+Arma2_7:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 17002,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           Armas 3          ===========]
+// [==================================================]
+Arma3:
+	mes @JMROW$;
+	mes "No seas Ingenuo, Amigo la descripcion es Imnesesaria Simplemente es lo Mejor delo Mejor:";
+	set @item, select("Libro", "Muffler", "Sapatos", "Accsesorios", "Lentes", "Pistola");
+	switch (@item)
+	{
+		case 1: goto Arma3_1;
+                case 2: goto Arma3_2;
+                case 3: goto Arma3_3;
+                case 4: goto Arma3_4;
+                case 5: goto Arma3_5;
+                case 6: goto Arma3_6;
+
+	}
+Arma3_1:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 16031,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+Arma3_2:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 18024,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+Arma3_3:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 18062,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+Arma3_4:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 18077,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+Arma3_5:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 20025,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+Arma3_6:
+	next;
+	mes "Necesitaras esto:";
+        mes "5 Mansanas";
+	mes "100 Fragmen of Rossata Stone";
+	mes "100 Heroic Hemblem";
+	mes "1 Assacin cross Eremes card MVP";
+	next;
+        if(countitem(512)<5)goto falta;
+	if(countitem(7211)<100)goto falta;
+	if(countitem(968)<100)goto falta;
+	if(countitem(4359)<1)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+        delitem 512,5;
+	delitem 7211,100;
+	delitem 968,100;
+	delitem 4359,1;
+	getitem 17021,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+
+
+falta:
+	mes "Aun no tienes lo necesario vuelve cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

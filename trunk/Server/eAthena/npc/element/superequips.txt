@@ -1,0 +1,345 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,303,259,5	script	Equipo de Dios	1708,{
+
+	set @JMROW$,"[^0065DFEQUIPO^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui 2 hats y 2 alas que seguro";
+	mes "Incrementaran tu poder tanto que no";
+	mes "Te lo podras creer /gg";
+	mes "deseas verlos??";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Hat 1", "Hat 2", "Alas 1", "Alas 2", "Salir");
+	switch (@item)
+	{
+		case 1: goto equipo1;
+		case 2: goto equipo2;
+                case 3: goto equipo3;
+                case 4: goto equipo4;
+		case 5: goto salir;
+	}
+
+// [==================================================]
+// [===========           equipo 1         ===========]
+// [==================================================]
+equipo1:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Hat 1");
+	switch (@item)
+	{
+		case 1: goto equipo1_1;
+
+	}
+  
+equipo1_1:
+	next;
+	mes "Tienes que traerme esto:";
+	mes "2 Pimped The Sign";
+	mes "1 Berzebub Card";
+	mes "1 General Egnigem Cenia Card";
+	mes "10 Ice Scale";
+	mes "10 Fire Dragon Scale";
+	mes "10 Heroic Emblem";
+	mes "50 Valhalla's Flower ";
+	mes "50 Sohee Card";
+	mes "50 Harpy Card";
+	mes "50 Drosera Card";
+	mes "50 Dark Frame Card";
+	mes "50 Cornutus Card";
+	mes "100 Scarlet Dyestuff";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(18077)<2)goto falta;
+	if(countitem(4145)<1)goto falta;
+	if(countitem(4352)<1)goto falta;
+	if(countitem(7562)<10)goto falta;
+	if(countitem(7451)<10)goto falta;
+	if(countitem(968)<10)goto falta;
+	if(countitem(7510)<50)goto falta;
+	if(countitem(4100)<50)goto falta;
+	if(countitem(4325)<50)goto falta;
+	if(countitem(4421)<50)goto falta;
+	if(countitem(4170)<50)goto falta;
+	if(countitem(4061)<50)goto falta;
+	if(countitem(975)<100)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 18077,2;
+	delitem 4145,1;
+	delitem 4352,1;
+	delitem 7562,10;
+	delitem 7451,10;
+	delitem 968,10;
+	delitem 7510,50;
+	delitem 4100,50;
+	delitem 4325,50;
+	delitem 4421,50;
+	delitem 4170,50;
+	delitem 4061,50;
+	delitem 975,100;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 16001,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 2         ===========]
+// [==================================================]
+equipo2:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Hat 2");
+	switch (@item)
+	{		
+		case 1: goto equipo2_1;
+
+	}
+equipo2_1:
+	next;
+	mes "Tienes que traerme esto:";
+	mes "2 Pimped The Sign";
+	mes "1 Berzebub Card";
+	mes "1 General Egnigem Cenia Card";
+	mes "10 Ice Scale";
+	mes "10 Fire Dragon Scale";
+	mes "10 Heroic Emblem";
+	mes "50 Valhalla's Flower ";
+	mes "50 Sohee Card";
+	mes "50 Harpy Card";
+	mes "50 Drosera Card";
+	mes "50 Dark Frame Card";
+	mes "50 Cornutus Card";
+	mes "100 Orange Dyestuff";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(18077)<2)goto falta;
+	if(countitem(4145)<1)goto falta;
+	if(countitem(4352)<1)goto falta;
+	if(countitem(7562)<10)goto falta;
+	if(countitem(7451)<10)goto falta;
+	if(countitem(968)<10)goto falta;
+	if(countitem(7510)<50)goto falta;
+	if(countitem(4100)<50)goto falta;
+	if(countitem(4325)<50)goto falta;
+	if(countitem(4421)<50)goto falta;
+	if(countitem(4170)<50)goto falta;
+	if(countitem(4061)<50)goto falta;
+	if(countitem(980)<100)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 18077,2;
+	delitem 4145,1;
+	delitem 4352,1;
+	delitem 7562,10;
+	delitem 7451,10;
+	delitem 968,10;
+	delitem 7510,50;
+	delitem 4100,50;
+	delitem 4325,50;
+	delitem 4421,50;
+	delitem 4170,50;
+	delitem 4061,50;
+	delitem 980,100;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 16009,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 3         ===========]
+// [==================================================]
+equipo3:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Alas 1");
+	switch (@item)
+	{		
+		case 1: goto equipo3_1;
+
+	}
+equipo3_1:
+	next;
+	mes "Tienes que traerme esto:";
+	mes "6 Phoenix Of Death Wings";
+	mes "1 Berzebub Card";
+	mes "2 General Egnigem Cenia Card";
+	mes "10 Ice Scale";
+	mes "10 Fire Dragon Scale";
+	mes "10 Heroic Emblem";
+	mes "50 Valhalla's Flower ";
+	mes "50 Sohee Card";
+	mes "50 Harpy Card";
+	mes "50 Drosera Card";
+	mes "50 Dark Frame Card";
+	mes "50 Cornutus Card";
+	mes "100 Orange Dyestuff";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(15038)<6)goto falta;
+	if(countitem(4145)<1)goto falta;
+	if(countitem(4352)<2)goto falta;
+	if(countitem(7562)<10)goto falta;
+	if(countitem(7451)<10)goto falta;
+	if(countitem(968)<10)goto falta;
+	if(countitem(7510)<50)goto falta;
+	if(countitem(4100)<50)goto falta;
+	if(countitem(4325)<50)goto falta;
+	if(countitem(4421)<50)goto falta;
+	if(countitem(4170)<50)goto falta;
+	if(countitem(4061)<50)goto falta;
+	if(countitem(980)<100)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 15038,6;
+	delitem 4145,1;
+	delitem 4352,2;
+	delitem 7562,10;
+	delitem 7451,10;
+	delitem 968,10;
+	delitem 7510,50;
+	delitem 4100,50;
+	delitem 4325,50;
+	delitem 4421,50;
+	delitem 4170,50;
+	delitem 4061,50;
+	delitem 980,100;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 16003,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 4         ===========]
+// [==================================================]
+equipo4:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Alas 2");
+	switch (@item)
+	{		
+		case 1: goto equipo4_1;
+
+	}
+equipo4_1:
+	next;
+	mes "6 Demon Wings";
+	mes "1 Berzebub Card";
+	mes "2 General Egnigem Cenia Card";
+	mes "10 Ice Scale";
+	mes "10 Fire Dragon Scale";
+	mes "10 Heroic Emblem";
+	mes "50 Valhalla's Flower ";
+	mes "50 Sohee Card";
+	mes "50 Harpy Card";
+	mes "50 Drosera Card";
+	mes "50 Dark Frame Card";
+	mes "50 Cornutus Card";
+	mes "100 Violet Dyestuff";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(15036)<6)goto falta;
+	if(countitem(4145)<1)goto falta;
+	if(countitem(4352)<2)goto falta;
+	if(countitem(7562)<10)goto falta;
+	if(countitem(7451)<10)goto falta;
+	if(countitem(968)<10)goto falta;
+	if(countitem(7510)<50)goto falta;
+	if(countitem(4100)<50)goto falta;
+	if(countitem(4325)<50)goto falta;
+	if(countitem(4421)<50)goto falta;
+	if(countitem(4170)<50)goto falta;
+	if(countitem(4061)<50)goto falta;
+	if(countitem(980)<100)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 15036,6;
+	delitem 4145,1;
+	delitem 4352,2;
+	delitem 7562,10;
+	delitem 7451,10;
+	delitem 968,10;
+	delitem 7510,50;
+	delitem 4100,50;
+	delitem 4325,50;
+	delitem 4421,50;
+	delitem 4170,50;
+	delitem 4061,50;
+	delitem 981,100;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 16003,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario regresa cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

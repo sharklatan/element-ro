@@ -1,0 +1,198 @@
+// -o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o \\
+//          Ancient Refiner for eAthena 1.0           \\
+//                 (c) 2007 by Myzter                 \\
+// -o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o \\
+prt_in.gat,63,60,4	script	Hefesto#1::ANRefiner	813,{
+	set @Greet$,"Buenas tardes ";
+	if (gettime(3) > 19 || gettime(3) < 5) set @Greet$,"Buenas noches ";
+	if (gettime(3) > 4 && gettime(3) < 12) set @Greet$,"Buenos días ";
+	mes "[^0000FFDios del Fuego y Forja^000000]";
+	mes @Greet$ + strcharinfo(0) + ".";
+	mes " ";
+	mes "Hola yo soy ^B88A00Hefesto^000000, El Dios del Fuego y Forja de la mitologia griega.";
+	next;
+	mes "[^0000FFHefesto^000000]";
+	mes "Puedo refinar a niveles altos con menos riesgo que otros métodos, ^FF0000¿te interesa?^000000";
+	mes " ";
+	mes " Precio: ^0000FF" + $@CountItemsByRef1 + " " + getitemname($@ItemForRefine1) + " y ^0000FF" + $@CountItemsByRef2 + " " + getitemname($@ItemForRefine2) + " por cada nivel de refinamiento^000000.";
+	next;
+	setarray @CurItems$[0],getequipname(1),getequipname(2),getequipname(3),getequipname(4),getequipname(5),getequipname(6),getequipname(7),getequipname(8),getequipname(9),getequipname(10);
+	for (set @X,0; @X < 10; set @X, @X + 1) {
+		if (getequiprefinerycnt(@X + 1)) set @CurItems$[@X], @CurItems$[@X] + "^FF0000+" + getequiprefinerycnt(@X + 1) + "^000000";
+	}
+	
+	set @Opc, select("^FF0000No, gracias.^000000",@CurItems$[0],@CurItems$[1],@CurItems$[2],@CurItems$[3],@CurItems$[4],@CurItems$[5],@CurItems$[6],@CurItems$[7],@CurItems$[8],@CurItems$[9]) - 1;
+	if (!@Opc) goto lExit;
+	
+	mes "[^0000FFHefesto^000000]";
+	if (!getequipisequiped(@Opc)) {
+		mes "Lo siento, no puedo refinar tu cuerpo.";
+		close;
+	}
+	if (!getequipisenableref(@Opc)) {
+		mes "Lo siento, no puedo hacer nada con ese tipo de item.";
+		close;
+	}
+	if (!getequipisidentify(@Opc)) {
+		mes "Lo lamento, no puedo refinar items no identificados.";
+		close;
+	}
+	
+	set @CurrRef, getequiprefinerycnt(@Opc);
+	set @CurrLvl, getequipweaponlv(@Opc);
+	
+	if (@CurrRef < $@BaseRefLvlToUse) {
+		mes "Lo siento, solo trabajo en items previamente refinados de al menos nivel +^FF0000" + $@BaseRefLvlToUse + "^000000.";
+		close;
+	}
+	if (@CurrRef > 9) {
+		mes "Lo siento, el nivel máximo de refinamiento es ^FF0000+10^000000.";
+		close;
+	}
+	if (@CurrRef < 9) {
+		mes "Interesante ^0000FF" + getitemname(getequipid(@Opc)) + "^000000, indica el nivel de refinamiento que deseas: (^FF0000" + (@CurrRef + 1) + "^FF0000 - ^FF000010^000000)";
+		mes " ";
+		mes " ^FF0000* Precaución * ^0000FFSi falla, tu item puede perder niveles de refinamiento.^000000";
+		next;
+		input @RefLvl;
+		mes "[^0000FFHefesto^000000]";
+	} else {
+		set @RefLvl,10;
+	}
+	
+	if (@RefLvl <= @CurrRef) {
+		mes "Lo siento, el nivel mínimo de refinamiento para este item es ^FF0000+" + (@CurrRef + 1) + "^000000";
+		close;
+	}
+	if (@RefLvl > 10) {
+		mes "Lo siento, el nivel máximo de refinamiento para este item es ^FF0000+10^000000";
+		close;
+	}
+	
+	set @TotalLevels, @RefLvl - @CurrRef;
+	set @TotalPrize1, $@CountItemsByRef1 * @TotalLevels;
+	set @TotalPrize2, $@CountItemsByRef2 * @TotalLevels;
+	
+	mes "Para refinar tu ^0000FF" + getitemname(getequipid(@Opc)) + "^000000 a +^FF0000" + @RefLvl + "^000000, traeme ^0000FF" + @TotalPrize1 + " " + getitemname($@ItemForRefine1) + "^000000, ^0000FF" + @TotalPrize2 + " " + getitemname($@ItemForRefine2) + "^000000 más ^FF0000" + $@RefCost + "^000000z.";
+	next;
+	
+	if (select("^0000FFDe acuerdo, aquí tienes!^000000","^FF0000Volveré luego...^000000") == 2) goto lExit;
+	
+	mes "[^0000FFHefesto^000000]";
+	if (zeny < $@RefCost) {
+		mes "Lo lamento, no trabajo por caridad, vende algunos items y regresa cuando tengas los ^FF0000" + $@RefCost + "^000000z.";
+		next;
+		goto lExit;
+	}
+	if (countitem($@ItemForRefine1) < @TotalPrize1 || countitem($@ItemForRefine2) < @TotalPrize2) {
+		mes "Lo lamento, necesito ^0000FF" + @TotalPrize1 + " " + getitemname($@ItemForRefine1) + "^000000 y ^0000FF" + @TotalPrize2 + " " + getitemname($@ItemForRefine2) + "^000000 para refinar tu item.";
+		next;
+		goto lExit;
+	}
+	
+	delitem $@ItemForRefine1,@TotalPrize1;
+	delitem $@ItemForRefine2,@TotalPrize2;
+	set zeny, zeny - $@RefCost;
+
+	mes "Ok, estoy listo para procesar tu ^0000FF" + getitemname(getequipid(@Opc)) + "^000000, por favor ten paciencia...";
+	next;
+	
+	mes "[^0000FFHefesto^000000]";
+	set @TryRef,1;
+	while (@TryRef) {
+		soundeffect "apocalips_h_move.wav",0;
+		mes "* ^FF0000Procesando tu " + getitemname(getequipid(@Opc)) + "...^000000 *";
+		mes " ";
+		mes "> Dice: ^0000FF" + $@RefineMsg$[rand(getarraysize($@RefineMsg$))] + "^000000";
+		next;
+		mes "[^0000FFHefesto^000000]";
+		set @TryRef,rand(4);
+	}
+	switch (@CurrLvl) {
+		case 1:set @Chance, $@RefineProb1[@RefLvl];break;
+		case 2:set @Chance, $@RefineProb2[@RefLvl];break;
+		case 3:set @Chance, $@RefineProb3[@RefLvl];break;
+		case 4:
+		case 0:set @Chance, $@RefineProb4[@RefLvl];
+	}
+	
+	if (@TotalLevels > 1) set @Chance, @Chance - (@TotalLevels * 2 - 2); // Lower probabilities on 2 or more refine levels (sample: +7 to +10 = 3 lvls -> -4%)
+	if (rand(100) <= @Chance) {
+		atcommand "@refine " + $@InternalSlots[@Opc] + " -10";
+		atcommand "@refine " + $@InternalSlots[@Opc] + " " + @RefLvl;
+		soundeffect "tming_success.wav",0;
+		mes "Yeah!, el proceso fue satisfactorio!";
+		mes " ";
+		mes "Disfruta tu ^0000FF" + getitemname(getequipid(@Opc)) + " ^FF0000+" + @RefLvl + "^000000";
+	} else {
+		soundeffect "die_male.wav",0;
+		mes "Ooh noo!, el proceso no resultó.";
+		mes " ";
+		if (!rand(10)) {
+			failedrefitem @Opc;
+			mes "^FF0000Tu item no resistió.^FF0000";
+		} else if (rand(5)) {
+			set @LostLvl, rand(1,$@BaseRefLvlToUse);
+			atcommand "@refine " + $@InternalSlots[@Opc] + " -" + @LostLvl;
+			mes "^FF0000Tu  " + getitemname(getequipid(@Opc)) + " perdió " + @LostLvl + " nivel(es) de refinamiento^FF0000";
+		} else {
+			mes "^0000FFTu " + getitemname(getequipid(@Opc)) + " no resultó con daños.^FF0000";
+		}
+	}
+	close;
+lExit:
+	mes "[^0000FFHefesto^000000]";
+	mes "Espero verte pronto " + strcharinfo(0) + ".";
+	close;
+OnInit:
+	// Configura 2 items para cada nivel de refinamiento y la cantidad a utilizar
+	set $@ItemForRefine1,984; 	// Item Id 1 necesario para cada nivel de refinamiento (default: Oridecon)
+	set $@CountItemsByRef1,1;	// Cantidad de items Id 1 requeridi por cada nivel (default: 1)
+	
+	set $@ItemForRefine2,999; 	// Item Id 2 necesario para cada nivel de refinamiento (default: Steel)
+	set $@CountItemsByRef2,2;	// Cantidad de items Id 2 requeridi por cada nivel (default: 2)
+	
+	set $@RefCost,75000;		// Costo or 1 o más niveles de refinamiento (estimula más riesgo)
+	
+	set $@BaseRefLvlToUse,0;	// Nivel de refinamiento base para poder usar este systema (default: +6)
+	
+	// Probabilidades de lograr el refinamiento para items de nivel 1 al 4
+	//                          0   1   2   3   4   5   6   7  8  9   10
+	setarray $@RefineProb1[0],100,100,100,100,100,100,100,100,100,100,100;
+	setarray $@RefineProb2[0],100,100,100,100,100,100,100,100,100,100,100;
+	setarray $@RefineProb3[0],100,100,100,100,100,100,100,100,100,100,100;
+	setarray $@RefineProb4[0],100,100,100,100,100,100,100,100,100,100,100;
+	
+	// Conversación al azar que tendrá el refinador mientras intenta refinar el item
+	setarray $@RefineMsg$[0],	"grrr... estoy agotado de este trabajo...",
+					"solo un poco más afilado...",
+					"si, mucho mejor así...",
+					"si, se ve bien...",
+					"un poco más por aquí...",
+					"ahora estoy afilando...",
+					"maldición, este martillo me pesa mucho...",
+					"ahora debo presionar aquí...",
+					"grr... odio pulir, pero no puedo regresar al Olimpo...",
+					"que lindo!... si!!",
+					"ehm... esto no está bien...",
+					"wow, miren como está quedando...",
+					"oh si!!!, si!, si!...",
+					"a esto le llamo Arte...",
+					"adoro este juego...",
+					"ufff, huele como a los pies de MaSiO...",
+					"omg, está duro aquí...",
+					"después de esto creo que tomaré vacaciones...",
+					"tanto trabajo por solo " + $@RefCost + "z...",
+					"espero que esto funcione...",
+					"se ve demasiado debil...",
+					"arghhh... mi mano!!",
+					"bien, bien, bien...",
+					"cof, cof... cof...",
+					"ahora aplicaré un poco de calor...y...";
+	
+	// Cuidado - JAMÁS modifiques este arreglo ya que tiene los códigos internos de eAthena para refinar:
+	setarray $@InternalSlots[0],0,256,16,32,2,4,64,8,128,512,1;
+}
+
+// Duplicados
+quiz_02.gat,49,388,4		duplicate(ANRefiner)	Hefesto#2	813

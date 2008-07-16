@@ -1,0 +1,170 @@
+//===== eAthena Script ========================================================================
+//= Universal Rental NPC
+//===== By: ===================================================================================
+//= Anderson E. Peñaloza C. (Omega... GM Designer)
+//===== Current Version: ======================================================================
+//= 1.0
+//===== Compatible With: ======================================================================
+//= Any eAthena
+//===== Description: ==========================================================================
+//= Un rentador de Pecos y Falcons Personalizable
+//===== Additional Comments: ==================================================================
+//= 1.0 Primera versión
+//=============================================================================================
+
+prontera.gat,122,200,1	script	Universal Rental Npc	726,{
+	if ($Nivel == 0) set $Nivel, 99;	// Nivel de GM Para Poder Editar Precios
+	if ($Cobrar == 0) set $Cobrar, 1;
+	if ($Precio == 0) set $Precio, 1000;
+	mes "[Universal Rental NPC]";
+	mes "Hola "+ strcharinfo(0) +" Espero Que La Estes Pasando Bien";
+	next;
+	if (getgmlevel() >= $Nivel) goto L_Admin;
+	if (callfunc("Is_Merc_Class") || (Class==Job_Super_Baby) || (Class==Job_SuperNovice)) goto L_Carro;
+	if ((Class==Job_Hunter) || (Class==Job_Baby_Hunter) || (Class==Job_Sniper)) goto L_Falcon;
+	if ((Class==Job_Knight) || (Class==Job_Knight2) || (Class==Job_Crusader) || (Class==Job_Crusader2) || (Class==Job_Lord_Knight) || (Class==Job_Lord_Knight2) || (Class==Job_Paladin) || (Class==Job_Paladin2)) goto L_Peco;
+	mes "[Universal Rental NPC]";
+	mes "Que tengas Buen Dia";
+	close;
+
+L_Admin:
+	mes "[Universal Rental NPC]";
+	mes "En que Puedo Ayudarte?";
+	if ($Cobrar == 1) set @item, select("Alquilar Carro", "Alquilar Falcon", "Alquilar Peco", "Cobrar Por alquilar", "Establecer Precio","Nada");
+	if ($Cobrar == 2) set @item, select("Alquilar Carro", "Alquilar Falcon", "Alquilar Peco", "No Cobrar Por alquilar", "Establecer Precio", "Nada");
+	switch (@item)
+	{
+		case 1: goto Ad_carro;
+		case 2: goto Ad_falcon;
+		case 3: goto Ad_Peco;
+		case 4: goto L_Cobrar;
+		case 5: goto L_Precio;
+		case 6: goto L_Salir;
+	}
+
+Ad_carro:
+	mes "[Universal Rental NPC]";
+	mes "Aqui tienes";
+	setcart;
+	next;
+	goto L_Salir;
+
+Ad_falcon:
+	mes "[Universal Rental NPC]";
+	mes "Aqui tienes";
+	setfalcon;
+	next;
+	goto L_Salir;
+
+Ad_Peco:
+	mes "[Universal Rental NPC]";
+	mes "Aqui tienes";
+	setriding;
+	next;
+	goto L_Salir;
+
+L_Cobrar:
+	mes "[Universal Rental NPC]";
+	if ($Cobrar == 1) mes "Deseas Cobrar Por Rentar Falcon, Peco y carro?";
+	if ($Cobrar == 2) mes "Deseas Dejar de Cobrar Por Rentar Falcon, Peco y carro?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if ($Cobrar == 1) set @temp, 2;
+	if ($Cobrar == 2) set @temp, 1;
+	mes "[Universal Rental NPC]";
+	mes "Muy bien Como Desees";
+	set $Cobrar, @temp;
+	next;
+	goto L_Salir;
+
+L_Precio:
+	mes "[Universal Rental NPC]";
+	mes "El Precio Por Alquiler es de ^FF0000" + $Precio + " Zenys^000000";
+	mes "Deseas Modificarlo?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	mes "[Universal Rental NPC]";
+	mes "Indica El Nuevo Precio";
+	input @tempchangevar;
+	next;
+	mes "[Universal Rental NPC]";
+	mes "El Nuevo Precio Será ^FF0000"+ @tempchangevar + " Zenys^000000";
+	mes "Es Correcto?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	mes "[Universal Rental NPC]";
+	mes "Muy bien Como desees";
+	set $Precio, @tempchangevar;
+	next;
+	goto L_Salir;
+
+L_Salir:
+	mes "[Universal Rental NPC]";
+	mes "Que Tengasun Buen Dia";
+	close;
+
+Checkzeny1:
+	mes "[Universal Rental NPC]";
+	mes "El Alquiler De Carro Es De ^FF0000" + $Precio + " Zenys^000000";
+	mes "Estas De acuerdo?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if (zeny < $Precio) goto Nozenys;
+	goto Ad_carro;
+
+Checkzeny2:
+	mes "[Universal Rental NPC]";
+	mes "El Alquiler De Carro Es De ^FF0000" + $Precio + " Zenys^000000";
+	mes "Estas De acuerdo?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if (zeny < $Precio) goto Nozenys;
+	goto Ad_Falcon;
+
+Checkzeny3:
+	mes "[Universal Rental NPC]";
+	mes "El Alquiler De Carro Es De ^FF0000" + $Precio + " Zenys^000000";
+	mes "Estas De acuerdo?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if (zeny < $Precio) goto Nozenys;
+	goto Ad_Peco;
+
+Nozenys:
+	mes "[Universal Rental NPC]";
+	mes "Lo siento Pero Mis Servicios No Son Gratis";
+	close;
+
+L_Need_Skill:
+	mes "[Universal Rental NPC]";
+	mes "Todavia No tienes Las habilidades Necesarias";
+	close;
+
+L_Carro:
+	mes "[Universal Rental NPC]";
+	mes "Deseas Alquilar Un caro?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if (getskilllv(39)<1) goto L_Need_Skill;
+	if ($Cobrar == 2) goto Checkzeny1;
+	goto Ad_carro;
+
+L_Falcon:
+	mes "[Universal Rental NPC]";
+	mes "Deseas Alquilar Un Falcon?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	if (getskilllv(127)<1) goto L_Need_Skill;
+	if ($Cobrar == 2) goto Checkzeny2;
+	goto Ad_falcon;
+
+L_Peco:
+	mes "[Universal Rental NPC]";
+	mes "Deseas Alquilar Un PecoPeco?";
+	next;
+	menu "Si", -, "No", L_Salir;
+	mes "[Universal Rental NPC]";
+	if (getskilllv(63)<1)  goto L_Need_Skill;
+	if ($Cobrar == 2) goto Checkzeny3;
+	goto Ad_Peco;
+}

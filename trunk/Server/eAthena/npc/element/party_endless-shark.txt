@@ -1,0 +1,67 @@
+prontera.gat,147,165,5 script Mensajero Party 117,{
+mes "[Mensajero Party]";
+
+if (getcharid(1)==0) goto L_NParty;
+goto L_PartyL;
+
+L_PartyL:
+mes "[Mensajero Party]";
+mes "Hola " +strcharinfo(0)+ " Quieres un mensaje para " +strcharinfo(1)+ " ?";
+next;
+menu "Sip smile.gif",L_Sep,"No Gracias",L_NThx;
+
+L_NParty:
+mes "[Mensajero Party]";
+mes "Tu no tienes ni party!";
+close;
+
+L_NThx:
+mes "[Mensajero Party]";
+mes "Pero se que volveras";
+close;
+
+L_Sep:
+mes "[Mensajero Party]";
+mes "Ok Primero que nada dime a donde sera la party";
+next;
+input $pa$;
+next;
+mes "" +$pa$+ " Eso es correcto?";
+next;
+menu "Sip",-,"Nop, lo hare de nuevo",L_Sep,"No quiero enviar nada",L_NThx;
+
+mes "[Mensajero Party]";
+mes "Ok segundo dime cual sera el nivel minimo";
+next;
+input @ml;
+next;
+mes "" +@ml+ " Es Correcto?";
+next;
+mes "Y Cual sera el maximo?";
+input @mal;
+next;
+mes "" +@mal+ " Es Correcto?";
+menu "Sip",-,"Nop, lo hare de nuevo",L_Sep,"No quiero enviar nada",L_NThx;
+
+mes "[Mensajero Party]";
+mes "Ok tercero dime donde se reuniran";
+next;
+input $ds$;
+next;
+mes "" +$ds$+ " Es correcto?";
+next;
+menu "Sip",-,"Nop, lo hare de nuevo",L_Sep,"No quiero enviar nada",L_NThx;
+
+mes "[Mensajero Party]";
+mes "Quieres que lo envie?";
+mes "El menaje Final sera el Siguiente:";
+mes "Party a " +$pa$+ " Desde " +@ml+" Hasta " +@mal+ " Se reune en:" +$ds$+"";
+next;
+menu "Sip",-,"Nop, lo hare de nuevo",L_Sep,"No quiero enviar nada",L_NThx;
+
+mes "[Mensajero Party]";
+mes "Tan pronto como cierres esto se vera tu anuncio";
+close2;
+announce strcharinfo(0)+ ": " +strcharinfo(1)+ " (Party)a" +$pa$+ " Recluta Gente Desde " +@ml+ " Hasta " +@mal+ " Se reune en: " +$ds$,8;
+end;
+}

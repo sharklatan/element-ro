@@ -1,0 +1,120 @@
+//==================================================
+//==================================================
+// Test de Efectos
+//==================================================
+// Version 1
+//==================================================
+// Autor: Ivion
+//==================================================
+// Descripción:
+// - Test de Efectos
+//==================================================
+// Actualizaciones (5 últimas versiones):
+//
+// 1:
+//  - Script base.
+//==================================================
+//==================================================
+
+
+//==================================================
+// Data
+//==================================================
+prontera.gat,155,179,5	script	Element RO	710,{
+
+OnClick:
+	if (getgmlevel() == 99) {
+		stopnpctimer;
+		mes "[Test de Efectos]";
+		mes "Bienvenido al servicio de testeo de Efectos.";
+		next;
+		mes "[Test de Efectos]";
+		mes "¿Deseas realizar un test de Efectos en tu server?";
+		next;
+		menu "Sí.",L_Efectos1,"No.",-;
+		mes "[Test de Efectos]";
+		mes "OK.";
+		mes "Suerte con tu server.";
+		close;
+	}
+	if (getgmlevel() <= 99) {
+		mes "[Test de Efectos]";
+		mes "Bienvenido a Prontera.";
+		close;
+	}
+end;
+
+L_Efectos1:
+	mes "[Test de Efectos]";
+	mes "Selecciona el nº de efecto por el cual quieres empezar.";
+	next;
+	input $Efecto1;
+	if ($Efecto1 >= 657 || $Efecto1 == 0) {
+		mes "[Test de Efectos]";
+		mes "No existe ese nº de Efecto.";
+		next;
+		input $Efecto1;
+	}
+	announce "Iniciando test de Efectos.",bc_all,0x00AAFF;
+	initnpctimer;
+	close;
+end;
+
+OnTimer1000:
+	if ($Efecto1 == 166 || $Efecto1 == 545 || $Efecto1 == 617) {
+		setnpctimer 0;
+		announce "Efecto nº" + $Efecto1 + " ¡Efecto inválido!",bc_all,0xFF5500;
+		set $Efecto1,$Efecto1 + 1;
+		startnpctimer;
+	}
+	if ($Efecto1 >= 657) {
+		announce "El test de Efectos ha finalizado correctamente.",bc_all,0x00AAFF;
+		stopnpctimer;
+	}
+	setnpctimer 0;
+	specialeffect $Efecto1;
+	announce "Efecto nº" + $Efecto1,bc_all,0xFFFF00;
+	set $Efecto1,$Efecto1 + 1;
+	startnpctimer;
+end;
+
+OnInit:
+	waitingroom "Feliz Navidad",0;
+
+    disablenpc "payg02";
+    disablenpc "payg03";
+    disablenpc "payg04";
+    disablenpc "payg05";
+
+    disablenpc "payg02-1";
+    disablenpc "payg03-1";
+    disablenpc "payg04-1";
+    disablenpc "payg05-1";
+
+    disablenpc "prtg02";
+    disablenpc "prtg02-1";
+    disablenpc "prtg03-1";
+    disablenpc "prtg04-1";
+    disablenpc "prtg05-1";
+
+    disablenpc "aldg02";
+    disablenpc "aldg03";
+    disablenpc "aldg04";
+    disablenpc "aldg05";
+
+    disablenpc "gefg02";
+    disablenpc "gefg03";
+    disablenpc "gefg04";
+    disablenpc "gefg05";
+    disablenpc "gefg06";
+    disablenpc "gefg07";
+    disablenpc "gefg08";
+    disablenpc "gefg09";
+    disablenpc "gefg09-1";
+	end;
+}
+}
+//==================================================
+//==================================================
+ 
+ 

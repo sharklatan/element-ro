@@ -1,0 +1,30 @@
+-	script	User ::User	113,{
+
+//moc_fild22,55,192,6	script	Baby Desert Wolf	1107,{
+
+nada:
+end;
+
+
+//OnInit:
+//	waitingroom "Feliz Navidad",0;
+//	end;
+}
+//==================================================
+//==================================================
+moc_fild22,64,194,6                         duplicate(User)       User  884
+moc_fild22,69,186,6                         duplicate(User)       User  870
+moc_fild22,64,188,6                         duplicate(User)       User  940
+moc_fild22,57,197,6                         duplicate(User)       User  937
+moc_fild22,58,191,6                         duplicate(User)       User  880
+moc_fild22,71,185,6                         duplicate(User)       User  860
+
+moc_fild22,53,185,6                         duplicate(User)       User  745
+moc_fild22,47,200,6                         duplicate(User)       User  746
+moc_fild22,47,192,6                         duplicate(User)       User  747
+moc_fild22,59,201,6                         duplicate(User)       User  753
+//moc_fild22,39,193,6                         duplicate(User)       User  726
+//moc_fild22,60,198,6                         duplicate(User)       User  719
+//moc_fild22,62,196,6                         duplicate(User)       User  123
+//moc_fild22,65,190,6                         duplicate(User)       User  118
+//moc_fild22,60,190,6                         duplicate(User)       User  64

@@ -1,0 +1,541 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,255,386,6	script	Accesorios V2	903,{
+
+	set @JMROW$,"[^0065DFEQUIPO^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui algunos equipos que te pueden ayudar";
+	mes "deseas verlos??";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Pimped_Celebration_Ring", "Pimped_Brisingamen", "Pimped_Megingjard", "Pimped_Bow_Thimble", "Pimped_Critical_Ring", "Pimped_The_Sign", "Salir");
+	switch (@item)
+	{
+		case 1: goto equipo1;
+		case 2: goto equipo2;
+                case 3: goto equipo3;
+                case 4: goto equipo4;
+                case 5: goto equipo5;
+		case 6: goto equipo6;
+		case 7: goto equipo7;
+                case 8: goto equipo8;
+                case 9: goto equipo9;
+                case 10: goto equipo10;
+                case 11: goto equipo11;
+                case 12: goto equipo12;
+		case 13: goto salir;
+	}
+
+// [==================================================]
+// [===========           equipo 1         ===========]
+// [==================================================]
+equipo1:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_Celebration_Ring");
+	switch (@item)
+	{
+		case 1: goto equipo1_1;
+
+	}
+  
+equipo1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Celebration Ring";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2631)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2631,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18076,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 2         ===========]
+// [==================================================]
+equipo2:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_Brisingamen");
+	switch (@item)
+	{		
+		case 1: goto equipo2_1;
+
+	}
+equipo2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Brisingamen";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2630)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2630,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18075,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 3         ===========]
+// [==================================================]
+equipo3:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_Megingjard");
+	switch (@item)
+	{		
+		case 1: goto equipo3_1;
+
+	}
+equipo3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Megingjard ";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2629)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2629,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18074,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 4         ===========]
+// [==================================================]
+equipo4:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_Bow_Thimble");
+	switch (@item)
+	{		
+		case 1: goto equipo4_1;
+
+	}
+equipo4_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Bow Thimble";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2619)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2619,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18072,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 5         ===========]
+// [==================================================]
+equipo5:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_Critical_Ring");
+	switch (@item)
+	{		
+		case 1: goto equipo5_1;
+
+	}
+equipo5_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Critical Ring";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2616)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2616,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18071,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+
+// [==================================================]
+// [===========           equipo 6         ===========]
+// [==================================================]
+equipo6:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Pimped_The_Sign");
+	switch (@item)
+	{		
+		case 1: goto equipo6_1;
+
+	}
+equipo6_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 RJC Necklace";
+	mes "20 Drops Card";
+	mes "5 Ba Gua ";
+	mes "200 Hand of God ";
+	mes "200 Crystal Fragment ";
+	mes "200 Dark Crystal Fragment ";
+	mes "100 Fragment of Agony";
+	mes "100 Fragment of Despair";
+	mes "100 Fragment of Hatred";
+	mes "100 Fragment of Sorrow";
+	mes "50 Golden Ornament";
+	mes "50 Sage Stone ";
+	mes "50 Yggdrasil Berry ";
+	mes "5 God Hammer";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2669)<1)goto falta;
+	if(countitem(4004)<20)goto falta;
+	if(countitem(7169)<5)goto falta;
+
+	if(countitem(1009)<200)goto falta;
+	if(countitem(7321)<200)goto falta;
+	if(countitem(7415)<200)goto falta;
+	if(countitem(7436)<100)goto falta;
+	if(countitem(7439)<100)goto falta;
+	if(countitem(7438)<100)goto falta;
+	if(countitem(7437)<100)goto falta;
+	if(countitem(7435)<50)goto falta;
+	if(countitem(12040)<50)goto falta;
+	if(countitem(607)<50)goto falta;
+	if(countitem(7808)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2669,1;
+	delitem 4004,20;
+	delitem 7169,200;
+
+	delitem 1009,200;
+
+	delitem 7321,200;
+
+	delitem 7415,200;
+	delitem 7436,200;
+	delitem 7439,200;
+	delitem 7438,200;
+
+	delitem 7437,200;
+
+	delitem 7435,200;
+
+	delitem 12040,50;
+	delitem 607,50;
+	delitem 7808,5;
+	set Zeny,Zeny-20000000;
+	getitem 18077,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario regresa cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

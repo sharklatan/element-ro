@@ -1,0 +1,35 @@
+//===== Athena Script ========================================
+//= Moscovia Dungeon Monster Spawn Script
+//===== By: ==================================================
+//= $ephiroth
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= Any Athena Version
+//===== Additional Comments: =================================
+//= 1.0 Initial version [$ephiroth]
+//============================================================
+//============================================================
+// Les Forest [mosk_dun01] - Moscovia Dungeon 1
+//============================================================
+mosk_dun01,0,0,0,0	monster	Wolf	1013,10,0,0,0
+mosk_dun01,0,0,0,0	monster	Spore	1014,10,0,0,0
+mosk_dun01,0,0,0,0	monster	Wood Goblin	1880,10,0,0,0
+mosk_dun01,0,0,0,0	monster	Mavka	1881,10,0,0,0
+//============================================================
+// Temny Forest [mosk_dun02] - Moscovia Dungeon 2
+//============================================================
+mosk_dun02,0,0,0,0	monster	Wood Goblin	1880,10,0,0,0
+mosk_dun02,0,0,0,0	monster	Mavka	1881,10,0,0,0
+mosk_dun02,0,0,0,0	monster	Baba-Yaga	1882,10,0,0,0
+mosk_dun02,0,0,0,0	monster	Kikimora	1883,10,0,0,0
+//============================================================
+// Dremuci Forest [mosk_dun03] - Moscovia Dungeon 3
+//============================================================
+mosk_dun03,0,0,0,0	monster	Yellow Plant	1081,10,0,0,0
+mosk_dun03,0,0,0,0	monster	White Plant	1082,10,0,0,0
+mosk_dun03,0,0,0,0	monster	Shining Plant	1083,10,0,0,0
+mosk_dun03,0,0,0,0	monster	Baba-Yaga	1882,10,0,0,0
+mosk_dun03,0,0,0,0	monster	Kikimora	1883,10,0,0,0
+mosk_dun03,0,0,0,0	monster	Lesavka	1884,10,0,0,0
+mosk_dun03,0,0,0,0	monster	Zmey Gorynych	1885,10,0,0,0
