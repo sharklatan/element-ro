@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+
+<clientinfo>
+
+<desc>Cualquier descripcion</desc>
+
+<servicetype>korea</servicetype>
+<servertype>sakray</servertype>
+
+<connection>
+<display>Element-RO Lite 3.0</display>
+<desc>Ragnarok Online</desc>
+<address>element-ro.no-ip.org</address>
+<aid>
+	<admin>2000001</admin>
+	<admin>2000152</admin>
+	<admin>2000338</admin>
+	<admin>2000004</admin>
+	<admin>2000323</admin>
+</aid>
+<port>6900</port>
+<version>20</version>
+<langtype>8</langtype>
+<registration>http://element-ro.no-ip.org</registration>
+</connection>
+
+</clientinfo>

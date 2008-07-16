@@ -1,0 +1,161 @@
+¡/savechat : guarda el chat como un archivo de texto.
+#
+¡Puedes seleccionar un tipo de mini mapa usando ctrl+[*] entre transparente y opaco.
+#
+¡Puedes cambiar la vista de tu personaje arrastrando el mouse con el botón derecho y la tecla shift presionadas.
+   Haciendo doble click en el botón derecho, puedes regresar a la vista por defecto.
+#
+¡Puedes alejar o acercar tu personaje manteniendo presionado el botón derecho y la tecla ctrl, mientras mueves el mouse.
+    Doble-click en el botón derecho del mouse mientras mantienes presonada la tecla ctrl, regresa a la vista original.
+    También puedes usar la rueda de tu mouse para alejar o acercar tu personaje.
+#
+¡Cuando acercas el cursor a un monstruo, cambia su forma a una espada.
+    Haciendo clic cuando está con forma de espada, inicia el ataque.
+#
+¡Los puntos de experiencia que puedes recibir de un monstruo equivalen a la cantidad de daño que causaste.
+¡En el caso que 2 jugadores hagan daño al mismo monstruo, el que golpeó primero recibirá más EXP por el sistema de EXP.
+#
+¡Presionando la tecla ctrl con un click derecho en un monstruo, inicia [Auto-Ataque] hasta que derrotes al monstruo.
+#
+¡Para obtener ítems que se han dejado caer al suelo, haz click izquierdo en el ítem que desees recoger.
+   Los ítems obtenidos serán almacenados en el inventario.
+#
+¡Lleva el cursor a un ítem y haz click derecho. Puedes ver una imagen más grande y su descripción.
+#
+¡Las 2 barras que se muestran bajo tu personaje son tu HP y SP.
+   La "Barra Verde" indica tu HP (Puntos de Vida) y la "Barra Azul" indica SP (Puntos de Habilidad). Cuando tu HP llega a 0, tu personaje muere. Cuando tu HP baja a menos del 25% de su máxima cantidad, la barra cambia a "Rojo" para advertir.
+#
+¡Cada vez que la barra de EXP esté llena (100%), el nivel base de tu personaje pasa al siguiente nivel. Subir de nivel te proporciona una cantidad aleatoria de puntos de estatus, para así dar más capacidad a tu personaje.
+#
+¡Cada vez que tu barra de Job EXP esté llena (100%), el nivel de job de tu personaje subirá al siguiente nivel. Subir nivel de job te proporciona 1 punto de habilidad para que lo uses en tu árbol de habilidades.
+#
+¡Estar de pie sin moverse recupera una pequeña cantidad de HP y SP.
+¡ Tu HP y SP pueden recuperarse 2 veces más rápido mientras estés sentado. Sin embargo tu HP/SP no se recuperarán cuando el peso de tu personaje esté sobre el 50% de su máxima capacidad.
+#
+¡Peso: muestra el peso actual de tu personaje a la derecha y el máximo peso a la izquierda.
+   Tu personaje puede llevar tanto como su máxima capacidad.
+   Cuando el peso esté sobre 50% de la máxima capacidad, el peso se muestra en color rojo. Desde ese momento tu HP y SP no se recuperarán automáticamente. Además cuando el peso está sobre el 90% de su máxima capacidad, tu personaje no puede atacar ni usar sus habilidades.
+#
+¡Zeny : esta es la moneda usada dentro del Mundo Ragnarok.
+#
+¡Cuando el nivel de tu personaje sube, una cantidad aleatoria de puntos de estatus te son entregadas.
+    Usando estos puntos, puedes aumentar la capacidad de tu personaje como desees.
+    Entre el nivel 1 y 10, se darán 3 puntos. Después del nivel 10, la cantidad total de puntos aumentará de 1 en 1 cada 5 niveles que subas.
+#
+¡STR(Fuerza) : afecta la fuerza del ataque de tu personaje.
+   Además aumenta la capacidad máxima de peso, para que tu personaje pueda llevar más ítems.
+#
+¡DEX(Destreza) : afecta la precisión de tu personaje cuando ataca o usa el arma.
+   Aumenta el daño promedio de los ataques de las armas, especialmente el daño hecho por arcos es más afectado por DEX. Además reduce el fallo cuando atacas, también reduce el tiempo de invocación para las habilidades mágicas.
+#
+¡AGI(Agilidad) : está muy ligado a la facilidad de movimiento de tu personaje.
+   AGI aumenta la capacidad para esquivar y la velocidad de ataque de tu personaje.
+#
+¡VIT(Vitalidad) : afecta la defensa/salud de tu personaje.
+   VIT aumenta la defensa de tu personaje, así recibe menos daño de los enemigos. Y además aumenta la cantidad máxima de HP y la velocidad de regeneración de HP.
+#
+¡INT(Inteligencia) : está muy involucrada con la capacidad mágica de tu personaje.
+    INT aumenta el ataque/defensa Mágico y resistencia contra encantos.
+#
+¡LUK(Suerte) : está ligado a la fortuna de tu personaje, afecta en varias situaciones. 
+    Además, la tasa de ataque crítico y tu perfect dodge ambos son afectados por LUK.
+#
+¡[Print Screen] o [Scroll Lock] : Guarda capturas de pantalla en la carpeta  [ScreenShot].
+#
+¡[F10] : Arregla el tamaño de la ventana de chat.
+#
+¡[F11] : Cierra todas las ventanas de tu pantalla, excepto información básica y la ventana de chat.
+#
+¡[F12] : Abre o cierra la ventana de teclas de acceso rápido.
+¡ Registra ítems de uso práctico o habilidades en el menú de teclas de acceso rápido. Cada uno corresponde a las teclas F1 a la F9.
+#
+¡[INSERT] : Atajo para /sit, /stand.
+¡ Puedes escribir [/sit] o [/stand] en vez de usar la tecla [INSERT]. Mientras esté sentado tu personaje, su HP/SP se regenerará 2 veces más rápido.
+#
+¡[Alt] + [Fin] : Enciende/Apaga tus barras de [HP/SP].
+#
+¡[Alt] + [Inicio] : Enciende/Apaga el área movible de indicación (La Celda Verde de indicación en el suelo).
+#
+¡[Alt] + [=] : Restaura la forma de escribir desde el tamaño 1*1 de letras al modo original. Casi ningún comando se puede activar cuando el modo de escritura es con letras de 1*1.
+#
+¡[Alt] + [F10] : Enciende/Apaga la ventana de Chat.
+#
+¡[Alt] + [1~9], [Ctrl] + [-,=,\]  : Teclas de acceso rápido para varios emoticons tales como /! /? /ho /lv /lv2 /swt /ic /an /ag /$ /.../gawi (significa "tijeras") /bawi (significa "piedra")/bo (significa "papel")/thx /wah /sry /heh /swt2 /hmm /no1 /??/omg /oh /X /hp /go /sob /gg /kis /kis2 /pif
+#
+¡/who : Muestra la cantidad de usuarios activos en el servidor.
+#
+¡/where : Muestra información del área y coordenadas de tu personaje.
+#
+¡/H : Enlista comandos básicos para tu información.
+#
+¡/music : Enciende/Apaga el BGM.
+¡ También puedes arreglar el volumen de la música con la ventana de Opciones (acceso rápido: [Alt] + [o]).
+#
+¡/sound : Enciende/Apaga los Efectos de Sonido.
+¡ También puedes arreglar el volumen del sonido con la ventana de Opciones (acceso rápido: [Alt] + [o]).
+#
+¡/effect : Permite encender o apagar varios efectos gráficos para tu conveniencia considerando la velocidad de juego.
+¡ Apagar los efectos aumentará la fluidez del juego.
+#
+¡/skip : Enciende/Apaga Salto de Cuadros.
+¡ El Salto de Cuadros apagado causa una demora (lag) en tu juego, dependiendo de las especificaciones de tu sistema.
+   A menos que exista una demora (lag) extrema en el juego, te recomendamos que no uses esta función.
+#
+¡/ex [nombre de Personaje] : Bloquea la mensajería privada de ese personaje.
+¡/in [nombre de Personaje] : Permite desbloquear al personaje de la mensajería privada.
+#
+¡/exall : Bloquea toda mensajería privada de otras personas.
+¡/inall : Permite mensajería privada de todo el mundo.
+#
+¡/ex : Muestra tu lista de personajes bloqueados de la mensajería privada.
+#
+¡/organize [Nombre de la Party] : Organiza una party.
+¡ En caso de ser el líder, es posible invitar a quien desees a la party.
+#
+¡Lleva el cursor al personaje que desees invitar a tu party, luego haz click derecho con tu mouse. La ventana de comandos, incluida 'Invitar (nombre del personaje) a tu party', aparecerá. Puedes organizar tus propias parties con tus amigos de esta forma.
+#
+¡/leave : Deja la party a la que te has unido.
+¡ Este comando no te solicita confirmación, por favor piénsalo 2 veces antes de usarlo.
+#
+¡/expel [Nombre del Personaje] : Saca un miembro que no desees de la party.
+¡ Este comando no te solicita confirmación, por favor piénsalo 2 veces antes de usarlo.
+#
+¡Haz click en el botón inferior de los que están ubicados en la esquina inferior derecha de la ventana de chat y selecciona del menú "Enviar a Party". Así puedes disfrutar de una conversación privada con los miembros de tu party.
+#
+¡%[diálogo que deseas enviar] : Envía este mensaje por el chat de party.
+    O manteniendo presionada la tecla Ctrl al enviar, tiene la misma función.
+#
+¡La ubicación de los miembros de la party en el mismo mapa está indicado en el mini-mapa de la esquina superior derecha de la pantalla. Así los miembros de la party pueden encontrarse sin mayor dificultad.
+#
+¡Cómo mandar mensajería privada: Coloca el nombre en la cajita izquierda de la ventana de chat, escribe un mensaje que desees enviar en la cajita de la derecha de la misma ventana. La tecla TAB mueve tu cursor de una a la otra.
+#
+¡Haz click en el ícono [+/-] del mini-mapa, para Aumentar/Reducir el área alrededor tuyo que observas dentro del mismo mini-mapa.
+#
+¡[Sistema MVP] : Ha sido establecido para proteger el beneficio al jugador que más contribuyó en la batalla contra un monstruo tipo Boss, esto es un sistema en el cual ítems raros llegan directamente a tu inventario tras haber contribuido de mayor manera ante los competidores#
+    Si el monstruo no bota ningún ítem raro, el 50% de puntos de EXP que ya fueron obtenidos del monstruo, serán otorgados al MVP.
+#
+¡Cuando el juego corre en modo ventana, puedes mover la posición de la ventana.
+    Presiona [Alt] + [Barra Espaciadora] mientras presionas la tecla [M], ajusta la posición con las ^ff0000Flechas del Teclado^000000 o el ^ff0000Mouse^000000.
+#
+¡/fog : Enciende/Apaga el efecto de niebla. El efecto de niebla está implementado para mejorar la sensación ambiental.
+    Este efecto podría ser una molestia para usuarios con sistemas de especificaciones muy antiguas (computadores lentos). Si el juego se cuelga (deja de responder) sin razones específicas o sigue sin conectarse. Puedes configurar el efecto de niebla en la ventana de ajustes (setup).
+#
+¡Ítems dejados por monstruos necesitan ser identificados con Magnifiers (Lupas). Magnifiers pueden ser comprados en los Kit Shops.
+#
+¡Las habilidades de trampas de los Hunters necesitan trampas que pueden ser comprados en los Kit Shops.
+#
+¡Puedes organizar Guilds usando Emperiums. El comando para crearla es /guild [Nombre de Guild], el acceso rápido para la ventana de Guild es [ALT]+[G].
+#
+¡El acceso rápido para el chat de Guild es /gc [mensaje] o $[mensaje] o [mensaje], seguido de ALT+ENTER.
+#
+¡Coloca el ítem al que desees colocar una carta en tu inventario, luego haz doble click en la carta. Así puedes insertar la carta en un ítem.
+#
+¡A continuación están las descripciones para estados anormales:
+- Stun : significa que tú o el/los mostruo(s) pierde(n) el conocimiento al ser atacados. No puedes moverte mientras dure el estado.
+- Blind : significa que tú o el/los montruo(s) quedan ciegos. La pantalla se pone de color negro. En caso de los monstruos, su rango visual disminuye.
+- Sleep : suprime todas tus actividades. No puedes hacer nada hasta que te golpeen.
+#
+¡En caso de morir, tanto tu EXP como tu Job EXP bajan en un 1% cada una, en un calabozo puedes botar equipo por casuallidad. Y es imposible durante 5 segundos después de usar habilidades o luchar.
+#
+¡En las Kafras de las ciudades, es posible arrendar Carros, tener Inventario Extra y Guardar tu juego.
+#

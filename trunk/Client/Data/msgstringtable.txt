@@ -1,0 +1,1170 @@
+¿Aceptas las normas?#
+Error al conectar con el server.#
+Desconectado del servidor.#
+Desconectado del servidor.#
+El servidor esta cerrado temporalmente por problemas técnicos o mantenimiento.#
+Alguien está conectado con la misma ID, por favor avisa a la administración.#
+Esa cuenta no existe. Asegúrate de haberla escrito correctamente.#
+Password incorrecto. Prueba otra vez.#
+Esta cuenta ya no es válida.#
+Acceso denegado.#
+Ya existe ese nombre o contiene caracteres no permitidos, prueba con otro.#
+No puedes crear más personajes.#
+No puedes borrar ese personaje.#
+Ponle título a la sala de chat.#
+No utilices esa clase de lenguaje.#
+Escribe tu password.#
+Escribe tu password. Ha de tener al menos 4 caracteres de longitud.#
+¿Seguro que quieres salir?#
+Tu ID y tu password deben tener al menos 4 caracteres de longitud. Inténtalo de nuevo.#
+¿Seguro que quieres borrar ese personaje?.#
+Sin insultar, ¿eh?.#
+El nombre de tu personaje ha de tener al menos 4 caracteres de longitud.#
+Lista de comandos: /h | /help#
+Efectos: On#
+Efectos: Off#
+Volumen del sonido#
+Volumen de la música#
+Efectos de sonido: On#
+Efectos de sonido: Off#
+Salto de frame: On#
+Salto de frame: Off#
+Música de fondo: On#
+Música de fondo: Off#
+Escribe /h o /help para mostrar la lista de comandos.#
+/w o /who Muestra el número de jugadores conectados.#
+/music: Activa o desactiva la música de fondo.#
+/sound: Activa o desactiva los efectos de sonido.#
+/effect: Activa o desactiva los efectos visuales.#
+/where: Muestra tus coordenadas.#
+/skip: Activa o desactiva el salto de frame.#
+/v (0~127): Regula el volumen de los efectos sonoros.#
+/bv (0~127): Regula el volumen de la música de fondo.#
+/ex (Nombre del personaje): Bloquea los susurros de ese jugador.#
+/ex: Ver la lista de los jugadores bloqueados.#
+/in (Nombre del personaje): Acepta los susurros de ese jugador.#
+/inall: Permite susurros de cualquier jugador.#
+/exall: Bloquea los susurros de todos los jugadores.#
+Click derecho en un personaje y [Registrar Amigo] para añadir un jugador a tu lista de amigos.#
+F12: Abre la barra de Acceso Rápido, en la que puedes colocar objetos usables, equipo y habilidades para poder acceder rápidamente a ellas.#
+No puedes escribir la misma frase o palabra 3 veces seguidas.#
+El mensaje no se envió por usar lenguaje inapropiado.#
+No puedes arrastrar esa clase de objeto a la ventana.#
+No puedes tomar más objetos porque tienes Sobrepeso.#
+No puedes tomar ese objeto.#
+El negocio se ha completado satisfactoriamente.#
+No tienes suficiente dinero.#
+Estás por encima del Límite de Peso.#
+El negocio ha fallado.#
+Has bloqueado los susurros de todo el mundo.#
+Has fallado al bloquear todos los susurros.#
+Has activado los susurros de todo el mundo.#
+Has fallado al activar todos los susurros.#
+No tienes una lista de bloqueos.#
+[Lista de personajes bloqueados]#
+El chat se ha creado satisfactoriamente.#
+Límite del chat excedido.#
+Ya existe un chat con ese nombre.#
+El chat está lleno.#
+Has sido kickeado del chat.#
+El negocio ha sido cancelado.#
+Estás demasiado lejos para negociar con esa persona.#
+Ese personaje no está conectado ahora o no existe.#
+El personaje está negociando con otra persona.#
+El personaje tiene sobrepeso, no puedes negociar.#
+El negocio ha sido cancelado.#
+El negocio se ha completado satisfactoriamente.#
+El negocio ha fallado.#
+El Grupo se ha organizado correctamente.#
+Ya existe un Grupo con ese nombre.#
+El personaje ya está en otro grupo.#
+El personaje se ha unido a otro grupo.#
+Proposición de grupo cancelada.#
+Proposición de grupo aceptada.#
+El grupo está lleno.#
+Dejas el grupo.#
+Enviar a todos#
+Enviar al grupo#
+Solicitar negocio con %s#
+Pedir a %s que se una a tu grupo#
+Pri:#
+Pub:#
+Pulsa `Reiniciar' para ir al punto salvado o pulsa `Salir' para elegir otro personaje.#
+Selecciona el tipo de negocio.#
+ quiere negociar contigo.#
+ - Has sido invitado a éste grupo, ¿quieres unirte?#
+Comando inválido#
+Dejar grupo#
+Expulsar del grupo#
+Enviar mensajes#
+Chat 1:1#
+Información#
+Configuración del grupo#
+Amigo#
+Grupo#
+Equipo#
+Estado#
+Inventario#
+/organize 'Nombre grupo': para organizar un grupo. Usa [/leave] para dejar ese grupo.#
+Si eres el líder del grupo, puedes invitar gente haciendo clic derecho a la persona.#
+Recuperar#
+Ataque#
+Ayuda#
+Entero#
+Arma#
+Defensa#
+Agua#
+Tierra#
+Fuego#
+Viento#
+No puedes comprar dos objetos de lo mismo a la vez.#
+Por favor, cambia tu resolución a 16-bit cuando juegues al RO en modo ventana.#
+Espera, por favor...#
+Espera, por favor...#
+Espera, por favor...#
+Espera, por favor...#
+Crear un chat#
+Configuración del chat#
+Expulsar del chat#
+Dar privilegios#
+Ver Información#
+Sala de Chat#
+Personas#
+/sit: Te sientas. Si estás sentado, te levantas.#
+/stand: Te levantas. Si estás de pie, te sientas.#
+/chat: Crea una sala de chat.#
+/q: Dejas una sala de chat.#
+/deal [Nombre personaje]: Solicita un negocio con el personaje.#
+/organize 'Nombre grupo': Organizas un grupo.#
+/leave: Dejas ese grupo#
+/expel [Nombre personaje]: Echa al personaje del grupo.#
+[Alt] + [End]: Muestra o desactiva la barra de HP/SP.#
+[Alt] + [Home]: Muestra o desactiva el cursor del suelo.#
+[Insert]: Te levantas o te sientas. (Acceso rápido de /sit o /stand)#
+Felicidades! Has matado a un Jefe final!! Has obtenido #
+!!#
+Felicidades! Has matado a un Jefe final!! Obtienes #
+puntos de experiencia!!#
+Has matado al jefe final, pero no puedes conseguir el premio porque tienes sobrepeso.#
+No existe este personaje o está desconectado.#
+ no quiere recibir tus mensajes.#
+ no está para hablar con nadie.#
+Jugador expulsado.#
+No se puede expulsar.#
+Has conseguido %s (%d unidad/es) #
+[Alt] + [=]: Repara el error de intervalo entre letras.#
+[F10]: Para iniciar una ventana de Chat [Alt] + [F10]: Ventana de Chat On/Off#
+Para Susurrar: Escribe el nombre del Personaje en la parte izquierda de la ventana de Chat, y escribe el mensaje en la de la derecha. La tecla Tabulador te ayudará a cambiar de celda.#
+/!,/?,/ho,/lv,/lv2,/swt,/ic,/an,/ag,/$,/¡¦.,/thx,/wah,/sry,/heh,/swt2,/hmm,/no1,/??,/omg,/oh,/X,/hp,/go,/sob,/gg,/kis,/kis2,/pif,/ok: Emoticonos correspondientes a Alt + (1~9) Ctrl + (-=\\)#
+Para Hablar al Grupo : Añade % delante de cada mensaje.#
+No has aprendido suficientes habilidades para Intercambiar.#
+No has aprendido suficientes habilidades para usar Emoticonos.#
+No has aprendido suficientes habilidades para sentarte.#
+No has aprendido suficientes habilidades para crear una sala de chat.#
+No has aprendido suficientes habilidades para formar un grupo.#
+No has aprendido suficientes habilidades para gritar.#
+No has aprendido suficientes habilidades para pelearte.#
+Lista de objetos de la tienda#
+Tienda de Objetos#
+Objetos a la venta#
+Inventario#
+ ha sido puesto.#
+ ha sido quitado.#
+Para Añadir nombres a la Lista de Susurros.#
+Para hacer Capturas de Pantalla: Pulsa [Imprimir Pantalla] o [Scroll Lock]#
+Consejo del Día#
+^3850a0¿Sabías que... ^000000  //^709fed#
+Abrir al iniciar R0M0N#
+/tip: Abre el 'Consejo del Día'#
+Hay %d Jugadores conectados.#
+(%s) ha entrado.#
+(%s) ha salido.#
+(%s) fue expulsado.#
+%d ea.#
+%s : %d ea.#
+%s %s : %d#
+Objetos disponibles para Vender#
+Objetos de la Tienda#
+Lugar Desconocido#
+El lenguaje de tu cliente no se corresponde con el del Servidor.#
+Por favor, quítate el objeto primero. Sólo puedes tirar objetos desde el Inventario.#
+Aquí sólo hablamos Español.#
+No está implementado aún.#
+Lista Susurros vacía.#
+:Susurros bloqueados.#
+:Ha fallado el bloqueo de Susurros.#
+:Ha fallado el bloqueo de Susurros. La lista está llena.#
+:Susurros aceptados.#
+:El comando ha fallado.#
+:El comando ha fallado. La lista está llena.#
+No escribas Espacios al principio o al final de un Nombre.#
+Privado#
+Público#
+No tienes suficiente SP.#
+No tienes suficiente HP.#
+Ha Fallado la Habilidad.#
+No has robado nada.#
+Intercambio#
+El Veneno no ha funcionado.#
+No puedes usar esa ID en este servidor.#
+Aumento de Velocidad.#
+La Velocidad Disminuye.#
+/memo: Para memorizar este lugar como punto de Teletransporte (Si eres Acolyte)#
+Lugar Aleatorio#
+Selecciona un Lugar para Teletransportarse.#
+Nivel de Habilidad Insuficiente.#
+No hay Lugares Memorizados.#
+No has Aprendido Teletransporte.#
+Punto de Teletransporte guardado.#
+Cancelar#
+Hay un Retardo entre una Habilidad y la siguiente.#
+No puedes tomar ese Objeto porque tienes sobrepeso.#
+Límite de Capacidad Máxima, tienes demasiados items.#
+Objetos del Carro#
+Quitar Carro#
+Poner Tienda#
+Nombre de tu tienda.#
+Mi Tienda#
+Tienda de Mercader#
+Objetos para Vender#
+%s Compra Fallida %s#
+Agotado#
+%s %d vendido.#
+Objetos Disponibles para Vender#
+La Habilidad ha Fallado porque no tienes suficientes Zenys.#
+Selecciona un Objetivo.#
+/pk on: Activa el modo PK. /pk off: Desactiva el modo PK.#
+Tienda#
+Objetos del Carro [Alt+W]#
+Información Básica#
+No puedes usar la Habilidad con ese Arma.#
+La Compra de %s ha Fallado. Agotado. Productos disponibles %d.#
+Has sido desconectado debido a un desfase entre el servidor y tú.#
+Equípate las flechas primero.#
+No puedes Atacar o usar Habilidades mientras tengas sobrepeso.#
+No puedes usar Habilidades mientras tengas sobrepeso.#
+Flechas Equipadas.#
+Necesitas Gemas Rojas.#
+Necesitas Gemas Azules.#
+Fuerza#
+Agilidad#
+Vitalidad#
+Inteligencia#
+Destreza#
+Suerte#
+Ataque#
+Defensa#
+Precisión#
+Ataque Crítico#
+Clan#
+Puntos de Estado#
+Ataque Mágico#
+Defensa Mágica#
+Evasión#
+Velocidad de Ataque#
+El servidor esta saturado por exceso de población en estos momentos.#
+Opciones#
+Tu cuenta ha sido bloqueada por un GameMaster.#
+Password Incorrecto.#
+Elige tu peinado#
+Ataque#
+Defensa#
+Attack Snap On#
+Attack Snap Off#
+Skill Snap On#
+Skill Snap Off#
+/snap: Pone el snap on/off en las luchas, /skillsnap: Pone snap on/off en las skills. /itemsnap: Pone snap on/off en los items del suelo.#
+Item Snap On#
+Item Snap Off#
+Snap#
+No puedes llevar más de 30,000 unidades de cada tipo de Objeto.#
+No puedes borrar un personaje con un nivel superior a 30. Si deseas borrar el personaje contacta con un GameMaster.#
+Mientras intercambias objetos no puedes usar NPC's ni Tiendas.#
+Nombre de la Tienda#
+Árbol de Habilidades#
+Puntos de Habilidad : %d#
+La Habilidad ha Fallado.#
+Pasiva#
+Cada player gana#
+Compartir#
+Cada player gana#
+Compartir#
+Configuración del Grupo#
+Cómo Compartir EXP#
+Cómo Compartir Items#
+Sólo el líder del Grupo puede cambiar ésta opción.#
+No preguntar el nº de Objetos#
+El Personaje se borrará en ^ff0000%d^000000 segundos. Pulsa Cancelar si quieres impedirlo.#
+No puedes intercambiar más de 10 tipos de Objetos por vez.#
+Eres Menor de Edad.#
+Escribe tu e-mail.#
+Escribe tu e-mail.#
+El Borrado del Personaje ha fallado por haber introducido un e-mail incorrecto.#
+Si ves este mensaje avisa al Administrador.#
+Si ves este mensaje avisa al Administrador.#
+No puedes vender más de 15 tipos de Objetos cada vez.#
+Eres Menor de Edad, no puedes jugar en este servidor.#
+Tu HP/SP no se restaurará mientras tu peso supere el 50%.#
+No puedes usar Habilidades ni atacar si tu peso supera el 90%.#
+Ahora tu HP/SP se restaurará de forma normal.#
+El Ataque y las Habilidades ya están disponibles.#
+Tu Cliente no está actualizado o está mal instalado.#
+Objetos Agotados.#
+Guardar Conversación#
+/savechat: Para guardar la conversación.#
+Registra una Cuenta#
+Rechazar Susurros#
+Permitir Susurros#
+Mostrar 'Miss'#
+Ocultar 'Miss'#
+Zoom de la Cámara Activado.#
+Zoom de la Cámara Desactivado.#
+/camera: Activa o Desactiva el zoom de la Cámara.#
+Ver Información de Habilidades#
+Cambiar Habilidad#
+Resolución de Sprites#
+Resolución de Texturas#
+Nivel de Detalle#
+Obtienes %Zeny#
+Nombre del Clan#
+Nv del Clan#
+Señor del Clan#
+Miembros#
+Nivel Medio del Clan#
+Territorio#
+Tendencia#
+EXP#
+Emblema#
+Tasa#
+Alianzas#
+Antagonistas#
+Info del Clan#
+Info de los Miembros#
+Posición#
+Habilidades del Clan#
+Lista de Expulsiones#
+Noticias#
+Lista del Clan#
+Lista de Susurros#
+Abrir ventana de Susurros#
+Para Abrir la ventana de Susurros: Pulsa [Alt] + [H]#
+Abrir la ventana de Susurros Automáticamente.#
+Borrar#
+Cerrar desde el siguiente#
+Último tiempo de logueo#
+Última IP logueada#
+Configuración de Amigos#
+¿Seguro que quieres Borrar?#
+¿Seguro que quieres Salir?#
+Registrar Amigo#
+Abrir Chat 1:1 entre Amigos#
+Abrir Chat 1:1#
+Abrir Chat 1:1 entre no Amigos#
+Avisar al recibir Susurro#
+¿Seguro que quieres Expulsarlo?#
+%s deja el Clan.#
+Razón de Secesión: %s#
+Fallo al Disolver el Clan.#
+Razón de la Disolución: %s#
+Esta ID ha sido totalmente borrada.#
+Precio : #
+%s ha sido expulsado de nuestro Clan.#
+Razón de la Expulsión: %s#
+No puedes equiparte este objeto.#
+No puedes cambiar la Configuración del Grupo.#
+El Clan ha sido creado.#
+Ya estás en un Clan.#
+El Nombre del Clan ya existe, elige otro.#
+- Has sido invitado a unirte a este Clan. ¿Aceptas unirte?#
+Ya está en un Clan.#
+Oferta Rechazada#
+Oferta Aceptada#
+Tu Clan está Completo.#
+Proponer a %s unirse al Clan#
+No conoces suficientes habilidades para Juzgar a alguien.#
+Has Juzgado al Jugador.#
+Ya has gastado tu punto de hoy.#
+Aún no ha transcurrido un mes desde que puntuaste a esa persona.#
+Recuerda, Spammear no está bien.#
+Por favor, evita los malos modales.#
+Recibes un Punto Positivo.#
+Recibes un Punto Negativo.#
+Comerciar con %s#
+Proponer a %s unirse al grupo#
+ te propone formar una alianza con ellos. ¿Aceptas?#
+Ya estás aliado con ellos.#
+Rechazas la Oferta#
+Aceptas la Oferta#
+Tienen demasiadas Alianzas.#
+Tienes demasiadas Alianzas.#
+Proponer Alianza este Clan.#
+El Clan se ha disuelto correctamente.#
+Has fallado al disolver el Clan porque su SSN es incorrecto.#
+Has fallado al disolver el Clan porque todavía quedan Miembros dentro.#
+Declarar el Clan como Antagonista#
+Elegir Color de Pelo#
+Necesitas un Emperio para crear un Clan.#
+Información del Monstruo#
+Nombre:#
+Lv:#
+HP:#
+Tamaño:#
+Tipo:#
+MDEF:#
+Prop.:#
+Neutral#
+Agua#
+Tierra#
+Fuego#
+Viento#
+Veneno#
+Sagrado#
+Oscuro#
+Fantasma#
+Nomuerto#
+No puedes crear Objetos aún.#
+Listado de Objetos que puedes Trabajar#
+Crear %s#
+ , materiales para fabricarlo#
+ creación de objeto fallida.#
+ objeto creado satisfactoriamente.#
+ creación de objeto fallida.#
+ objeto creado satisfactoriamente.#
+No tienes suficiente Nivel.#
+Demasiado nivel para este trabajo.#
+Clase no válida para este tipo de trabajo.#
+Guardar mensajes en la Talkie Box#
+Escribe un mensaje en la Talkie Box#
+Enviar al Clan#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online#
+El servidor está saturado en estos momentos. Inténtalo de nuevo pasados unos minutos.#
+El Servidor aún reconoce tu última conexión. Inténtalo de nuevo pasados unos minutos.#
+Sueltas tu Halcón#
+Te Bajas del Peco Peco#
+Pequeño#
+Mediano#
+Grande#
+Doble#
+Triple#
+Cuádruple#
+Tienes prohibida la entrada hasta dentro de %s.#
+'s #
+del Fuego#
+del Hielo#
+del Viento#
+de la Tierra#
+38.144.194.2#
+6900#
+http://www.R0M0N.com#
+Matar a %s#
+Muy Fuerte#
+Muy Muy Fuerte#
+Muy Muy Muy Fuerte#
+Razón de la Expulsión#
+Velocidad de Ataque aumentada.#
+Velocidad de Ataque disminuida.#
+Daño del Arma aumentado.#
+Daño del Arma reducido.#
+Retardo de Conjuro reducido.#
+El Retardo de Conjuro vuelve a ser normal.#
+El Arma ha sido encantada con Veneno.#
+El Arma ha sido bendecida por el Espíritu Santo.#
+El Arma vuelve a ser normal.#
+La Armadura ha sido bendecida por el Espíritu Santo.#
+La Armadura vuelve a ser normal.#
+Barrera Formada.#
+Barrera Cancelada.#
+Weapon Perfection Iniciado.#
+Weapon perfection Cancelado.#
+Power-Thrust Iniciado.#
+Power-Thrust Cancelado.#
+Maximize-Power Iniciado.#
+Maximize-Power Cancelado.#
+Nuevo#
+ (%d)#
+(En mantenimiento)#
+El miembro del Clan %s se ha conectado.#
+El miembro del Clan %s ha salido.#
+Ganas %s de EXP de Base.#
+Ganas %s de EXP de Job.#
+Dejas el Clan.#
+Has sido expulsado del Clan.#
+La Identificación del objeto se ha completado.#
+La Identificación del objeto ha fallado.#
+La composición ha funcionado.#
+La composición ha fallado.#
+Antagonista seleccionado.#
+El Clan tiene demasiados Antagonistas.#
+Clan ya seleccionado como Antagonista.#
+La Mejora ha funcionado.#
+La Mejora ha fallado.#
+No puedes Teletransportarte en este Área.#
+No puedes memorizar un portal en este Área.#
+No puedes salir aún. Inténtalo de nuevo pasados 10 segundos.#
+Posición#
+Trabajo#
+Nota#
+Devoción#
+Tasa#
+Dejar Clan#
+Expulsión#
+Rango#
+Título de Posición#
+Invitar#
+Expulsar#
+Tasa %#
+Título#
+Contenido#
+Nombre del Clan#
+Nv del clan#
+Gente#
+Ranking#
+Identificación de Objetos#
+Insertar Carta#
+Por favor, escribe la razón de la Secesión.#
+Por favor, escribe la razón de la Expulsión.#
+Por favor, cierra la Tienda.#
+Habilidad #
+Nombre del Objeto#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Nombre demasiado largo. Sólo puedes escribir hasta 23 caracteres.#
+El personaje se borrará en %d segundos.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online #
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Lista de Emoticonos#
+/emo#
+/!#
+/?#
+/ho#
+/lv#
+/lv2#
+/swt#
+/ic#
+/an#
+/ag#
+/$#
+/...#
+/thx#
+/wah#
+/sry#
+/heh#
+/swt2#
+/hmm#
+/no1#
+/??#
+/omg#
+/oh#
+/X#
+/hlp#
+/go#
+/sob#
+/gg#
+/kis#
+/kis2#
+/pif#
+/ok#
+Lista de Comandos#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Error del sistema. Desconectado.#
+Conflicto de IP, Desconectado.#
+NO MESSAGE (1)#
+Has sido Forzado a Desconectar por un GameMaster.#
+No puedes usar Habilidades porque tienes sobrepeso.#
+ Sin Nombre#
+¡Felicidades! La posición de %s ha aumentado a %d.#
+¡Que mal! La posición de %s ha bajado a  %d.#
+Información de la Mascota#
+Hambre:#
+Amistad:#
+No puedes abrir Salas de Chat mientras vendes.#
+ea#
+Has vencido a %s.#
+%s te ha vencido.#
+Alimentar - `%s' no está disponible.#
+Alimentar#
+Acción#
+Devolver al Huevo#
+Quitar Accesorio#
+Consultar Estado#
+Accesorio:#
+Equipado#
+Lista de Mascotas#
+Desequipado#
+¿Quieres alimentar a tu mascota?#
+Sólo están disponibles los números del 0 al 9.#
+No puedes vender Objetos sin identificar.#
+Atención, hay objetos a 0 zenys. ¿Estás seguro?#
+[Nueva Lista de Emoticonos]#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Ya hay un personaje de la misma cuenta.#
+ - mayores de edad#
+Provoke Iniciado.#
+Provoke Cancelado.#
+Endure Iniciado.#
+Endure Cancelado.#
+Improve Concentration Iniciado.#
+Improve Concentration Cancelado.#
+Hiding Iniciado.#
+Hiding Cancelado.#
+Cloacking Iniciado.#
+Cloacking Cancelado.#
+Poison React Iniciado.#
+Poison React Cancelado.#
+Velocidad Reducida.#
+Quagmire Cancelado.#
+Defensa Aumentada.#
+Angelus Cancelado.#
+Blessing Recibida.#
+Blessing Cancelado.#
+Signum Crusis Iniciado.#
+Signum Crusis Cancelado.#
+Slow Poison Iniciado.#
+Slow Poison Cancelado.#
+Recuperación de HP/SP Aumentada.#
+Magnificat Cancelado.#
+Suerte Aumentada.#
+Gloria Cancelado.#
+Daño doble por cada Ataque Iniciado.#
+Lex Aeterna Cancelado.#
+Velocidad de Ataque Aumentada.#
+Velocidad de Ataque Reducida.#
+Acabas de subir al Peco Peco.#
+Acabas de bajar del Peco Peco.#
+Acabas de llamar a tu Halcón.#
+Acabas de soltar a tu Halcón.#
+Te haces el muerto.#
+Dejas de hacerte el muerto.#
+STR aumentada.#
+STR vuelve a la normalidad.#
+Energy Coat Iniciado.#
+Energy Coat Cancelado.#
+Armadura Destruida.#
+Armadura Reparada.#
+Arma Destruida.#
+Arma Reparada.#
+Invisibilidad Iniciada.#
+Invisibilidad Cancelada.#
+NO MESSAGE (2)#
+Debes quitar las flechas primero.#
+Lista de Flechas#
+Lista de Carros#
+Necesitas un Carro.#
+No puedes abrir ventanas de Chat.#
+N/A#
+No puedes usar el Objeto sentado.#
+Has sido enmudecido por los Administradores durante %d minutos.#
+Ya puedes hablar.#
+-[Desequipado]#
+Hambriento#
+Con un poco de Hambre#
+Normal#
+Lleno#
+A tope#
+Te Odia#
+Desconfiado#
+Amigable#
+Leal#
+No se Sabe#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Ya hay un personaje de esta cuenta conectado.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+El nombre puede tener hasta 23 caracteres.#
+¡Sólo puedes ponerle Nombre una vez! El Nombre de tu mascota será ^0000ff %s^000000. ¿Estás seguro?#
+/font#
+¡Has fallado! No quedan suficientes Zenys en Union#
+¡Has fallado! Has excedido la cantidad máxima de Zenys en Union#
+Efectos Desactivados#
+Efectos Activados#
+Fianza#
+Para tirar un Objeto tienes que arrastrarlo fuera desde la ventana de Objetos (Alt+E).#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+NO MESSAGE (3)#
+NO MESSAGE (4)#
+No hay suficientes zenys o has excedido el límite de zenys.#
+¡Has Muerto! Pulsa ESC para Volver al Punto Guardado o elige Seguir Jugando.#
+, obtienes %d#
+Lista de Habilidades#
+/Minimize#
+El Objeto se ha dañado#
+/noshift : Podrás usar tu 'fuerza sanadora' sin necesidad de pulsar la tecla shift.#
+[no shift] [Activado]#
+[no shift] [Desactivado]#
+MSI_REFUSE_BAN_BY_DBA#
+MSI_REFUSE_EMAIL_NOT_CONFIRMED#
+MSI_REFUSE_BAN_BY_GM#
+MSI_REFUSE_TEMP_BAN_FOR_DBWORK#
+MSI_REFUSE_SELF_LOCK#
+MSI_REFUSE_NOT_PERMITTED_GROUP#
+MSI_REFUSE_WAIT_FOR_SAKRAY_ACTIVE#
+/aura : Activa o desactiva el efecto del aura.#
+Activas la visualización del Aura.#
+Desactivas la visualización del Aura#
+Chat block record %d times#
+Lista de bloqueados#
+/showname : Cambia la visualización del nombre de los personajes. #
+/noctrl : Activa el ataque automático sin tener que pulsar la tecla control.#
+[Ataque Automático Activado]#
+[Ataque Automático Desactivado]#
+Desactva la conversación#
+Chat activado#
+Reduce la duración de la mudez#
+Vuelves a la fuente original. [Modo de visualización 1]#
+Muestra el nombre del grupo cuando la fuente está en modo normal [modo de visualización 2]#
+/doridori : El jugador agita la cabeza sin parar#
+Internet room is paying now.#
+Prepaid voucher validate until %d days %d hours %d minutes later.\nTime limit voucher validate until %d hours %d minutes later.#
+/bingbing : El Jugador gira en el sentido de las agujas del reloj.#
+/bangbang : El Jugador gira en el sentido contrario a las agujas del reloj.#
+/skillfail : Muestra u oculta los mensajes cuando fallas al usar una Habilidad o tiene un retardo. On Off #
+Se muestra un mensaje cuando fallas al usar una Habilidad o tiene un retardo. [Mostrar ON]#
+No se muestra ningún mensaje cuando fallas al usar una Habilidad o tiene un retardo. [Mostrar OFF]#
+/notalkmsg : Desactiva la visualización del diálogo. On Off#
+Visualización del diálogo activada. [ON]#
+Visualización del diálogo desactivada. [OFF]#
+/set1 : /noctrl + /showname + /skillfail#
+/fog : Activa o desactiva la niebla#
+Alguien te propone matrimonio, ¿Aceptas?#
+Distribución de objetos#
+Distribuir individualmente#
+Distribuir por igual #
+nProtect KeyCrypt#
+A keyboard driver was detected. Do you want to install the keyboard security features? (When complete, a system reboot will be required)#
+Instalación completada. El sistema se reiniciará.#
+La instalación ha fallado.#
+NO MESSAGE (12)#
+Files required for the keyboard protecting driver are missing (npkeyc.vxd, npkeyc.sys, npkeycs.sys)#
+A USB keyboard was detected. Do you want to install the keyboard security features? (When complete, a system reboot will be required)#
+ftp://ragnarok.nefficient.co.kr/pub/ragnarok/ragnarok0526.exe#
+NO MESSAGE (13)#
+NO MESSAGE (14)#
+NO MESSAGE (15)#
+NO MESSAGE (16)#
+NO MESSAGE (17)#
+NO MESSAGE (18)#
+NO MESSAGE (19)#
+Querido#
+/report : Genera un informe de la situación.#
+Este documento puede ser utilizado por los GMs \n como prueba de acciones malintencionadas de los jugadores. \n El documento no será válido si se guarda en otro formato o su contenido es modificado.#
+¡Te quiero!#
+Por favor, ajusta el brillo de tu monitor si los efectos de pantalla son demasiado brillantes.#
+Por favor, utiliza ALT+TAB para seleccionar las ventanas si tienes problemas en el modo de pantalla completa. Esto es efectivo con algunos tipos de PC.#
+(%d personas) - Servidor Gratuito#
+(%d personas) - Servidor P2P#
+Los jugadores que no sean de pago no pueden acceder al servidor P2P#
+Usar la skill de F9 con el botón derecho activado  [/q1 ON]#
+Usar la skill de F9 con el botón derecho desactivado [/q1 OFF]#
+/quickspell : Usando el botón derecho del ratón, permite usar Habilidades y Objetos asignados a la tecla F9. On Off#
+Usar las skills de F7 y F8 con la rueda del ratón activado [/q2 ON]#
+Usar las skills de F7 y F8 con la rueda del ratón desactivado [/q2 OFF]#
+/quickspell2 : Usando la rueda del ratón, permite usar Habilidades y Objetos asignados a las teclas F7 y F8. On Off #
+/q3 : /quickspell (/q1) + /quickspell2 (/q2)#
+/bzz#
+/rice#
+/awsm#
+/meh#
+/shy#
+/pat#
+/mp#
+/slur#
+/com#
+/yawn#
+/grat#
+/hp#
+/emotion : Muestra la lista de emoticonos.#
+Activar las barras de acceso rápido 2 y 3 en el teclado. [/bm ON]#
+Desactivar las barras de acceso rápido 2 y 3 en el teclado. [/bm OFF]#
+/battlemode : La Barra de Acceso Rápido 2 se utiliza mediante las teclas Q~O.#
+                     La Barra de Acceso Rápido 3 se utiliza mediante las teclas A~L.#
+Si utilizas otros programas durante la ejecución de R0M0N, el juego podría ralentizarse.#
+Ángel Guardián, ¿puedes oírme? ^^;#
+Mi nombre es #
+, y soy un Super Novice~#
+Por favor ayúdame~ T.T#
+ quiere adoptarte. ¿Aceptas?#
+                     Pulsa Z para activar la Habilidad almacenada en F1. On/Off#	
+                     Pulsa Intro o la Barra Espaciadora para poder escribir con normalidad.#	
+Los archivos de actualización no están o están corruptos. Por favor, reinstala el juego.#
+Algunos archivos del sistema están corruptos, por favor, reinstala Internet Explorer.#
+Error al parchear. Reinicia R0M0N.#
+Programas ilegales detectados. Detén la ejecución de todos los programas innecesarios y reinicia R0M0N.#
+Error de conexión. Comprueba tu conexión a Internet y la configuración de tu Firewall.#
+Error de conexión. Comprueba tu conexión a Internet y la configuración de tu Firewall.#
+Error. Comprueba si tu sistema ha sido infectado por virus, si estas usando programas de mantenimiento desactívalos antes de ejecutar R0M0N.#
+/notrade : Rechazar cualquier propuesta de intercambio. On Off#
+Rechazar cualquier propuesta de intercambio. [/nt ON]#
+Aceptar cualquier propuesta de intercambio. [/nt OFF]#
+La cantidad máxima de un objeto que puedes comprar no puede exceder de 30000.#
+Materiales insuficientes.#
+Se ha guardado la Información de la Cuenta %s.#
+No se puede acceder debido a un problema de Hacking. Para más detalles consulta la Web y el Foro.#
+No se puede acceder debido a un Error del Sistema.#
+Este Objeto puede repararse#
+¡Has reparado el Objeto!#
+Has Fallado al reparar (Comprueba la distancia a la que estás de él) #
+Estado del Sistema activado [GM mode] [/sc ON]#
+Estado del Sistema desactivado [GM mode] [/sc OFF]#
+/systemcheck : ¿Deseas examinar el estado del sistema? [Sólo para Administración]#
+(%s) quiere ser tu Amigo, ¿Aceptas?#
+No puedes añadir más amigos.#
+(%s) no tiene espacio para añadir más Amigos.#
+Te has hecho amigo de (%s).#
+(%s) No quiere ser tu Amigo.#
+Este personaje ha sido bloqueado hasta %s#
+Si vendes un objeto por un precio superior a 10.000.000 de Zenys, el precio cambiará automáticamente a 10.000.000 de Zenys.#
+(Desierto)#
+(Vacío)#
+(Normal)#
+(Lleno)#
+(Saturado)#
+Un GM te ha bloqueado el habla durante %d minuto(s) por conducta inapropiada.#
+Quedan %d minuto(s) hasta que finalice al castigo. #
+El castigo ha finalizado. Por favor, procura no volver a infringir las normas.#
+Se te han bloqueado automáticamente las habilidades y chat durante %d minuto(s).#
+Quedan %d minuto(s) hasta que finalice el castigo automático.#
+Se te ha levantado el castigo automático. Por favor, procura no repetirte ni molestar a los demás.#
+%s se ha divorciado de %s.#
+El Star Gladiator %s ha designado %s como el Lugar del Sol.#
+El Star Gladiator %s ha designado %s como el Lugar de la Luna.#
+El Star Gladiator %s ha designado %s como el Lugar de las Estrellas.#
+Lugar del Sol del Star Gladiator %s : %s#
+Lugar de la Luna del Star Gladiator %s : %s#
+Lugar de las Estrellas del Star Gladiator %s : %s#
+El Star Gladiator %s ha designado %s como el Monstruo del Sol.#
+El Star Gladiator %s ha designado %s como el Monstruo de la Luna.#
+El Star Gladiator %s ha designado %s como el Monstruo de las Estrellas.#
+Monstruo del Sol del Star Gladiator %s : %s#
+Monstruo de la Luna del Star Gladiator %s : %s#
+Monstruo de las Estrellas del Star Gladiator %s : %s#
+/window : Al mover una ventana el resto se moverá con ella. On Off#
+Al mover una ventana el resto se moverá con ella [/wi ON]#
+Al mover una ventana, ésta se moverá con independencia de la demás [/wi OFF]#
+/pvpinfo : Permite visualizar los Resultados de PVP y los puntos [Sólo para PvP]#
+Estado actual %d Victorias, %d Derrotas. Tu puntuación en PVP es de %d#
+El punto de moral se te ha transferido satisfactoriamente.#
+Estás accediendo al área PK, por favor, ten cuidado de los ataques de los otros jugadores.#
+Game Guard no ha sido actualizado o existe un problema causado por un virus o spyware que ha provocado un fallo en el sistema. Por favor, ejecuta un antivirus para reparar tu sistema.#
+El Sistema se ha cerrado debido a un problema ocurrido durante el cambio de Ventana. Por favor, vuelve a iniciar el juego. #
+Te han sido bloqueadas las funciones de Chat, Habilidades e Inventario. #
+El personaje está siendo borrado, no podrás entrar hasta pasados unos minutos. #
+Tu pareja está siendo borrada en estos momentos, no podrás entrar hasta pasados unos minutos.#
+Novice#
+Swordman#
+Mage#
+Archer#
+Acolyte#
+Merchant#
+Thief#
+Knight#
+Priest#
+Wizard#
+Blacksmith#
+Hunter#
+Assassin#
+Novice#
+Swordman#
+Magician#
+Archer#
+Acolyte#
+Merchant#
+Thief#
+Knight#
+Priest#
+Wizard#
+Blacksmith#
+Hunter#
+Assassin#
+Invitar a %s a ser adoptado.#
+Tus valores de status no pueden exceder las 80 unidades y no podrás Renacer. Además tu HP y SP serán reducidos. ¿Estás de acuerdo?#
+Todos los estados alterados han sido curados.#
+Serás inmune a los estados alterados durante 1 minuto.#
+Tu HP Máximo aumentará drásticamente durante 1 minuto.#
+Tu SP Máximo aumentará drásticamente durante 1 minuto.#
+Todos tus valores de status aumentarán drásticamente durante 1 minuto.#
+Todas tus armas adquirirán el atributo Sagrado durante 1 minuto.#
+Todo tu equipo defensivo adquirirá el atributo Sagrado durante 1 minuto.#
+Tu Defensa aumentará drásticamente durante 10 segundos.#
+Tu Ataque aumentará drásticamente durante 1 minuto.#
+Tu puntería y tu evasión aumentarán drásticamente durante 1 minuto.#
+Sólo puedes adoptar un hijo por cuenta.#
+Se requiere nivel 70 o superior para adoptar un hijo.#
+[PUNTO] La puntuación en la Tabla de Blacksmith ha aumentado en %d puntos. Eso hace un total de %d puntos.#
+[PUNTO] La puntuación en la Tabla de Alchemist ha aumentado en %d puntos. Eso hace un total de %d puntos.#
+Ángel Guardián, ¿Puedes oírme? ^^;#
+Mi nombre es #
+, y soy un Super Novice#
+Por favor ayúdame T.T#
+/notalkmsg2 : El contenido de las conversaciones no se mostrará en la ventana de conversación (Incluyendo las de Clan). On Off#
+Mostrar mensajes. [/nm2 ON]#
+Ocultar mensajes (incluidos los del Clan) [/nm2 OFF]#
+Armas Refinables.#
+Arma Refinada: %s#
+Arma Refinada: %s#
+No puedes mejorar %s hasta que no subas el nivel de la Habilidad Upgrade Weapon.#
+Necesitas %s para poder mejorar este arma.#
+No es posible Desarmar al objetivo porque está completamente protegido.#
+No se puede adoptar a alguien si está casado.#
+El personaje no está en tu lista de Amigos. Comprueba el nombre.#
+/hi : Envía un saludo a todos tus Amigos.#
+El personaje no pertenece a tu Clan. Comprueba el nombre.#
+El precio introducido no puede ser superior a 99.999.999.999 zenys. Por favor, introduce una cantidad adecuada.#
+Los susurros de Amigos se mostrarán como [ Amigo ], y los del Clan como [ Miembro ].#
+( Desde "Nombre del personaje": ) proviene de un jugador anónimo que no está en tu Clan ni en tu lista de Amigos.#
+/blacksmith : Muestra los 10 mejores Blacksmiths del server.#
+/alchemist : Muestra los 10 mejores Alchemist del server.#
+ALT+Y : Abre la ventana de comandos.#
+[PUNTO] Has sido recompensado con %d punto(s) de rango de TaeKwon Mission. Tu puntuación total es de %d.#
+[TaeKwon Mission] Monstruo Objetivo : %s (%d)#
+Error - Fallo al iniciar GameGuard : %lu#
+Speed Hack ha sido detectado.#
+El programa ilegal, (%s) ha sido detectado.#
+El juego o GameGuard están corruptos.#
+GameGuard ya ha sido iniciado. Espera un rato y reinicia el juego.#
+El juego o GameGuard ya ha sido iniciado. Por favor, reinicia el juego.#
+Error al iniciar GameGuard. Inténtalo de nuevo tras reiniciar el sistema o cerrar algunos programas.#
+Error al cargar el módulo antivirus. Esto puede deberse a un fallo en la memoria o una infección de virus en su PC.#
+Información del Homunculus#
+Habilidades del Homunculus#
+Escribe un nombre para tu Homunculus, no debe superar los 23 caracteres.#
+Sólo puedes bautizar a tu Homunculus una vez. Su nombre será ^0000ff %s^000000. ¿Estás seguro?#
+(Ausente)#
+[Mensaje automático]#
+Envía un Mensaje Automático cuando estás Ausente.#
+Cancelar Mensaje Automático de Ausencia.#
+Escribe un Mensaje Automático para cuando no estés.#
+/fsh#
+/spin#
+/sigh#
+/dum#
+/crwd#
+/desp#
+/dice#
+/pk : Muestra el Ranking de Asesinos de Jugadores de R0M0N.#
+[Punto] Has sido recompensado con % punto(s) de rango de Asesino de Jugadores. Tu puntuación total es de %d.#
+Perfeccionable#
+Has decidido borrar este Homunculus ^ff0000^ff0000. Cuando se haya borrado, no será posible recuperarlo en el futuro. ¿Deseas continuar?#
+El Status del Homunculus se guardará#
+El Status del Homunculus no se guardará#
+Crusader#
+Monk#
+Sage#
+Rogue#
+Alchemist#
+Bard#
+Crusader#
+Monk#
+Sage#
+Rogue#
+Alchemist#
+Dancer#
+High Novice#
+High Swordman#
+High Magician#
+High Archer#
+High Acolyte#
+High Merchant#
+High Thief#
+High Novice#
+High Swordman#
+High Magician#
+High Archer#
+High Acolyte#
+High Merchant#
+High Thief#
+Lord Knight#
+High Priest#
+High Wizard#
+Whitesmith#
+Sniper#
+Assassin Cross#
+Lord Knight#
+High Priest#
+High Wizard#
+Whitesmith#
+Sniper#
+Assassin Cross#
+Paladin#
+Champion#
+Professor#
+Stalker#
+Creator#
+Clown#
+Paladin#
+Champion#
+Professor#
+Stalker#
+Creator#
+Gypsy#
+No has registrado una cuenta. ¿Quieres registrar una nueva cuenta?#
+Has introducido un password incorrecto 3 veces. Vuelve a intentarlo más tarde.#
+Has fallado al intentar cambiar el password.#
+El password debe ser mayor de 4 dígitos y menor de 8.#
+Password#
+Nuevo Password#
+Repetir Password#
+Tu password ha sido cambiado.#
+Ambos passwords deben ser idénticos.#
+Introduce Password#
+¡El Homunculus está muriendo! Si no le alimentas desaparecerá.#
+EXP#
+[EVENTO] Has ganado un premio del evento. Recíbelo en el juego.#
+Antipático#
+Hostil#
+El Homunculus ha sido personalizado.#
+El Homunculus ha sido activado con la IA básica.#
+Lista de Mensajes#
+Escribir Mensaje#
+Leer Mensaje#
+No podrás cambiar la designación del mapa una vez lo hayas hecho. ¿Seguro que deseas designar este mapa?#
+Se ha añadido un Objeto a la ventana de Objetos.#
+Error al añadir un Objeto a la ventana de Objetos.#
+Se ha enviado correctamente el mensaje.#
+Error al enviar el mensaje. El destinatario no existe.#
+[Sun, Moon and Stars Angel] Los lugares y monstruos designados se han reiniciado.#
+Has fallado al pujar en la subasta.#
+Has pujado en la subasta.#
+La subasta ha sido cancelada.#
+Una subasta con al menos una puja no puede ser cancelada.#
+El Mensaje se ha borrado satisfactoriamente.#
+El Mensaje no se ha borrado.#
+Te has equipado dagas lanzables.#
+%s ha entrado.#
+%s ha salido.#
+/loginout: Muestra el estado de amigos y miembros del Clan. On Off#
+Muestra un aviso cuando un amigo se conecta o desconecta. [/li ON]#
+No muestra un aviso cuando un amigo se conecta o desconecta. [/li OFF]#
+Ya ha sido iniciado.#
+Se ha detectado un programa Macro.#
+Se ha detectado el uso de un Speed hack.#
+Se ha detectado un API Hooking.#
+Se ha detectado un Message Hooking.#
+El módulo ha sido modificado o dañado, o su versión no corresponde.#
+Si ves este mensaje, por favor borra todo y reinstala Ragnarok Online.#
+Anterior#
+Siguiente#
+Subasta#
+Lista de Productos#
+Registro#
+Estado de la Venta#
+Estado de la Compra#
+Objeto#
+Nombre del Objeto#
+Puja Actual / Precio de Compra Directa#
+Vendedor#
+Comprador#
+Fecha de Fin de Subasta#
+%m %d %H (mm/dd/hora)#
+Establecer Tiempo#
+Fianza de Subasta#
+No se han encontrado Objetos.#
+Tu Lista de Ventas esta vacía.#
+Tu Lista de Compras esta vacía.#
+La Información de la Subasta es Incorrecta.#
+No se puede encontrar la información del objeto.#
+La Subasta ya ha sido registrada.#
+Precio de Salida#
+Puja Actual#
+Precio de Compra Directa#
+Tu Saldo Actual#
+Puja Máxima#
+Puja Anterior#
+Puja Siguiente#
+¿Quieres comprar este objeto?#
+¿Quieres vender este objeto?#
+Realizar una Puja#
+Compra Directa#
+Finalizar la Subasta#
+Realizar otra Puja#
+Has ganado la subasta.#
+No has ganado la subasta.#
+No tienes suficientes Zenys.#
+Armadura#
+Carta#
+Otros#
+Número de Puja#
+Buscar#
+Has finalizado la subasta.#
+No puedes finalizar la subasta.#
+Número de Puja incorrecto.#
+Destinatario#
+Título#
+Has recibido un mensaje nuevo.#
+Buscando...#
+No puedes presentar más de 5 objetos a la vez en una subasta.#
+No puedes realizar más de 5 pujas a la vez.#
+Por favor, acepta todos los objetos de tu mensaje antes de borrarlo.#
+Por favor, introduce un título.#
+/shopping: Te permite abrir una tienda con un click izquierdo del ratón y cerrar tu tienda con un click derecho.#
+Ahora puedes abrir una tienda con un click izquierdo del ratón y cerrar tu tienda con un click derecho. [sh ON].#
+Puedes abrir las tiendas con un doble click. [/sh OFF]#
+Por favor introduce la cantidad de Zenys antes de enviar el mail.#
+No tienes suficientes Zenys para pagar la Fianza de la Subasta.#
+TEST MESSAGE 1#
+Ver Estado#
+Alimentar#
+Apoyar#
+Super Novice#
+Super Novice#
+TaeKwon Boy#
+TaeKwon Girl#
+Star Gladiator#
+Star Gladiator#
+Soul Linker#
+Soul Linker#
+TEST MESSAGE 2#
+TEST MESSAGE 3#
+TEST MESSAGE 4#
+Éste objeto no puede adjuntarse a un mensaje.#
+No puedes aceptar más objetos. Inténtalo de nuevo más tarde.#
+Hombre#
+Mujer#
+Nuevo Jugador.#
+La dirección de e-mail es necesaria para borrar un personaje.#
+Por favor, introduce correctamente la información.#
+Por favor, usa ésta clave.#
+Por favor, introduce el password de la tarjeta correcta.#
+Información PT#
+El PT_ID es %s#
+El NUM_ID es %s#
+Por favor, no pierdas ésta información.#
+1001#
+1002#
+1003#
+1004#
+1006#
+1007#
+1008#
+1009#
+1012#
+1013#
+1014#
+1015#
+1019#
+1020#
+1021#
+1023#
+1024#
+1025#
+1027#
+1028#
+10#
+20#
+40#
+50#
+60#
+70#
+80#
+90#
+100#
+110#
