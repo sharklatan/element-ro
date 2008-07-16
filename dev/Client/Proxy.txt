@@ -1,0 +1,8 @@
+INSTRUCCIONES MAS RAPIDAS
+
+1) Abre el programa Proxy.exe y configuralo exactamente como muestra en la imagen Proxy.png.
+2) Presiona el boton "Start" y minimiza el programa (no lo cierres).
+3) Entra a AtlantisRO.exe y selecciona la opcion de entrada "AtlantisRO (Proxy Local)".
+
+Mas informacion en http://foro.atlantis-ro.net
+
