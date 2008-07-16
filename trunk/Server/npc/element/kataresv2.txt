@@ -1,0 +1,495 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,226,381,4	script	Katares V2	730,{
+
+	set @JMROW$,"[^0065DFEQUIPO^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui algunos equipos que te pueden ayudar";
+	mes "deseas verlos??";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Loki´s_Talon", "Infernal_Katar", "Katar_of_Frozen_Icicle_v2", "Katar_of_Ranging_Blaze_v2", "Katar_of_Quaking_v2", "Katar_of_Piercing_Wind_v2", "Holy_Touch", "Unholy_Touch_v2", "Salir");
+	switch (@item)
+	{
+		case 1: goto equipo1;
+		case 2: goto equipo2;
+                case 3: goto equipo3;
+                case 4: goto equipo4;
+                case 5: goto equipo5;
+		case 6: goto equipo6;
+		case 7: goto equipo7;
+                case 8: goto equipo8;
+                case 9: goto equipo9;
+                case 10: goto equipo10;
+                case 11: goto equipo11;
+                case 12: goto equipo12;
+		case 13: goto salir;
+	}
+
+// [==================================================]
+// [===========           equipo 1         ===========]
+// [==================================================]
+equipo1:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Loki´s_Talon");
+	switch (@item)
+	{
+		case 1: goto equipo1_1;
+
+	}
+  
+equipo1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Infiltrator[0]";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1261)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1261,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16076,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 2         ===========]
+// [==================================================]
+equipo2:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Infernal_Katar");
+	switch (@item)
+	{		
+		case 1: goto equipo2_1;
+
+	}
+equipo2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Ogre's Toenail";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "20 Decayed Nail";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1268)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(957)<20)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1268,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+
+
+	delitem 957,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16079,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 3         ===========]
+// [==================================================]
+equipo3:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Katar_of_Frozen_Icicle_v2");
+	switch (@item)
+	{		
+		case 1: goto equipo3_1;
+
+	}
+equipo3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Katar of Frozen Icicle";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "20 Cristal Blue";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1256)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(991)<20)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1256,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+
+	delitem 991,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16071,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 4         ===========]
+// [==================================================]
+equipo4:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Katar_of_Ranging_Blaze_v2");
+	switch (@item)
+	{		
+		case 1: goto equipo4_1;
+
+	}
+equipo4_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Katar of Raging Blaze";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "20 Red Blood";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1258)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(990)<20)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1258,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+
+	delitem 990,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16073,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 5         ===========]
+// [==================================================]
+equipo5:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Katar_of_Quaking_v2");
+	switch (@item)
+	{		
+		case 1: goto equipo5_1;
+
+	}
+equipo5_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Katar of Quaking";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "20 Green Live";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1257)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(993)<20)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1257,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+	delitem 993,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16072,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 6         ===========]
+// [==================================================]
+equipo6:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Katar_of_Piercing_Wind_v2");
+	switch (@item)
+	{
+		case 1: goto equipo6_1;
+
+	}
+  
+equipo6_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Katar of Piercing Wind";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "20 Wind of Verdure";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1259)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(992)<20)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1259,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+
+	delitem 992,20;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16074,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 7         ===========]
+// [==================================================]
+equipo7:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Holy_Touch");
+	switch (@item)
+	{		
+		case 1: goto equipo7_1;
+
+	}
+equipo7_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Inverse Scare";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "100 Opal";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1269)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(727)<100)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1269,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+	delitem 727,100;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16075,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 8         ===========]
+// [==================================================]
+equipo8:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Unholy_Touch_v2");
+	switch (@item)
+	{		
+		case 1: goto equipo8_1;
+
+	}
+equipo8_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Bloody Blade";
+	mes "20 Injustice Card";
+	mes "100 Animal Gore";
+	mes "100 Red Muffler";
+	mes "100 Cursed Seal";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(1271)<1)goto falta;
+	if(countitem(4268)<20)goto falta;
+
+	if(countitem(702)<100)goto falta;
+	if(countitem(7216)<100)goto falta;
+	if(countitem(7442)<100)goto falta;
+
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 1271,1;
+	delitem 4268,20;
+
+	delitem 702,100;
+
+	delitem 7216,100;
+
+
+	delitem 7442,100;
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16077,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario regresa cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

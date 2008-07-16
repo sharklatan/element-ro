@@ -1,0 +1,283 @@
+prontera.gat,184,194,5	script	Cambio de Color	731,{
+set @npcname$,"^0000FF[^000000^FF0000Tatius^000000^0000FF]^000000";
+	mes @npcname$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!";
+	mes "Mi Nombre es ^5555FF" + @npcname$ + "^000000!";
+	mes "Aqui pudes cambiar el color de 3 tipos de gorros.";
+	mes "Los cuales son:,";
+	mes "Drooping Cat, Deviruchi Hat y El Mage Hat.";
+	next;
+	mes "Quieres que te cambie de color alguno de esos hats??";
+	menu "Si",-,"No",no;
+
+	mes @npcname$;
+	mes "bueno que tipo de hats quieres que cambie??,";
+	menu "Drooping Cat",-,"Deviruchi Hat",d_h,"Mage Hat",last_h;
+
+	mes @npcname$;
+	mes "Tengo los siguientes colores de ese sombrero";
+	mes "pero antes tienes que tener el drooping hat.";
+
+	if(countitem(5058) < 1) goto L_NOTENOUGH;
+
+	mes "Bueno como iva diciendo tengo estos colores.";
+	menu "Azul",-,"Gris",h_g,"Rosado",h_r,"Blanco",h_b,"Amarillo",h_a;
+
+	mes @npcname$;
+	mes "Para cambiar este hat a color Azul necesito ^3355FF 2 Cobaltblue Dyestuff^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(978) < 2) goto L_NOTENOUGH;
+
+	delitem 978,2;
+	delitem 5058,1;
+
+	getitem 5233,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+	
+h_g:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Gris necesito ^3355FF 1 Black Dyestuff^000000";
+	mes "^3355FF y 1  White Dyestuff^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 1 || countitem(983) < 1) goto L_NOTENOUGH;
+
+	delitem 982,1;
+	delitem 5058,1;
+	delitem 983,1;
+
+	getitem 5231,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+h_r:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Rosado necesito ^3355FF 1 Violet Dyestuff ^000000";
+	mes "^3355FF y 1  White Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 1 || countitem(981) < 1) goto L_NOTENOUGH;
+
+	delitem 982,1;
+	delitem 5058,1;
+	delitem 981,1;
+
+	getitem 5232,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+h_b:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Blanco necesito ^3355FF 2 White Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 2) goto L_NOTENOUGH;
+
+	delitem 982,2;
+	delitem 5058,1;
+	
+	getitem 5230,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+h_a:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Amarillo necesito ^3355FF 2 Lemon Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(976) < 2) goto L_NOTENOUGH;
+
+	delitem 976,2;
+	delitem 5058,1;
+	
+	getitem 5234,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+d_h:
+	mes @npcname$;
+	mes "Tengo los siguientes colores de ese sombrero";
+	mes "pero antes tienes que tener el Deviruchi Hat.";
+
+	if(countitem(5038) < 1) goto L_NOTENOUGH;
+
+	mes "Bueno como iva diciendo tengo estos colores.";
+	menu "Gris",-,"Rojo",d_r,"Blanco",d_b;
+
+	mes @npcname$;
+	mes "Para cambiar este hat a color Gris necesito ^3355FF 1 Black Dyestuff^000000";
+	mes "^3355FF y 1  White Dyestuff^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 1 || countitem(983) < 1) goto L_NOTENOUGH;
+
+	delitem 982,1;
+	delitem 5038,1;
+	delitem 983,1;
+
+	getitem 5229,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+d_r:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Rojo necesito ^3355FF 2 Scarlet Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(975) < 2) goto L_NOTENOUGH;
+
+	delitem 975,2;
+	delitem 5038,1;
+
+	getitem 5227,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+d_b:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Blanco necesito ^3355FF 2 White Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 2) goto L_NOTENOUGH;
+
+	delitem 982,2;
+	delitem 5038,1;
+	
+	getitem 5228,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+	
+last_m:
+	mes @npcname$;
+	mes "Tengo los siguientes colores de ese sombrero";
+	mes "pero antes tienes que tener el Mage Hat.";
+
+	if(countitem(5027) < 1) goto L_NOTENOUGH;
+
+	mes "Bueno como iva diciendo tengo estos colores.";
+	menu "Azul",-,"Gris",m_h,"Rojo",m_r,"Blanco",m_b,"Amarillo",m_a;
+
+	mes @npcname$;
+	mes "Para cambiar este hat a color Azul necesito ^3355FF 2 Cobaltblue Dyestuff^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(978) < 2) goto L_NOTENOUGH;
+
+	delitem 978,2;
+	delitem 5027,1;
+
+	getitem 5241,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+	
+last_h:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Gris necesito ^3355FF 1 Black Dyestuff^000000";
+	mes "^3355FF y 1  White Dyestuff^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 1 || countitem(983) < 1) goto L_NOTENOUGH;
+
+	delitem 982,1;
+	delitem 5027,1;
+	delitem 983,1;
+
+	getitem 5240,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+last_r:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Rojo necesito ^3355FF 2 Scarlet Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(975) < 2) goto L_NOTENOUGH;
+
+	delitem 975,2;
+	delitem 5027,1;
+
+	getitem 5238,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+last_b:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Blanco necesito ^3355FF 2 White Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(982) < 2) goto L_NOTENOUGH;
+
+	delitem 982,2;
+	delitem 5027,1;
+	
+	getitem 5239,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+last_a:
+	mes @npcname$;
+	mes "Para cambiar este hat a color Amarillo necesito ^3355FF 2 Lemon Dyestuff ^000000";
+	mes "Quieres que lo cambie de color";
+	menu "Si",-,"No",no;
+
+	if(countitem(976) < 2) goto L_NOTENOUGH;
+
+	delitem 976,2;
+	delitem 5027,1;
+	
+	getitem 5242,1;
+
+	mes @npcname$;
+	mes "Aqui tienes, disfrutalo";
+	close;
+
+no:
+	mes @npcname$;
+	mes "bueno como quieras";
+	mes "vuelve pronto";
+	close;
+
+L_NOTENOUGH:
+	mes @npcname$;
+	mes "Lo siento.";
+	mes "No tienes todos los items necesarios para que cambie de color los hats";
+	close;
+}

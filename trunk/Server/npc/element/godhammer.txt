@@ -1,0 +1,89 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,275,366,1	script	Forjador	851,{
+
+	set @JMROW$,"[^0065DFForjador^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "Sabes atraves de los años he encontrado";
+	mes "la forma de forjar el poderoso";
+	mes "God Hammer aun que no es sensillo";
+	mes "pero si me traes unos items puedo forjarte uno";
+	mes "Te interesa la idea?";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "Ok nesesito que me traigas estos items:";
+	mes "1 Enperiun Anvil";
+	mes "50 Hammer of Blacksmith";
+	mes "20 millones de zeny";
+	next;
+	menu "Ok voy a conseguirlos",vuelvo,"Lo tengo todo",item;
+
+item:
+	mes "Bien, veamos si tienes todo";
+	if(countitem(989)<1)goto falta;
+	if(countitem(1005)<50)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Bien, esta todo en oreden";
+	mes "enpesare a forjar";
+	next;
+	mes "mmm...";
+	mes "esto se ve difisil";
+	next;
+	mes "ya casi...";
+	mes "auch quema!!";
+	next;
+	mes "^ee0000DIABLOS SE ROMPIO^000000";
+	next;
+	mes "pero no te preocupes que";
+	mes "por eso te pedi 50 Hammers /gg";
+	next;
+	mes "bien de nuevo!!";
+	mes "mmm esto se ve mas fasil";
+	next;
+	mes "Depues de varios intentos mas..";
+	next;
+	mes "Jojojojo";
+	mes "Por fin aqui esta tu God Hammer";
+	next;
+	delitem 989,1;
+	delitem 1005,50;
+	set Zeny,Zeny-20000000;
+	getitem 7808,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+
+vuelvo:
+	mes "Ok regresa pronto";
+	close;
+
+falta:
+	mes "Hey no tienes las cosas que te pedi, regresa cuando las tengas";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

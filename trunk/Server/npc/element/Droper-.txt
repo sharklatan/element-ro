@@ -1,0 +1,125 @@
+prontera.gat,156,195,4	script	Drop Setter	811,{
+
+	set @highest_mob_id,1796; // set to the highest mob id in your mob_db
+
+	mes "[Drop Setter]";
+	mes "Hi I can give monsters new item drops for the whole server or just for one map";
+	menu "Set new monster drop",-,"Delete one of the new monster drops",L_del_mob,"Nothing",L_Cancel;
+
+	mes "Ok input monster ID, 0 to chancel";
+	input @mob_id;
+	if(@mob_id == 0) goto L_Cancel;
+	if(@mob_id <1001 || @mob_id > @highest_mob_id ) goto L_nomob;
+//	mes "Ok should this mob drop it on a specified map/s?";
+//	menu "Yeah dude",-,"No every monster of this type should",L_set_drop;
+
+//	mes "Ok how much maps?";
+//	input @am_maps;
+//	mes "Now input the map names without the .gat!";
+//	for(set @loop, 0;@loop<@am_maps;set @loop,@loop+1){
+//		input @drop_maps$[@loop];
+//	}
+	next;
+	L_set_drop:
+	mes "What item it should drop?";
+	input @item_drop;
+	next;
+	mes "At least input the chance of drop";
+	mes "Note: 1 == 0,01%";
+	input @chance_to;
+	next;
+	mes "Hmm do you want that the monster ^00FF00"+getmonsterinfo(@mob_id,0)+"^000000";
+	mes "from this moment will drop the item ^FF0000"+getitemname(@item_drop)+"^000000 with a chance of ^0000FF"+@chance_to+"/100%^000000 ?";
+	if(@am_maps == 0 ) mes "On the whole server?";
+	else {
+		mes "On the maps:";
+		for(set @loop,0;@loop<@am_maps;set @loop,@loop+1){
+		mes @drop_maps$[@loop];
+		}
+	mes "?";
+	}
+	menu "Yeah that should be",-,"Nope I didn't want so",L_Cancel;
+
+	set $new_drop_mob[getarraysize($new_drop_mob)],@mob_id;
+	set $new_drop_tmob[getarraysize($new_drop_tmob)],@item_drop;
+	if(@am_maps != 0) {
+		for(set @loop,0;@loop<=@am_maps;set @loop,@loop+1){
+			setd "$dropmaps"+@loop+"$["+getarraysize(getd("$dropmaps"+@loop+"$"))+"]",@drop_maps$[@loop];
+		}
+	} else {	if(!$whole_world[0]) set $whole_world[0],1;
+			else setd "$whole_world["+getarraysize($new_drop_mob)+"]",1;
+			if(!$new_chance_of[0]) set $new_chance_of[0],@chance_to;
+			else setd "$new_chance_of["+getarraysize($new_drop_mob)+"]",@chance_to;
+		}
+	mes "Ok now it will be...";
+	close;
+
+	L_del_mob:
+	if(!$new_drop_tmob) {
+	mes "Sry but theres nothing";
+	close;
+	}
+	mes "Look here the list of all new drops with monster!";
+	do {
+		if(getarraysize($new_drop_mob) < 8) {
+			for(set @loopvar,getarraysize($new_drop_mob);getarraysize($new_drop_mob)>@loop;set @loop,@loop+1){
+				if(@loop != 0) set @drop_menu$,@drop_menu$+":"+getitemname($new_drop_tmob[@loop])+" - "+strmobinfo(1,$new_drop_mob[@loop]);
+			else	set @drop_menu$,getitemname($new_drop_tmob[@loop])+" - "+strmobinfo(1,$new_drop_mob[@loop]);
+			}
+		} else {
+			for(set @loopvar,@loopvar+8;@loop<@loopvar;set @loop,@loop+1){
+				if(@loop != 0) set @drop_menu$,@drop_menu$+":"+getitemname($new_drop_tmob[@loop])+" - "+strmobinfo(1,$new_drop_mob[@loop]);
+			else	set @drop_menu$,getitemname($new_drop_tmob[@loop])+" - "+strmobinfo(1,$new_drop_mob[@loop]);
+			}
+		set @drop_menu$,@drop_menu$+":Next";
+		}
+		set @loop_num,@loop_num+1;
+		set @finish_delete,select(@drop_menu$);
+		if(@finish_delete != 9) {
+			for(set @del_array,@loopvar*@loop_num;@del_array<=getarraysize($new_drop_mob);set @del_array,@del_array+1){
+				setd "$new_drop_mob["+(@del_array-1)+"]",getd("$new_drop_mob["+@del_array+"]");
+				setd "$new_drop_tmob["+(@del_array-1)+"]",getd("$new_drop_tmob["+@del_array+"]");
+				setd "$whole_world["+(@del_array-1)+"]",getd("$whole_world["+@del_array+"]");
+				setd "$new_chance_of["+(@del_array-1)+"]",getd("$new_chance_of["+@del_array+"]");
+				cleararray getd("$dropmaps"+@delarray+"$[0]"),0,127;
+			}
+		goto L_endspeak;
+		}
+	} while(getarraysize($new_drop_mob) <= @loopvar);
+
+	L_endspeak:
+	next;
+	mes "All deleted dude.";
+	close;
+
+	L_nomob:
+	mes "This monster doesn't exist";
+	close;
+
+	L_Cancel:
+	mes "Ok cya later";
+	close;
+}
+-	script	OnNPCKillEvent	-1,{
+	if(!$new_drop_mob[0]) end;
+	if(getmapxy($@mapname$,$@mapx,$@mapy,0,strcharinfo(0)) != 0) end;
+	set $chance_var,rand(1,10000);
+	for(set $@loop,0;$@loop<getarraysize($new_drop_mob);set $@loop,$@loop+1){
+//		if($new_drop_mob[$@loop] == killedrid && !$whole_world[$@loop] && getarraysize(getd("$dropmaps"+$@loop)) != 0 ){
+//			announce "Geht 1",bc_self;
+//			for(set $@loop2,0;$@loop2<getarraysize(getd("$dropmaps"+$@loop+"$"));set $@loop2,$@loop2+1){
+//				announce "Geht 2",bc_self;
+//				if(getd("$dropmaps"+$@loop+"$["+$@loop2+"]")+".gat" == $@mapname$ && $new_chance_of[$@loop] <= rand(1,10000)) {
+//					announce "Geht 3",bc_self;
+//					getitem $new_drop_tmob[$@loop],1;
+//				}
+//			}
+//		}
+		if($new_drop_mob[$@loop] == killedrid && $whole_world[$@loop] == 1) {
+			if($new_chance_of[$@loop] >= $chance_var) {
+				getitem $new_drop_tmob[$@loop],1;
+			}
+		}
+	}
+	end;
+}

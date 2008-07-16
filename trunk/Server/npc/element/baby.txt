@@ -1,0 +1,286 @@
+//===== Athena Script =======================================
+//= Baby job master
+//===== By ================================================
+//=    Ultima
+//===== Version ===========================================
+//= 1
+//===== Compatible With ===================================
+//= eAthena 
+//===== Description =======================================
+//= Cambio babys 
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+prontera.gat,136,171,4	script	Baby Job Master	729,{
+if (class == 0 || class == 4001) goto makebaby;
+if (class == 4023) goto Go1st;
+if (class == 4024 || class == 4025 || class == 4026 || class == 4027 || class == 4028 || class == 4029) goto Go2nd;
+if (class >= 4030) goto ur2nd;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Sorry Tu no eres un Baby, Novice o Baby First Jobclass, porfavor usa la Job Changer normal.";
+close;
+
+ur2nd:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Que es lo que buscas de mi? Tu ya eres un baby con segunda profecion.";
+close;
+
+makebaby:
+if(joblevel>1) goto Lbabyjobone;
+if(baselevel>1) goto Lbabybaseone;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Yo soy la Baby Master de Element Ro! Tu quieres ser baby?";
+menu "claro que si!",Lyes,"hmm... naa!",Lno;
+
+Lbabyjobone:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Tu no eres Novici@ 1/1!";
+close;
+
+Lbabybaseone:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Tu no eres Novici@ 1/1!";
+close;
+
+Lyes:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Que bien! bienbenid@ al jardin infantil de Element Ro xD!";
+jobchange 4023;// Job: Baby_Novice
+close;
+
+Lno:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes " Si no quieres, vete de aqui Grandot@! >.> ";
+close;
+
+Go1st:
+if(joblevel<10) goto Lbabyjobten;
+if(SkillPoint != 0) goto Lbabyskillpt;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Yo soy la baby Master de Element Ro! Veo que estas listo para elejir lo que quieres ser";
+mes "Porfavor elije tu primera profecion...";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Elije la profecion que quieras!";
+menu "Baby Swordsman",LbabySword,"Baby Mage",LbabyMage,"Baby Thief",LbabyThief,"Baby Merchant",LbabyMerc,"Baby Acolyte",LbabyAco,"Baby Archer",LbabyArch,"Super Baby",LbabySupNovi,"Aun no quiero",LCancel;
+
+Lbabyjobten:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Ash, Tu necesitas ser nivel 10 de job para poder elejir tu primera profecion ve a matar algunos porings o algo.. >.>";
+cutin "kafra_01",255;
+close;
+
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Porfavor usa todos tus skillpoint antes de elejir tu profecion! ";
+cutin "kafra_01",255;
+close;
+
+LbabySupNovi:
+mes "[ ^0065DFBaby Master^000000 ]";
+if(baselevel<35) goto LReqnovi;
+mes "Si no quieres ser un grandot@ aburrido,.. Ser Super Baby es la mejor decision!!!";
+cutin "kafra_01",255;
+jobchange 4045; //Super_Novice
+close;
+
+LReqnovi:
+mes "Tu necesitas ser Baby nivel 35";
+mes "para poder ser un Super Baby";
+close;
+
+
+LbabySword:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Wow, fantastico! Ves lo gratificante de haberte esforsado? *jejeje* Puedo ver ^B70004SANGRE DE Porings^000000 en tus manos! al parecer estas lleno de espiritu de ^0005CEBaby Swordsman^000000 ! ";
+cutin "kafra_01",255;
+jobchange 4024; //Job_BabySwordman
+close;
+
+LbabyMage:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Nice, porfin lograste sacar el poder del ^2200DFM^7600F9A^AF00FBN^DA00DFA^000000, de tu interior, la magia fluye por ti!!!";
+cutin "kafra_01",255;
+jobchange 4025; //Job_BabyMage
+close;
+
+LbabyThief:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Esos dedos de mantequilla, realmente crees que es bueno robar (sin comentarios)..... ya vete a robarle los jellopy a los pobres poring!!";
+cutin "kafra_01",255;
+jobchange 4029; //Job_BabyThief
+close;
+
+LbabyMerc:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Oh yeah, Señor@ BolsaGrande de dinero, ALGUIEN aqui ama el sonido de las moneditas cuando agitas la cartera.... bueno esa no soy yo!.. >_>..... bah.. ";
+cutin "kafra_01",255;
+jobchange 4028; //Job_BabyMerchant
+close;
+
+LbabyAco:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Yawn.. Que haces??... vete a leer la biblia o algo asi...";
+cutin "kafra_01",255;
+jobchange 4027; //Job_BabyAcolyte
+close;
+
+LbabyArch:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Recuerdo que cuando empese en ragnaron mi primer trabajo era de Archer..";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Creo que eres como yo atacar desde la seguridad de la distancia es la mejor decision! jejeje...";
+cutin "kafra_01",255;
+jobchange 4026; //Job_BabyArcher
+close;
+
+
+Go2nd:
+if(SkillPoint != 0) goto Lbabyskillpt;
+if(joblevel<40) goto Lbabyjobforty;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Yo soy la baby Master de Element Ro! Veo que ya puedes elejir tu segunda profecion felicidades!";
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "porfavor elije que quieres ser ...";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "que es lo que quieres ser ??? (Recuerda tu primera profecion)";
+menu "Baby Knight",LbabyKnight,"Baby Wizard",LbabyWizard,"Baby Hunter" ,LbabyHunter,"Baby Blacksmith",LbabyBlacksmith,"Baby Assassin",LbabyAssassin,"Baby Priest",LbabyPriest,"Baby Crusader",LbabyCrusader,"Baby Sage",LbabySage,"Baby Dancer/Bard",LbabyDancerbard,"Baby Alchemist",LbabyAlchemist,"Baby  Rogue",LbabyRogue,"Baby Monk",LbabyMonk,"Aun no quiero cambiar",LCancel;
+
+Lbabyjobforty:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "*,.,* Ya sabes que necesitas minimo 40 de job lvl. Ve a payon dungeon es lo mejor a tu nivel.";
+cutin "kafra_01",255;
+close;
+
+
+LbabyHunter:
+if(class != 4026) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "o dios.. ya cumples los requisitos, veo que te divertiste lansando tus flechas a indefensos mob";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Ahora ya puedes cazar mobs que antes no podias y poner muchas trampitas y mas trampitas y ayudar a tu guild a proteger su emperium...";
+jobchange 4034; //Job_Hunter
+close;
+
+LbabyKnight:
+if(class != 4024) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "w00t w00t! Tu eres Job Level 40, Tu've been a Swordie all Tur life...";
+mes "Ya estas listo para dedicar tu vida a la justicia, la lealtad, el honor y todas esas cosas de caballeros! ";
+mes "...";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Si! Tu estas listo para combertirte en un Baby Knight! ";
+mes "Ve a salvar un damisela en peligro o algo por el estilo...";
+cutin "kafra_01",255;
+jobchange 4030; //Job_Knight
+close;
+
+LbabyBlacksmith:
+if(class != 4028) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes ":O Buenos drop, muchos materiales ya cumples con todos los requisitos...";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "YUP! ya lo hise! te cambie a Blacksmith! era eso lo que querias no??... ve a hacer algunas armas, crea materiales, abre algunas tiendas y haste rico! ";
+jobchange 4033; //Job_Blacksmith
+close;
+
+LbabyAssassin:
+if(class != 4029) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Tu sabes como se llama la mas grande asecina de todos los tiempos?... ya lo sabras a su tiempo ";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "por ahora solo se que ya estas list@ para hacerte un miembro mas de el mas siniestro clan de Element, el clan de los ^6500BFAsecin@s...";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Ahora podras intentar superar a mi maestra ... pif";
+jobchange 4035; //Job_Assassin
+close;
+
+LbabyPriest:
+if(class != 4027) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "puedo sentir que ya estas aburrid@ de quedarte sin sp. Bien ahora ya no te pasara tan seguido... ";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Te ves demaciado sexy para ser una religiosa..(ops)  bueno ya podras dar full soporte a tus amigos";
+jobchange 4031; //Job_Priest
+close;
+
+LbabyWizard:
+if(class != 4025) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Wiii, no se siente genial el haber llegado a ser wisard .... ahhhhhhh......";
+jobchange 4032; //Job_Wizard
+close;
+
+LbabyCrusader:
+if(class != 4024) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Mmmmm, Siempre me an gustado los crusados.. sus grandes armaduras slur, ....";
+next;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Oooo~~~ yeah, eso es un super crusado para proteger a sus amigos... yummy...";
+jobchange 4037; //Job_Crusader
+close;
+
+LbabyDancerbard:
+if(class != 4026) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+if(sex==1) mes "Yay! anda, toca alguna ballada para alguna Dancer o algo, simplemente es dificil seguir con ropa... ewww.";
+if(sex==1) jobchange 4042;// Job: Job_Bard
+if(sex==0) mes "Uh-huh, ese latigo, se ve bueno ^_~ Las Dancers son tan sexy.. Y yo con esta ropa de Super Baby.. blah, si solo pudiera cambiarme de profecion...seguro seria una dancer como tu *sigh*";
+if(sex==0) jobchange 4043;// Job_Dancer
+close;
+
+LbabyAlchemist:
+if(class != 4028) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Cool! hace algunas pociones! Abre una farmacia! chemical proteccion ! yeah yeah yeah! ";
+jobchange 4041;// Job_Alchem
+close;
+
+LbabyRogue:
+if(class != 4029) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Wow! Tu.. eres.. TAAAAN COOOL!! YEEEAAHH XD!! *drools*";
+jobchange 4040;//  Job_Rogue
+close;
+
+LbabyMonk:
+if(class != 4027) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Nice.... los monks pegan tan duro que nadie se salva si pelea con uno!";
+jobchange 4038;// Job_Monk
+close;
+
+LbabySage:
+if(class != 4025) goto wrong1stjob;
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "Ahhhh, es tan cool! yo nunca me canso de ver a gente cambiarse en esos nuevos 2-2 sprites.. YAHH XD!!";
+mes "ve cuarto Sage! muestra a esos wizzies un verdader@ destructor de mana, puedes hacerlo! Mwahaha...";
+jobchange 4039;// Job_Sage
+close;
+
+wrong1stjob:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "No seas tranpos@ elije la profecion que te corresponde.";
+close;
+
+Lbabyskillpt:
+mes "[ ^0065DFMaster^000000 ]";
+mes "porfavor usa todos tus puntos de skil antes de cambiar al la siguiente profecion! ";
+cutin "kafra_01",255;
+close;
+
+
+LCancel:
+mes "[ ^0065DFBaby Master^000000 ]";
+mes "waah..si asi lo quieres >_>..";
+cutin "kafra_01",255;
+close;
+}

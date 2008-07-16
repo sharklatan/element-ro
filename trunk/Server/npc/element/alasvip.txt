@@ -1,0 +1,98 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+//Created using Athena NPC Studio version 1.0
+quiz_02.gat,248,387,5	script	Alas VIP	862,{
+
+
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	mes "Tengo algunas wings VIP que podrian interesarte.";
+	mes "Al elejir estas wing nos ayudas";
+	mes "a mantener el servidor";
+	next;
+	mes "esto es lo mejor de lo mejor";
+	set @item, select("Ying Yang Wings", "Ohng Toi Wings", "Salir");
+	switch (@item)
+	{
+		case 1: goto wings1;
+		case 2: goto wings2;
+		case 3: goto Msalir;
+	}
+wings1:
+	mes @JMROW$;
+	mes "Estas wings dan el siguiente bonus:";
+	mes "HP + 5 :";
+	mes "MATK 500:";
+	mes "Critico 10:";
+	mes "todos los estatus a + 10:";
+	mes "Hit 50:";
+	mes "5% de resistencia a todos los elementos:";
+	mes "Asumption lvl 5:";
+	mes "Inmunidad a todos los efectos:";
+	set @item, select("Ying Yang wings");
+	switch (@item)
+	{
+		case 1: goto wings1_1;
+	}
+wings1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "10 tikets v.i.p";
+	next;
+	if(countitem(19001)<10)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 19001,10;
+	getitem 15051,1;
+	close;
+	
+wings2:
+	mes @JMROW$;
+	mes "Estas wings dan el siguiente bonus:";
+	mes "HP +5% :";
+	mes "MATK 500:";
+	mes "Critico 10:";
+	mes "Hit +50:";
+	mes "todos los status a +15:";
+	mes "5% de resistencia a todos los elementos:";
+	mes "Storm Gust Lvl.10:";
+	mes "Cloaking Lvl.10:";
+	set @item, select("Ohng Toi Wings");
+	switch (@item)
+	{
+		case 1: goto wings2_1;
+	}
+
+wings2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "10 tikets v.i.p";
+	next;
+	if(countitem(19001)<10)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 19001,10;
+	getitem 15045,1;
+	close;
+
+Msalir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario vuelve cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

@@ -1,0 +1,59 @@
+//===== Athena Script =======================================
+//= (PvP Arena)
+//===== By ================================================
+//= (ReYeS)
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= Todo eAthena
+//===== Description =======================================
+//= (Cuarto PvP)
+//===== Comments ==========================================
+//= 
+//=========================================================
+//=========================================================
+  
+prontera.gat,164,204,5	script	PvP Room	810,{
+	set @w1,getmapusers("pvp_n_1-5.gat");
+	set @w2,getmapusers("pvp_y_1-1.gat");
+	
+	mes "[^858FF1PvP RooM^000000]";
+	mes "Hola,^ff8000"+strcharinfo(0)+"^000000, Seas Bienvenido";
+	mes "Al Cuarto PvP, Aqui Solo Los Mejores Son Capas De Vivir.";
+	mes "¿Quieres Entrar?.";
+	menu "Si",Ok_,"No, Gracias",No_;
+Ok_:
+	next;
+	mes "[^858FF1PvP RooM^000000]";
+	mes "Tenemos Dos Arenas En Las Cuales Puedes Entrar";
+	mes "¿A Que Arena Deseas Ir?";
+	menu "PvP ViP ^C0C0C0[^000000^77B700"+@w1+"^000000/50^C0C0C0]^000000",Vip_,"PvP Prontera ^C0C0C0[^000000^77B700"+@w2+"^000000/50^C0C0C0]^000000",Pront_;
+Vip_:
+	next;
+	if (getmapusers("pvp_n_1-5.gat") > 50) goto much;
+	mes "[^858FF1PvP RooM^000000]";
+	mes "OK, Vamos!";
+	next;
+	warp "pvp_n_1-5.gat",	0,	0;	close;
+	
+Pront_:
+	if (getmapusers("pvp_y_1-1.gat") > 50) goto much;
+	mes "[^858FF1PvP RooM^000000]";
+	mes "Ok, Vamos!";
+	next;
+	warp "pvp_y_1-1.gat",	0,	0;	close;
+
+No_:
+	mes "[^858FF1PvP RooM^000000]";
+	mes "Ok, Cuando Quieras Entrar Regresas";
+	mes "Buena Suerte.";
+	close;
+
+much:
+	mes "[^858FF1PvP RooM^000000]";
+	mes "No Sabes, Cuanto lo siento";
+	next;
+	mes "[^858FF1PvP RooM^000000]";
+	mes "No Te Podre Dejar Entrar Ya Que El Arena Esta LLeno!";
+	close;
+}

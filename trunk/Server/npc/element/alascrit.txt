@@ -1,0 +1,249 @@
+//(=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=)
+//(       (c)2005 RagMods Modification Team presents        )
+//(       ______  __    __                                  )
+//(      /\  _  \/\ \__/\ \                     v 1.00.00   )
+//(    __\ \ \_\ \ \ ,_\ \ \___      __    ___      __      )
+//(  /'__`\ \  __ \ \ \/\ \  _ `\  /'__`\/' _ `\  /'__`\    )
+//( /\  __/\ \ \/\ \ \ \_\ \ \ \ \/\  __//\ \/\ \/\ \_\.\_  )
+//( \ \____\\ \_\ \_\ \__\\ \_\ \_\ \____\ \_\ \_\ \__/.\_\ )
+//(  \/____/ \/_/\/_/\/__/ \/_/\/_/\/____/\/_/\/_/\/__/\/_/ )
+//(                                                         )
+//(            __ [s] [c] [r] [i] [p] [t] [s] __            )
+//(   _   _   _   _   _   _   _     _   _   _   _   _   _   )
+//(  / \ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \  )
+//( ( e | s | p | a | ñ | o | l ) ( A | t | h | e | n | a ) )
+//(  \_/ \_/ \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/  )
+//(                                                         )
+//(   (c) 2007 Shark_Latan Element_RO			    )
+//(=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=)
+//===== eAthena Script ======================================
+//= wings Quest.
+//===========================================================
+//===== By ==================================================
+//= Ultima
+//===== Version =============================================
+//= 1.0
+//===== Compatible With =====================================
+//= eAthena SVN and Freya SVN
+//===== Description =========================================
+//= NPC wings Quest por categorias.
+//===========================================================
+quiz_02,242,364,1	script	Alas Criticos	936,{
+	set @JMROW$,"[^0065DFwings^000000]";
+
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	mes "Tengo algunas Quest wings para ti.";
+	next;
+	mes "aqui lo tienes";
+	set @item, select("wings 1", "Salir");
+	switch (@item)
+	{
+		case 1: goto wings3;
+		case 2: goto Msalir;
+	}
+wings3:
+	mes @JMROW$;
+	mes "Estas alas dan el siguiente bonus:";
+	mes "Str + 5:";
+	mes "Agi + 5:";
+	mes "Luk + 5:";
+	mes "Critical + 10:";
+	set @item, select("Blue Fairy Wings", "Mini Cute Wings", "Harpy Wings", "Dragon Wings", "Cat Tail", "Incubus Wings");
+	switch (@item)
+	{
+		case 1: goto wings3_1;
+		case 2: goto wings3_2;
+		case 3: goto wings3_3;
+		case 4: goto wings3_4;
+		case 5: goto wings3_5;
+		case 6: goto wings3_6;
+		case 7: goto wings3_7;
+	}
+wings3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15009,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_2:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15010,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_3:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 9697,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_4:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15004,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_5:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+	mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15042,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_6:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15034,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+wings3_7:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Baphomet Doll";
+	mes "1 Angel Wing";
+	mes "1 Evil Wing";
+        mes "100 Little Evil Wing";
+	mes "100 Cracked Diamond";
+	next;
+	if(countitem(750)<1)goto falta;
+	if(countitem(2254)<1)goto falta;
+	if(countitem(2255)<1)goto falta;
+	if(countitem(1039)<100)goto falta;
+	if(countitem(733)<100)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 750,1;
+	delitem 2254,1;
+	delitem 2255,1;
+	delitem 1039,100;
+	delitem 733,100;
+	getitem 15038,1;
+	close;
+
+
+falta:
+	mes "Aun no tienes lo necesario vuelve cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}

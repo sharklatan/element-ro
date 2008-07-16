@@ -1,0 +1,411 @@
+//===== Athena Script =======================================
+//= (name)
+//===== By ================================================
+//= Ultima
+//===== Version ===========================================
+//= 1.0
+//===== Compatible With ===================================
+//= eAthena 0.52
+//===== Description =======================================
+//= quest
+//===== Comments ==========================================
+//= Wii, ya soy toda una experta en esto
+//=========================================================
+quiz_02.gat,251,382,4	script	Mascaras	775,{
+
+	set @JMROW$,"[^0065DFEQUIPO^000000]";
+	
+	mes @JMROW$;
+	mes "Hola ^5555FF" + strcharinfo(0) + "^000000!... Espero Que Estes Disfrutando de Nuestro Servidor";
+	next;
+	mes "tengo aqui algunos equipos que te pueden ayudar";
+	mes "deseas verlos??";
+	next;
+	menu "Si",equipo,"No Gracias",no;
+
+equipo:
+	mes "estos son elije el que mas te agrade:";
+	next;
+	set @item, select("Odium Mask", "Dolor Mask", "Despero Mask", "Maero Mask", "5 Mask", "6 Mask", "7 Mask", "Salir");
+	switch (@item)
+	{
+		case 1: goto equipo1;
+		case 2: goto equipo2;
+                case 3: goto equipo3;
+                case 4: goto equipo4;
+                case 5: goto equipo5;
+		case 6: goto equipo6;
+		case 7: goto equipo7;
+                case 8: goto equipo8;
+                case 9: goto equipo9;
+                case 10: goto equipo10;
+                case 11: goto equipo11;
+                case 12: goto equipo12;
+		case 13: goto salir;
+	}
+
+// [==================================================]
+// [===========           equipo 1         ===========]
+// [==================================================]
+equipo1:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Odium Mask");
+	switch (@item)
+	{
+		case 1: goto equipo1_1;
+
+	}
+  
+equipo1_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16001,1;
+	close;
+	npctalk "~ NPC hecho por element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 2         ===========]
+// [==================================================]
+equipo2:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Dolor Mask");
+	switch (@item)
+	{		
+		case 1: goto equipo2_1;
+
+	}
+equipo2_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16009,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 3         ===========]
+// [==================================================]
+equipo3:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Despero Mask");
+	switch (@item)
+	{		
+		case 1: goto equipo3_1;
+
+	}
+equipo3_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16003,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 4         ===========]
+// [==================================================]
+equipo4:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("Maero Mask");
+	switch (@item)
+	{		
+		case 1: goto equipo4_1;
+
+	}
+equipo4_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16002,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 5         ===========]
+// [==================================================]
+equipo5:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("5 Mask");
+	switch (@item)
+	{		
+		case 1: goto equipo5_1;
+
+	}
+equipo5_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16005,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+// [==================================================]
+// [===========           equipo 6         ===========]
+// [==================================================]
+equipo6:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("6 Mask");
+	switch (@item)
+	{
+		case 1: goto equipo6_1;
+
+	}
+  
+equipo6_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16004,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+	
+// [==================================================]
+// [===========           equipo 7         ===========]
+// [==================================================]
+equipo7:
+	mes @JMROW$;
+	mes "Este equipo da los siguientes bonus:";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	mes "???";
+	set @item, select("7 Mask");
+	switch (@item)
+	{		
+		case 1: goto equipo7_1;
+
+	}
+equipo7_1:
+	next;
+	mes "Necesitaras esto:";
+	mes "1 Mr. Smile";
+	mes "20 Goblin Card";
+	mes "100 White Mask";
+	mes "100 Festival Mask";
+	mes "5 Emperium Avnil";
+	mes "20 millones de zeny";
+	next;
+	if(countitem(2278)<1)goto falta;
+	if(countitem(4060)<20)goto falta;
+
+	if(countitem(7568)<100)goto falta;
+	if(countitem(7187)<100)goto falta;
+	if(countitem(989)<5)goto falta;
+	if(Zeny< 20000000)goto falta;
+	next;
+	mes "Tienes todo, asi que aqui esta tu item";
+	next;
+	delitem 2278,1;
+	delitem 4060,20;
+
+	delitem 7568,100;
+
+	delitem 7187,100;
+
+	delitem 989,5;
+	set Zeny,Zeny-20000000;
+	getitem 16006,1;
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+
+no:
+	mes "Regresa cuando quieras";
+	mes "no sabes lo que te pierdes gg";
+	close;
+
+salir:
+	mes "...";
+	close;
+falta:
+	mes "Aun no tienes lo necesario regresa cuando lo tengas..";
+	close;
+	npctalk "~ NPC hecho por Element_RO ~";
+}
